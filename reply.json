@@ -1,0 +1,157 @@
+{
+    "id": "18cffa3d37e15517",
+    "threadId": "18cfe91fc07a1f5d",
+    "labelIds": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "snippet": "Reply without attachment On Fri, Jan 12, 2024, 17:47 NILE UNIVERSITY &lt;efonovia18@gmail.com&gt; wrote: Our student, undefined would like to intern at your company Validation: You might want to add",
+    "payload": {
+      "partId": "",
+      "mimeType": "multipart/alternative",
+      "filename": "",
+      "headers": [
+        {
+          "name": "Delivered-To",
+          "value": "efonovia18@gmail.com"
+        },
+        {
+          "name": "Received",
+          "value": "by 2002:a05:6020:12cc:b0:2c3:4f5f:991d with SMTP id o12csp2026757wde;        Fri, 12 Jan 2024 13:46:16 -0800 (PST)"
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a05:6830:2095:b0:6df:2c26:c5e with SMTP id y21-20020a056830209500b006df2c260c5emr2100209otq.31.1705095975851;        Fri, 12 Jan 2024 13:46:15 -0800 (PST)"
+        },
+        {
+          "name": "ARC-Seal",
+          "value": "i=1; a=rsa-sha256; t=1705095975; cv=none;        d=google.com; s=arc-20160816;        b=DSWqv1AJ65xOSWH+Wk0yeuw758SWMtVtri69CHOIYZPlOz8uh4BXlAea2E36MiC1t7         /UbjkkczgmM7EK7z06n05EI78I8fnnox7lgook08/0TmETpiPzjNeWr6+FoT1HlBU2uR         T/MvofezHQTa7ugVhJRSG8xcjcDu0NEmsVsN2A4b26EetS93Y0u1gwtjx1CGWxg5plVI         61/XOIj+mGuW7TH722HX2Li0ktJxhnt+BPjDPSNEIYQvWy1vkQB7Ot2MGrqac7CH0uZC         lKkjwI3wkHlJkjELZDbHbQnOpm30cHDD9sJcY3eQ+tAz/B58pkcmOglLuZkRkO4/wOoT         /Gnw=="
+        },
+        {
+          "name": "ARC-Message-Signature",
+          "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=to:subject:message-id:date:from:in-reply-to:references:mime-version         :dkim-signature;        bh=3a5zVCjamuvq28FR24sPYnjVaKOUnR7tRRPLn6DKRlo=;        fh=8StM74rKxWYrg7kQNYI4LmjT3lcmZqVp+y6av0sswWA=;        b=hzExnPcvFmDkdMaXvK903mREipFVXh5lSmFw+e99jHCOXAR9tBU++IdeZpVk/hPBCR         XKS1kdr10d+CNM1nMfQStgJ7YUho3kiSuuvwmt/Wl/Mqr3KFAYc5DhMBHM94eVVMXJZT         vyG/dPQjT9iwMJ7J2g3X3pWsmGy5mUXiKbXTVZrtH6HNtUcMworR3D4tofJQZkLmcet5         SaBV4DELmJWqhBzCdJXTXIvYcu5Muct/MFTXpotrDBHlaGOSaC19TG69kySBSho8Oqy4         ZZvk2i8RT+v5fQON7hOZwDJBHDnf7+oMMguoPRv3g/PoiU3dsd4g3RfcfbhnB2AJaUz+         g/XQ=="
+        },
+        {
+          "name": "ARC-Authentication-Results",
+          "value": "i=1; mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=Buqe5h4Z;       spf=pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lordnovia@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "Return-Path",
+          "value": "\u003clordnovia@gmail.com\u003e"
+        },
+        {
+          "name": "Received",
+          "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id t3-20020a9d7483000000b006dc6fc9ce50sor2261266otk.20.2024.01.12.13.46.15        for \u003cefonovia18@gmail.com\u003e        (Google Transport Security);        Fri, 12 Jan 2024 13:46:15 -0800 (PST)"
+        },
+        {
+          "name": "Received-SPF",
+          "value": "pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+        },
+        {
+          "name": "Authentication-Results",
+          "value": "mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=Buqe5h4Z;       spf=pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lordnovia@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=gmail.com; s=20230601; t=1705095975; x=1705700775; dara=google.com;        h=to:subject:message-id:date:from:in-reply-to:references:mime-version         :from:to:cc:subject:date:message-id:reply-to;        bh=3a5zVCjamuvq28FR24sPYnjVaKOUnR7tRRPLn6DKRlo=;        b=Buqe5h4ZWTPXH+gNcLkUbxnYbizxnEaCYzIxW995Jz6dZehTKRbnp5aXtaGZJ6zioh         JxsEGVCCTWkWVIQnQ41uY0QZkS2qIpLD1hUSvnlTZTCBtTybBc5EsV6qWiK1ed2FHJ6v         gi8XvKv7zvkI4ISIgWnvlodf5THfJnJ9fEZyjW/4s+lIG8TQCVDmq96j9SxhSxFGbQ1s         mLEnhVMe2fc5FxNooBZUsZVNOvpSHHLQllbhNM3KpPG86qrjWb1OBmyTii59B9UeHZE0         DuAZT8LXkbQMyynHrc5c7qG3AL2UJUFIJiDA7yreHhEAo7Pl5lEONYUEl5jNv832DIc7         jzzg=="
+        },
+        {
+          "name": "X-Google-DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20230601; t=1705095975; x=1705700775;        h=to:subject:message-id:date:from:in-reply-to:references:mime-version         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;        bh=3a5zVCjamuvq28FR24sPYnjVaKOUnR7tRRPLn6DKRlo=;        b=dN3yNmfj57ZOFbqazwb2H2lMMN1J7+M80o0Abo8GbsUfMYr5zOfH2K38/FP9yEoorg         6PfLfzOrZdrcwiAuUvYR9upDbcOeNWcQTDbogFlzgsqUDI6yc8BVW0Nrz8WNYQ0dHR9Q         L4yRnVoeNhj1T7j5s5ick+YO8p1vEnfr81/4/72mOhalmVPOkdb0FaezCVYECEYQtlSW         NS6wcWMdb2gYDz3Hs6tKzbi1Pm3rcNJjgXMa8csZtYKVx+wwMUS9EzoIatPmElJjBOT2         6IKl9XkyQusa7yQ2ncWDkCkhDeMMlM7+Oty6bciuF0kDT/6xf+FGrFgjxMFRzi+9GwCI         4+QA=="
+        },
+        {
+          "name": "X-Gm-Message-State",
+          "value": "AOJu0YzRyo3+GCMBtNq7Ldk5v7BnBGOitexj+aagwPaZ2oK7CbETcpXr HC+rwmYARyAvfHnc6LCtKJqPpOmi35j3L6NevEqlx1SQ4B1wFg=="
+        },
+        {
+          "name": "X-Google-Smtp-Source",
+          "value": "AGHT+IEhzGUax4yMAsq2VDbRELtaw7Rv5qakU0eOazUeJ4eShiaVImq20Cgjg6ssV8ZgqHSe+vNqP/6otrz/9nEgnMM="
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a4a:1781:0:b0:591:2de4:1fb6 with SMTP id 123-20020a4a1781000000b005912de41fb6mr1255393ooe.1.1705095975251; Fri, 12 Jan 2024 13:46:15 -0800 (PST)"
+        },
+        {
+          "name": "MIME-Version",
+          "value": "1.0"
+        },
+        {
+          "name": "References",
+          "value": "\u003c8898bc22-557d-7882-cf98-651cb151519c@gmail.com\u003e"
+        },
+        {
+          "name": "In-Reply-To",
+          "value": "\u003c8898bc22-557d-7882-cf98-651cb151519c@gmail.com\u003e"
+        },
+        {
+          "name": "From",
+          "value": "Igbinovia Efosa \u003clordnovia@gmail.com\u003e"
+        },
+        {
+          "name": "Date",
+          "value": "Fri, 12 Jan 2024 22:45:51 +0100"
+        },
+        {
+          "name": "Message-ID",
+          "value": "\u003cCAEB25ydM+mWUq2vFs02A6k7EJsXSrMtmJJsU_3bQMoY+Zw85=w@mail.gmail.com\u003e"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Internship Application for our Student final 1"
+        },
+        {
+          "name": "To",
+          "value": "NILE UNIVERSITY \u003cefonovia18@gmail.com\u003e"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/alternative; boundary=\"000000000000e9b736060ec697ef\""
+        }
+      ],
+      "body": {
+        "size": 0
+      },
+      "parts": [
+        {
+          "partId": "0",
+          "mimeType": "text/plain",
+          "filename": "",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "text/plain; charset=\"UTF-8\""
+            }
+          ],
+          "body": {
+            "size": 1049,
+            "data": "UmVwbHkgd2l0aG91dCBhdHRhY2htZW50DQoNCk9uIEZyaSwgSmFuIDEyLCAyMDI0LCAxNzo0NyBOSUxFIFVOSVZFUlNJVFkgPGVmb25vdmlhMThAZ21haWwuY29tPiB3cm90ZToNCg0KPiBPdXIgc3R1ZGVudCwgdW5kZWZpbmVkIHdvdWxkIGxpa2UgdG8gaW50ZXJuIGF0IHlvdXIgY29tcGFueQ0KPg0KPiBWYWxpZGF0aW9uOiBZb3UgbWlnaHQgd2FudCB0byBhZGQgZnVydGhlciB2YWxpZGF0aW9uIGZvciBmaWVsZHMgc3VjaCBhcw0KPiBkYXRlTWFkZS4gRm9yIGluc3RhbmNlLCB5b3UgY291bGQgc2V0IGENCj4gbWluaW11bSBhbmQgbWF4aW11bSBkYXRlIHJhbmdlLg0KPiBJbmRleGVzOiBEZXBlbmRpbmcgb24geW91ciB1c2UgY2FzZXMsIHlvdSBtaWdodCBjb25zaWRlciBhZGRpbmcgaW5kZXhlcyB0bw0KPiBmaWVsZHMgdGhhdCB5b3UnbGwNCj4gZnJlcXVlbnRseSB1c2UgZm9yIHF1ZXJpZXMsIGxpa2Ugc3R1ZGVudElkLCBjb21wYW55SWQsIG9yIGRhdGVNYWRlLg0KPiBEZWZhdWx0IFZhbHVlczogWW91J3ZlIGFscmVhZHkgc2V0IGRlZmF1bHQgdmFsdWVzIGZvcg0KPiBicmllZk1lc3NhZ2VzIGFuZCBkZXRhaWxlZE1lc3NhZ2VzLCB3aGljaCBpcyBnb29kLiBJdCBwcm92aWRlcyBhIGRlZmF1bHQNCj4gZW1wdHkgYXJyYXkgaWYgbm90IHNwZWNpZmllZC4NCj4gTmFtaW5nIENvbnZlbnRpb25zOiBZb3UndmUgdXNlZCBjYW1lbENhc2UgZm9yIGZpZWxkIG5hbWVzLCB3aGljaCBpcyBmaW5lLg0KPiBIb3dldmVyLCBzb21lIGRldmVsb3BlcnMgcHJlZmVyIHVzaW5nIHNuYWtlX2Nhc2UgZm9yIE1vbmdvREIgZmllbGRzLg0KPiBDb25zaXN0ZW5jeSBpcyBrZXksIHNvIGp1c3QgbWFrZSBzdXJlIHlvdSBmb2xsb3cgdGhlIG5hbWluZyBjb252ZW50aW9uDQo-IGNvbnNpc3RlbnRseSBhY3Jvc3MgeW91ciBhcHBsaWNhdGlvbi4NCj4gWW91IGNhbiByZXNwb25kIGFuZCBjb250YWN0IHRoZW0gYXQgMTIzNDU2Nzg5MEBuaWxldW5pdmVyc2l0eS5lZHUubmcNCj4NCj4NCj4gdmVyaWZpZWQgYnkgW2ltYWdlOiBOaWxlIFVuaXZlcml0eSdzIExvZ29dDQo="
+          }
+        },
+        {
+          "partId": "1",
+          "mimeType": "text/html",
+          "filename": "",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=\"UTF-8\""
+            },
+            {
+              "name": "Content-Transfer-Encoding",
+              "value": "quoted-printable"
+            }
+          ],
+          "body": {
+            "size": 1759,
+            "data": "PGRpdiBkaXI9ImF1dG8iPlJlcGx5IHdpdGhvdXQgYXR0YWNobWVudMKgPC9kaXY-PGJyPjxkaXYgY2xhc3M9ImdtYWlsX3F1b3RlIj48ZGl2IGRpcj0ibHRyIiBjbGFzcz0iZ21haWxfYXR0ciI-T24gRnJpLCBKYW4gMTIsIDIwMjQsIDE3OjQ3IE5JTEUgVU5JVkVSU0lUWSAmbHQ7PGEgaHJlZj0ibWFpbHRvOmVmb25vdmlhMThAZ21haWwuY29tIj5lZm9ub3ZpYTE4QGdtYWlsLmNvbTwvYT4mZ3Q7IHdyb3RlOjxicj48L2Rpdj48YmxvY2txdW90ZSBjbGFzcz0iZ21haWxfcXVvdGUiIHN0eWxlPSJtYXJnaW46MCAwIDAgLjhleDtib3JkZXItbGVmdDoxcHggI2NjYyBzb2xpZDtwYWRkaW5nLWxlZnQ6MWV4Ij4NCiAgICAgICAgPHU-PC91Pg0KICAgICAgICAgIDxoMSBzdHlsZT0idGV4dC1hbGlnbjpsZWZ0Ij5PdXIgc3R1ZGVudCwgdW5kZWZpbmVkIHdvdWxkIGxpa2UgdG8gaW50ZXJuIGF0IHlvdXIgY29tcGFueTwvaDE-DQogICAgICAgICAgPHAgc3R5bGU9Im1hcmdpbi1sZWZ0OjIwcHgiPlZhbGlkYXRpb246IFlvdSBtaWdodCB3YW50IHRvIGFkZCBmdXJ0aGVyIHZhbGlkYXRpb24gZm9yIGZpZWxkcyBzdWNoIGFzIGRhdGVNYWRlLiBGb3IgaW5zdGFuY2UsIHlvdSBjb3VsZCBzZXQgYSA8YnI-IG1pbmltdW0gYW5kIG1heGltdW0gZGF0ZSByYW5nZS48YnI-IEluZGV4ZXM6IERlcGVuZGluZyBvbiB5b3VyIHVzZSBjYXNlcywgeW91IG1pZ2h0IGNvbnNpZGVyIGFkZGluZyBpbmRleGVzIHRvIGZpZWxkcyB0aGF0IHlvdSYjMzk7bGwgPGJyPiBmcmVxdWVudGx5IHVzZSBmb3IgcXVlcmllcywgbGlrZSBzdHVkZW50SWQsIGNvbXBhbnlJZCwgb3IgZGF0ZU1hZGUuIDxicj4gRGVmYXVsdCBWYWx1ZXM6IFlvdSYjMzk7dmUgYWxyZWFkeSBzZXQgZGVmYXVsdCB2YWx1ZXMgZm9yIDxicj4gYnJpZWZNZXNzYWdlcyBhbmQgZGV0YWlsZWRNZXNzYWdlcywgd2hpY2ggaXMgZ29vZC4gSXQgcHJvdmlkZXMgYSBkZWZhdWx0IGVtcHR5IGFycmF5IGlmIG5vdCBzcGVjaWZpZWQuPGJyPiBOYW1pbmcgQ29udmVudGlvbnM6IFlvdSYjMzk7dmUgdXNlZCBjYW1lbENhc2UgZm9yIGZpZWxkIG5hbWVzLCB3aGljaCBpcyBmaW5lLiBIb3dldmVyLCBzb21lIGRldmVsb3BlcnMgcHJlZmVyIHVzaW5nIHNuYWtlX2Nhc2UgZm9yIE1vbmdvREIgZmllbGRzLiA8YnI-IENvbnNpc3RlbmN5IGlzIGtleSwgc28ganVzdCBtYWtlIHN1cmUgeW91IGZvbGxvdyB0aGUgbmFtaW5nIGNvbnZlbnRpb24gY29uc2lzdGVudGx5IGFjcm9zcyB5b3VyIGFwcGxpY2F0aW9uLiA8YnI-PC9wPg0KICAgICAgICAgIA0KICAgICAgICAgICAgICBZb3UgY2FuIHJlc3BvbmQgYW5kIGNvbnRhY3QgdGhlbSBhdCA8c3BhbiBzdHlsZT0iY29sb3I6Ymx1ZSI-PGEgaHJlZj0ibWFpbHRvOjEyMzQ1Njc4OTBAbmlsZXVuaXZlcnNpdHkuZWR1Lm5nIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub3JlZmVycmVyIj4xMjM0NTY3ODkwQG5pbGV1bml2ZXJzaXR5LmVkdS5uZzwvYT48L3NwYW4-DQogICAgICAgICAgDQogICAgICAgICAgPGJyPjxicj48YnI-DQogICAgICAgICAgPHNwYW4-dmVyaWZpZWQgYnkgPGltZyBoZWlnaHQ9Ijg1IiB3aWR0aD0iODUiIHNyYz0iaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8zLzNkL0xvZ29fTmlsZV9Vbml2ZXJzaXR5X1ZlcnRfLTAxLmpwZyIgYWx0PSJOaWxlIFVuaXZlcml0eSYjMzk7cyBMb2dvIj48L3NwYW4-DQogICAgICAgIDx1PjwvdT4NCiAgICAgIDwvYmxvY2txdW90ZT48L2Rpdj4NCg=="
+          }
+        }
+      ]
+    },
+    "sizeEstimate": 8267,
+    "historyId": "22032",
+    "internalDate": "1705095951000"
+  }
+  

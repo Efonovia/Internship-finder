@@ -1,0 +1,8 @@
+go through the last 500 emails
+if email id is not in database: //(because if the emailID was also in the DB it means you've already seen it)
+    check if threadID === to one of the messages they sent you before: //(making sure the email is for you and not for another student)
+        add to DB and mark as SEEN in DB and push notification
+    else:
+        ignore the email
+else: 
+    ignore email

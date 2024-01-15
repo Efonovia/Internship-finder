@@ -1,0 +1,196 @@
+{
+    "id": "18cffaad87e2faa8",
+    "threadId": "18cffaad87e2faa8",
+    "labelIds": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "snippet": "New mail to you WITH ATTACHMENT",
+    "payload": {
+      "partId": "",
+      "mimeType": "multipart/mixed",
+      "filename": "",
+      "headers": [
+        {
+          "name": "Delivered-To",
+          "value": "efonovia18@gmail.com"
+        },
+        {
+          "name": "Received",
+          "value": "by 2002:a05:6020:12cc:b0:2c3:4f5f:991d with SMTP id o12csp2029361wde;        Fri, 12 Jan 2024 13:53:56 -0800 (PST)"
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a05:6870:4d19:b0:203:31f4:6962 with SMTP id pn25-20020a0568704d1900b0020331f46962mr2324639oab.4.1705096436112;        Fri, 12 Jan 2024 13:53:56 -0800 (PST)"
+        },
+        {
+          "name": "ARC-Seal",
+          "value": "i=1; a=rsa-sha256; t=1705096436; cv=none;        d=google.com; s=arc-20160816;        b=ifKbcJ28xRjY/BteKj/nSAoYW8aakTWhdIyf0OuJfJLmcvMfQulj3+H9FSnv9V31No         UHY4qJPRz44iBEKuEjuHA3X0IebRFTJ8zd/kpVp3Fs5Kz3sQB+fC0C5XCZxcGFGf4Tnt         kg9aW3pOU952W/JPAEN/ivBTGqy5bEdycxZRo98LB91w+Qg3BDBhJ0byo6z0W1o0wO1S         K8iqM3I87P2ozxOYKhap5/ESmdha7XHk+ke4z3N1HxpfcS+NhJ4J/OSzaIrVZPQnUwNT         1jrTbSvF2AgUdpATzbCmJs0xmiw0/o3vrTnPFY8+L6Nyd9dFf0SkdJCuEH0hrZk8VSsP         z/Eg=="
+        },
+        {
+          "name": "ARC-Message-Signature",
+          "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=qOaDmbTNS6toQ0YqJ871M2jcs6a3Fyjt8cDbTBDmW8o=;        fh=f5qdT0S7OVevVo7/Pm3LRkin3LPy441+JS59qWBhD+o=;        b=W/U9h8V8AcmgG2mjCnNFgBHewf7sc01CWEQMia76rRnMcYyuSvCCzyUxG7HHx+sX9z         RoikFEgIM38NH5h3Fvcu4XjW9JCnS6o4HxSxGtq4OweP25FoRmIwpyHpkSkvByAip1E3         q8eugHrjIRa81x7ee/6TChzwHc8jZzmWHnyNObApb+q16CkWCiSDNW1ZXuhFpvHFw2jb         EEl/8hjLslABZplfcCVKvlFfaZEKyYKudZ/+d0m7fia/n4e6waOqFR3Uj6ERsjWlOlSb         y2hB3hoONqojOi3gG0UuRz4AfMgmxODLEErthZ2KgdftI1O2NbidKhzVQ/Hqi8fT3f3Q         TyMg=="
+        },
+        {
+          "name": "ARC-Authentication-Results",
+          "value": "i=1; mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=GLNc1KYw;       spf=pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lordnovia@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "Return-Path",
+          "value": "\u003clordnovia@gmail.com\u003e"
+        },
+        {
+          "name": "Received",
+          "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id s14-20020a05683004ce00b006dc7b3031desor2395871otd.19.2024.01.12.13.53.55        for \u003cefonovia18@gmail.com\u003e        (Google Transport Security);        Fri, 12 Jan 2024 13:53:56 -0800 (PST)"
+        },
+        {
+          "name": "Received-SPF",
+          "value": "pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+        },
+        {
+          "name": "Authentication-Results",
+          "value": "mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=GLNc1KYw;       spf=pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lordnovia@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=gmail.com; s=20230601; t=1705096435; x=1705701235; dara=google.com;        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject         :date:message-id:reply-to;        bh=qOaDmbTNS6toQ0YqJ871M2jcs6a3Fyjt8cDbTBDmW8o=;        b=GLNc1KYw8o8haEnGyssivcMvfSKAPYoG/PXjVPP07dauYlixJ4rt1EBE/dHrIyQtBT         ydFhSLSYbz0PDYT4hLPPYWqANWnVOyFLqyImVzyo+RAqXva466cFHT3SfgNtJvmpCngh         Sxa58xWF0Qm2Vo6kKc5ukP4qTxR8kMRZd1rd6Si2FF/5Ej48wCgcP1LggYObLvIMD6NP         hcaXY+2xT1QJ1v0iIiGdV0pD46hmPJKWlt3Dt5tiAE2QoU7V5Qm6grmeN9kxbVmKifrI         JISililOxkiOdTToa7OYSZCgvC9iYcPYOEZ7EKlLBhzg+mWL5rIyu4cjekmCfYbeDC1+         6NHA=="
+        },
+        {
+          "name": "X-Google-DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20230601; t=1705096435; x=1705701235;        h=to:subject:message-id:date:from:mime-version:x-gm-message-state         :from:to:cc:subject:date:message-id:reply-to;        bh=qOaDmbTNS6toQ0YqJ871M2jcs6a3Fyjt8cDbTBDmW8o=;        b=WWGHtJmBJuIWq/FPbl5tkdhJBV1CvkTW9R90AmcI6HEmB9/MY7phiGYPflvtmLPPG9         KiffFJ/fWhqhkuKAqwitPKnPNVk5jPKmcx/kp05zEsH+itzun3a+EETx861mz1yY5Bqt         U11W4P+p39GvBNz9A/UQ17TPdWMBaPQ+Ob+Rciq3x/BNr70wF9kHSm8XHd4YoyYj+4Im         nCENUp08H9yM7CTsbH5MLhvIGErGD57iafxLN4bXeIalsFaSoqls8PBi1cEA+Ok3aXV5         ozjueMOg225DXOVlAmajfCGRKOadeVyW06chgDPVEzJgDoUE8vZyx9JjI/G4ev+inZeI         7HkA=="
+        },
+        {
+          "name": "X-Gm-Message-State",
+          "value": "AOJu0YxkE6ctVo1FsY4G6QjC332ls3YOlvvXIU6hOOlxM+LH/M9eQx4a R8nWEnILLCcJhsy7MkfILJkptmDhsNkJTfkduYFDLKnv+fIFBg=="
+        },
+        {
+          "name": "X-Google-Smtp-Source",
+          "value": "AGHT+IFwJCMfxgkHfr00Vq6QW/Senb2ZAuJHk9lxXZfq7xTU5yFbpbrwPpUDfZSxU61f/odkCsqQc7TNUdacxdgZZd0="
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a05:6820:1626:b0:596:14e6:f451 with SMTP id bb38-20020a056820162600b0059614e6f451mr1276963oob.14.1705096435455; Fri, 12 Jan 2024 13:53:55 -0800 (PST)"
+        },
+        {
+          "name": "MIME-Version",
+          "value": "1.0"
+        },
+        {
+          "name": "From",
+          "value": "Igbinovia Efosa \u003clordnovia@gmail.com\u003e"
+        },
+        {
+          "name": "Date",
+          "value": "Fri, 12 Jan 2024 22:53:32 +0100"
+        },
+        {
+          "name": "Message-ID",
+          "value": "\u003cCAEB25yeJxJ9Ne1ug_6UB1QGLzDU=3K8wWPx6B5k5ZbkODPBzAg@mail.gmail.com\u003e"
+        },
+        {
+          "name": "Subject",
+          "value": "THIS IS THE ATTACHMENT SUBJECT"
+        },
+        {
+          "name": "To",
+          "value": "efonovia18@gmail.com"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/mixed; boundary=\"0000000000005835b0060ec6b3c0\""
+        }
+      ],
+      "body": {
+        "size": 0
+      },
+      "parts": [
+        {
+          "partId": "0",
+          "mimeType": "multipart/alternative",
+          "filename": "",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "multipart/alternative; boundary=\"0000000000005835ae060ec6b3be\""
+            }
+          ],
+          "body": {
+            "size": 0
+          },
+          "parts": [
+            {
+              "partId": "0.0",
+              "mimeType": "text/plain",
+              "filename": "",
+              "headers": [
+                {
+                  "name": "Content-Type",
+                  "value": "text/plain; charset=\"UTF-8\""
+                }
+              ],
+              "body": {
+                "size": 33,
+                "data": "TmV3IG1haWwgdG8geW91IFdJVEggQVRUQUNITUVOVA0K"
+              }
+            },
+            {
+              "partId": "0.1",
+              "mimeType": "text/html",
+              "filename": "",
+              "headers": [
+                {
+                  "name": "Content-Type",
+                  "value": "text/html; charset=\"UTF-8\""
+                },
+                {
+                  "name": "Content-Transfer-Encoding",
+                  "value": "quoted-printable"
+                }
+              ],
+              "body": {
+                "size": 57,
+                "data": "PGRpdiBkaXI9ImF1dG8iPk5ldyBtYWlsIHRvIHlvdSBXSVRIIEFUVEFDSE1FTlTCoDwvZGl2Pg0K"
+              }
+            }
+          ]
+        },
+        {
+          "partId": "1",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "filename": "Team 3 - A (updated version).docx",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document; name=\"Team 3 - A (updated version).docx\""
+            },
+            {
+              "name": "Content-Disposition",
+              "value": "attachment; filename=\"Team 3 - A (updated version).docx\""
+            },
+            {
+              "name": "Content-Transfer-Encoding",
+              "value": "base64"
+            },
+            {
+              "name": "Content-ID",
+              "value": "\u003c18cffaa638c5828a4121\u003e"
+            },
+            {
+              "name": "X-Attachment-Id",
+              "value": "18cffaa638c5828a4121"
+            }
+          ],
+          "body": {
+            "attachmentId": "ANGjdJ-PnMUdDRHOrGHdeGdtdueDxYhI3jtiMQ94jy4jz1YulicbGuMO70i2yKk3Dr_9LXCdasPwePOcgZpb_RLDfqaGGi8hsiNHSyvjQjidynbHNVyy_YfC2T2OPAr9uM7wIxcm_tE9DAqmDAQZedj6yqGanW7l4C2X4r8h9rckwAf3-4h0xjjsBIhJGuCMIHAddWiY5nP4nyenj_ULGwiqmpzHJGrv5wuE7mdUJ8bFFpgoGyEsaAjrqL7Wv7qfFu5dfHPpbOatKTmtedPFPEfxuoeoRTjsR6-8VXBVXSTi8xt6rDZgIiPOJwO0hloEKv0YhF5b7Py0r7T419oxaCUaDCYqMCOdR2wISiF9w1Co2EH7TglGGTzLoR4G2kjeIhBuKY6Kj4DNn1utV58x",
+            "size": 49260
+          }
+        }
+      ]
+    },
+    "sizeEstimate": 73128,
+    "historyId": "22279",
+    "internalDate": "1705096412000"
+  }
+  

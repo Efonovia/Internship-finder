@@ -1,0 +1,204 @@
+{
+    "id": "18cffa6c75d4c465",
+    "threadId": "18cfe246b54d4796",
+    "labelIds": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "snippet": "Reply WITH attachment On Fri, Jan 12, 2024, 15:47 NILE UNIVERSITY &lt;efonovia18@gmail.com&gt; wrote: Our student, James Richard would like to intern at your company not read How to Use Gmail-API with",
+    "payload": {
+      "partId": "",
+      "mimeType": "multipart/mixed",
+      "filename": "",
+      "headers": [
+        {
+          "name": "Delivered-To",
+          "value": "efonovia18@gmail.com"
+        },
+        {
+          "name": "Received",
+          "value": "by 2002:a05:6020:12cc:b0:2c3:4f5f:991d with SMTP id o12csp2027814wde;        Fri, 12 Jan 2024 13:49:30 -0800 (PST)"
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a9d:68cb:0:b0:6de:6ad0:d339 with SMTP id i11-20020a9d68cb000000b006de6ad0d339mr1356491oto.6.1705096169447;        Fri, 12 Jan 2024 13:49:29 -0800 (PST)"
+        },
+        {
+          "name": "ARC-Seal",
+          "value": "i=1; a=rsa-sha256; t=1705096169; cv=none;        d=google.com; s=arc-20160816;        b=QiIY8EC8WCLNo2uxwtcmd/8uO2HPt/j94vEvjk6FUT04LI3wVrRjOmvost+xvRW+1o         45tpfH1zsrIhWDPkzP0E4a5nhpYxdoPG62aI6qYwk6X8+7+25dGguInaNJHyHLKtqyAF         9K5OWnE5i3GLIS63rYLMy+qjK7aist0stcxfm7WS2jn0ACPGQkUF6dejLbS4xfLNulM/         ubG6thkqbKcEjX8mH57Hrjxg1RD8pn6qQK1aCJQ8rIZV81W3FUmwNCEW1RshNxhGCEH6         +0nLVAZ5U0WG+dpOY+UPDMFkPZ8G4fJIrsfrJMTnd6zX5tNfK/6PAnI5y8u+D81eHgAf         OxCQ=="
+        },
+        {
+          "name": "ARC-Message-Signature",
+          "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=to:subject:message-id:date:from:in-reply-to:references:mime-version         :dkim-signature;        bh=N5clW3E1R4MTWaELv3JRHsm9jZtH269MMsDHCnxWzRE=;        fh=8StM74rKxWYrg7kQNYI4LmjT3lcmZqVp+y6av0sswWA=;        b=SjNeuttpEYrmGXddkKMF4jYEx/eGIM8GmDfTUJhk43Ho8s1MArhqLF6juaMouB+lia         whYtU9toNgT21TruczIaIKQY5O0w/9s2tkLSBTQBdfGpu9MM0wcZAxWc3nT82OokCTTm         NASVOLxdq1FXWDjC7Vlk9J5HoZmdHjtv2BsnFpufuKjm+Nz8C1DYbh+0ywF3BpDy17ua         iycm/6a67Av1aEEFY0Yc4PplCpXzNloGsOonS84yEGNcVUlGJtTGqceEh5Fhce38AyAt         /OT3TMp6O16DctpHqX7nUowAo/p1JBmrE0ETVdUljX5sGoT5SEq8npaBJBEfVbQSKrUJ         ZObw=="
+        },
+        {
+          "name": "ARC-Authentication-Results",
+          "value": "i=1; mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=aNedtAfe;       spf=pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lordnovia@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "Return-Path",
+          "value": "\u003clordnovia@gmail.com\u003e"
+        },
+        {
+          "name": "Received",
+          "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id h7-20020a4a4207000000b00598c529a7besor841089ooj.1.2024.01.12.13.49.29        for \u003cefonovia18@gmail.com\u003e        (Google Transport Security);        Fri, 12 Jan 2024 13:49:29 -0800 (PST)"
+        },
+        {
+          "name": "Received-SPF",
+          "value": "pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+        },
+        {
+          "name": "Authentication-Results",
+          "value": "mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=aNedtAfe;       spf=pass (google.com: domain of lordnovia@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lordnovia@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=gmail.com; s=20230601; t=1705096169; x=1705700969; dara=google.com;        h=to:subject:message-id:date:from:in-reply-to:references:mime-version         :from:to:cc:subject:date:message-id:reply-to;        bh=N5clW3E1R4MTWaELv3JRHsm9jZtH269MMsDHCnxWzRE=;        b=aNedtAfeE0I8eQNaidKak9fHQytDJqiDDbjkgtHhsIf1ZJeJjcAPwbA2zWwj23af73         yxnkXnaHpD1got8pwCWtp+XK3bxrlMjPlacXrd1YfNcduqCnxKwj/X6flcoqPaBW17+D         sYigE5UVL0Ck505mMimcFCLMFEMLv0YalqA2tEBd+iI3ZvgxDtWDRjBd0djHZg+eN0zz         QuAbNemxNO8SNz9GA7dThEOPB/zOLXHYVcNGjZ5IknEzW0upjJOZNr9FaoM+KMy3Nvjr         BOZHvFoZzk24uv9SKPA/d0MMouNxXdDpMF6dN6CLN7osegosxNtL1LOFJx7AsBCT44OI         mwiQ=="
+        },
+        {
+          "name": "X-Google-DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20230601; t=1705096169; x=1705700969;        h=to:subject:message-id:date:from:in-reply-to:references:mime-version         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;        bh=N5clW3E1R4MTWaELv3JRHsm9jZtH269MMsDHCnxWzRE=;        b=UCuCmlUA90wBGb/Ayno9U52ShxGKnkHjKHjSVxeeTb4OHp6cl7cAiNEed3pdja5aaB         QH20XU0erT1KwpNsfw/pTE9yBgisRZW6+MwuqKCrDRf9Ib2dD26zU296fZsJ6R2sJ18/         J9o77JcmugbRS5XhJ3R1Wuq8pEJFIRz++E09aMWmogFga5fQvZJUn4AXPY+3Yav2bmAp         8zULE3CvKJ/UzkzW//kvPQXkBAkTPeRN9KUDq6u4jY8AcroPmAP8Nr837t3Q9lbfGv1A         MNiSr0q+EGAfU8whbFU94I1y3/eW0YlOTB/LRuvZFeSL8Yuhti/PYzsEP8cLCB8M4mmq         flmg=="
+        },
+        {
+          "name": "X-Gm-Message-State",
+          "value": "AOJu0YwiRcB4BvFH0k+5678bb3Yk5bpJ2+xm+n4EBw4P2R5dgi2OqqeL gi+ktMNl2rKb4EEGaE3h4zczjSniwFgPy43nHGmPsRSpM30btw=="
+        },
+        {
+          "name": "X-Google-Smtp-Source",
+          "value": "AGHT+IEVlLlQMrWmtECPxsQm9Gh3OTqFwjXglHzboWAQajunXAtySjNsRg8kgSLQIsJMVyZsysk00VRTPwl9HXaVl1k="
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a4a:d8cb:0:b0:598:6ded:e069 with SMTP id c11-20020a4ad8cb000000b005986dede069mr872387oov.0.1705096168780; Fri, 12 Jan 2024 13:49:28 -0800 (PST)"
+        },
+        {
+          "name": "MIME-Version",
+          "value": "1.0"
+        },
+        {
+          "name": "References",
+          "value": "\u003caa9eba91-112b-b473-0133-66728d1de3ef@gmail.com\u003e"
+        },
+        {
+          "name": "In-Reply-To",
+          "value": "\u003caa9eba91-112b-b473-0133-66728d1de3ef@gmail.com\u003e"
+        },
+        {
+          "name": "From",
+          "value": "Igbinovia Efosa \u003clordnovia@gmail.com\u003e"
+        },
+        {
+          "name": "Date",
+          "value": "Fri, 12 Jan 2024 22:49:04 +0100"
+        },
+        {
+          "name": "Message-ID",
+          "value": "\u003cCAEB25ycS-jimgqmZ4H-njoJhj5x20ZsUcoE11dANzMYAn147pw@mail.gmail.com\u003e"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Internship Application for our Student 3"
+        },
+        {
+          "name": "To",
+          "value": "NILE UNIVERSITY \u003cefonovia18@gmail.com\u003e"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/mixed; boundary=\"000000000000732bb4060ec6a312\""
+        }
+      ],
+      "body": {
+        "size": 0
+      },
+      "parts": [
+        {
+          "partId": "0",
+          "mimeType": "multipart/alternative",
+          "filename": "",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "multipart/alternative; boundary=\"000000000000732bb3060ec6a310\""
+            }
+          ],
+          "body": {
+            "size": 0
+          },
+          "parts": [
+            {
+              "partId": "0.0",
+              "mimeType": "text/plain",
+              "filename": "",
+              "headers": [
+                {
+                  "name": "Content-Type",
+                  "value": "text/plain; charset=\"UTF-8\""
+                }
+              ],
+              "body": {
+                "size": 789,
+                "data": "UmVwbHkgV0lUSCBhdHRhY2htZW50DQoNCk9uIEZyaSwgSmFuIDEyLCAyMDI0LCAxNTo0NyBOSUxFIFVOSVZFUlNJVFkgPGVmb25vdmlhMThAZ21haWwuY29tPiB3cm90ZToNCg0KPiBPdXIgc3R1ZGVudCwgSmFtZXMgUmljaGFyZCB3b3VsZCBsaWtlIHRvIGludGVybiBhdCB5b3VyIGNvbXBhbnkNCj4NCj4gbm90IHJlYWQgSG93IHRvIFVzZSBHbWFpbC1BUEkgd2l0aCBOb2RlLmpzIFBhcnQtMScgVG8gYmVnaW4gd2l0aCwgY3JlYXRlIGENCj4gbmV3IGZpbGUgY3JlYXRlTWFpbC5qcw0KPiBhbmQgaW5zdGFsbCBub2RlbWFpbGVyLiBucG0gaW5zdGFsbCBub2RlbWFpbGVyIC0tc2F2ZSBub2RlbWFpbGVyIHdpbGwgaGVscA0KPiB1cyB0byBlbmNvZGUgYW5kIGNyZWF0ZQ0KPiB0aGUgbWFpbCBib2R5LiBGaXJzdCwgd2UgaW1wb3J0IHRoZSBsaWJyYXJpZXMgYW5kIHRoZW4gd2UgY3JlYXRlIGEgY2xhc3MNCj4gQ3JlYXRlTWFpbCBpbiB0aGUgY3JlYXRlTWFpbC5qcw0KPiBmaWxlIGFuZCBkZWNsYXJlIHRoZSBjbGFzcyBjb25zdHJ1Y3Rvci4gVGhpcyBjb25zdHJ1Y3RvciB3aWxsIHRha2UgdGhlDQo-IGZvbGxvd2luZyBwYXJhbWV0ZXJzIGFuZCB3aWxsDQo-IGJlIGNhbGxlZCB3aGVuZXZlciBhIG5ldyBpbnN0YW5jZSBvZiB0aGUgY2xhc3MgaXMgY3JlYXRlZC4NCj4gWW91IGNhbiByZXNwb25kIGFuZCBjb250YWN0IHRoZW0gdmlhIDIwMzE0MjU1QG5pbGV1bml2ZXJzaXR5LmVkdS5uZw0KPg0KPg0KPg0KPg0KPiB2ZXJpZmllZCBieSBbaW1hZ2U6IE5sZSBVbml2ZXJpdHkncyBMb2dvXQ0K"
+              }
+            },
+            {
+              "partId": "0.1",
+              "mimeType": "text/html",
+              "filename": "",
+              "headers": [
+                {
+                  "name": "Content-Type",
+                  "value": "text/html; charset=\"UTF-8\""
+                },
+                {
+                  "name": "Content-Transfer-Encoding",
+                  "value": "quoted-printable"
+                }
+              ],
+              "body": {
+                "size": 1578,
+                "data": "PGRpdiBkaXI9ImF1dG8iPlJlcGx5IFdJVEggYXR0YWNobWVudMKgPC9kaXY-PGJyPjxkaXYgY2xhc3M9ImdtYWlsX3F1b3RlIj48ZGl2IGRpcj0ibHRyIiBjbGFzcz0iZ21haWxfYXR0ciI-T24gRnJpLCBKYW4gMTIsIDIwMjQsIDE1OjQ3IE5JTEUgVU5JVkVSU0lUWSAmbHQ7PGEgaHJlZj0ibWFpbHRvOmVmb25vdmlhMThAZ21haWwuY29tIj5lZm9ub3ZpYTE4QGdtYWlsLmNvbTwvYT4mZ3Q7IHdyb3RlOjxicj48L2Rpdj48YmxvY2txdW90ZSBjbGFzcz0iZ21haWxfcXVvdGUiIHN0eWxlPSJtYXJnaW46MCAwIDAgLjhleDtib3JkZXItbGVmdDoxcHggI2NjYyBzb2xpZDtwYWRkaW5nLWxlZnQ6MWV4Ij4NCiAgICAgICAgPHU-PC91Pg0KICAgICAgICAgIDxoMSBzdHlsZT0idGV4dC1hbGlnbjpsZWZ0Ij5PdXIgc3R1ZGVudCwgSmFtZXMgUmljaGFyZCB3b3VsZCBsaWtlIHRvIGludGVybiBhdCB5b3VyIGNvbXBhbnk8L2gxPg0KICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW4tbGVmdDoyMHB4Ij4NCiAgICAgICAgICAgICAgbm90IHJlYWQgSG93IHRvIFVzZSBHbWFpbC1BUEkgd2l0aCBOb2RlLmpzIFBhcnQtMSYjMzk7IFRvIGJlZ2luIHdpdGgsIGNyZWF0ZSBhIG5ldyBmaWxlIGNyZWF0ZU1haWwuanMgPGJyPg0KICAgICAgICAgICAgICBhbmQgaW5zdGFsbCBub2RlbWFpbGVyLiBucG0gaW5zdGFsbCBub2RlbWFpbGVyIC0tc2F2ZSBub2RlbWFpbGVyIHdpbGwgaGVscCB1cyB0byBlbmNvZGUgYW5kIGNyZWF0ZSA8YnI-DQogICAgICAgICAgICAgIHRoZSBtYWlsIGJvZHkuIEZpcnN0LCB3ZSBpbXBvcnQgdGhlIGxpYnJhcmllcyBhbmQgdGhlbiB3ZSBjcmVhdGUgYSBjbGFzcyBDcmVhdGVNYWlsIGluIHRoZSBjcmVhdGVNYWlsLmpzIDxicj4NCiAgICAgICAgICAgICAgZmlsZSBhbmQgZGVjbGFyZSB0aGUgY2xhc3MgY29uc3RydWN0b3IuIFRoaXMgY29uc3RydWN0b3Igd2lsbCB0YWtlIHRoZSBmb2xsb3dpbmcgcGFyYW1ldGVycyBhbmQgd2lsbCA8YnI-DQogICAgICAgICAgICAgIGJlIGNhbGxlZCB3aGVuZXZlciBhIG5ldyBpbnN0YW5jZSBvZiB0aGUgY2xhc3MgaXMgY3JlYXRlZC4gPGJyPg0KICAgICAgICAgIDwvcD4NCiAgICAgICAgICANCiAgICAgICAgICAgICAgWW91IGNhbiByZXNwb25kIGFuZCBjb250YWN0IHRoZW0gdmlhIDxzcGFuIHN0eWxlPSJjb2xvcjpibHVlIj48YSBocmVmPSJtYWlsdG86MjAzMTQyNTVAbmlsZXVuaXZlcnNpdHkuZWR1Lm5nIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub3JlZmVycmVyIj4yMDMxNDI1NUBuaWxldW5pdmVyc2l0eS5lZHUubmc8L2E-PC9zcGFuPg0KICAgICAgICAgIA0KICAgICAgICAgIDxicj48YnI-PGJyPjxicj48YnI-DQogICAgICAgICAgPHNwYW4-dmVyaWZpZWQgYnkgPGltZyBoZWlnaHQ9IjcwIiB3aWR0aD0iNzAiIHNyYz0iaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8zLzNkL0xvZ29fTmlsZV9Vbml2ZXJzaXR5X1ZlcnRfLTAxLmpwZyIgYWx0PSJObGUgVW5pdmVyaXR5JiMzOTtzIExvZ28iPjwvc3Bhbj4NCiAgICAgICAgPHU-PC91Pg0KICAgICAgPC9ibG9ja3F1b3RlPjwvZGl2Pg0K"
+              }
+            }
+          ]
+        },
+        {
+          "partId": "1",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "filename": "Team 3 - A (updated version).docx",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document; name=\"Team 3 - A (updated version).docx\""
+            },
+            {
+              "name": "Content-Disposition",
+              "value": "attachment; filename=\"Team 3 - A (updated version).docx\""
+            },
+            {
+              "name": "Content-Transfer-Encoding",
+              "value": "base64"
+            },
+            {
+              "name": "Content-ID",
+              "value": "\u003c18cffa651905828a4121\u003e"
+            },
+            {
+              "name": "X-Attachment-Id",
+              "value": "18cffa651905828a4121"
+            }
+          ],
+          "body": {
+            "attachmentId": "ANGjdJ8gY1sWQ9jkFgEim0TREZTbfaqAHi0NuwvrM9MCVnvnlS7n6xmLIFtrzHhl0HDoF9d7sl9rjQFagrnOyFsZT7qiZ18J_AS9EXZFj0aNfIr2RLAvUX1wsCI7Mex7JMEsm5nAJkkEsClQ6X7VJaH0eb3ACJSlW6wpr57VMiYTG9jvqKp4sJ4-s8jBPy7Den8dH4HTA9kXolJ5crqZvmfT4FWJ_COL0RaPNnzVpaVoCbsZ8KfUIZnjBaOE9pU21Ag5MT6b2k35g8vEMqoiI51L7TcuN1zFiK2Q7sqkuqMdNrBGbH66vhDU-6-jVxZLFtWGz3POMYdemz28Tzacogx5yD09z6P7KRNRLDXI_tuS0nEbv5myPrbuXgUcGQSI29HOT8rirAt7z41M7rO1",
+            "size": 49260
+          }
+        }
+      ]
+    },
+    "sizeEstimate": 75707,
+    "historyId": "22187",
+    "internalDate": "1705096144000"
+  }
+  

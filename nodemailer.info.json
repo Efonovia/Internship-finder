@@ -1,0 +1,27 @@
+{
+    "accepted": [
+      "lordnovia@gmail.com"
+    ],
+    "rejected": [],
+    "ehlo": [
+      "SIZE 35882577",
+      "8BITMIME",
+      "AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH",
+      "ENHANCEDSTATUSCODES",
+      "PIPELINING",
+      "CHUNKING",
+      "SMTPUTF8"
+    ],
+    "envelopeTime": 384,
+    "messageTime": 411,
+    "messageSize": 615,
+    "response": "250 2.0.0 OK  1704982655 re20-20020a170906d8d400b00a2aed87bb44sm624607ejb.110 - gsmtp",
+    "envelope": {
+      "from": "efonovia18@gmail.com",
+      "to": [
+        "lordnovia@gmail.com"
+      ]
+    },
+    "messageId": "<431fb039-1590-1c33-92df-1539eb338ccb@gmail.com>"
+  }
+

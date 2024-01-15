@@ -1,0 +1,698 @@
+[
+    {
+        "ID": 73,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "BRAINS AND HAMMERS CITY",
+        "Address": " LIFE CAMP, BRAINS AND HAMMERS CITY,",
+        "State": "FCT"
+    },
+    {
+        "ID": 77,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "GILMOR ENGINEERING ",
+        "Address": " 69 USUMA STREET MAITAMA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 78,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "H AND R INVESTMENTS ",
+        "Address": " ABUBAKAR KOKO CRESCENT AND MAITAMA SULE STREET ASOKORO , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 70,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "BILAAD REALTY ",
+        "Address": " SUITE 205, WING A, SHASHILGA COURT, JAHI ABUJA FCT, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 93,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "UNIBUILDRO RESOURCES LIMITED ",
+        "Address": " PLOT 1067, AHMED GAMBO SALEH CRESCENT JAHI, 900108, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 83,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "MODERN SHELTERS SYSTEMS AND SERVICES LIMITED ",
+        "Address": " ASANTE SANA SITE,GALADIMAWA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 86,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "PW NIGERIA LIMITED",
+        "Address": " PLOT 9",
+        "State": "FCT"
+    },
+    {
+        "ID": 91,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "STEELBRIDGE PROJECTS LTD ",
+        "Address": " 20, DAR ES SALAM CRESCENT, WUSE 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 72,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "BRAINS AND HAMMERS ",
+        "Address": " BEHIND AFRICAN UNIVERSITY OF SCIENCE & TECHNOLOGY COMPLEX,",
+        "State": "FCT"
+    },
+    {
+        "ID": 76,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "FUSION MINDS NIGERIA LIMITED",
+        "Address": " 20 ALARAPE STREET, NEW GARAGE, BARIGA, LAGOS",
+        "State": "LAGOS"
+    },
+    {
+        "ID": 94,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "UNIVERSAL BASIC EDUCATION COMMISSION",
+        "Address": " NO 7, GWANI STREET, ZONE 4, WUSE, ABUJA, ABUJA, ABUJA ",
+        "State": "ABUJA "
+    },
+    {
+        "ID": 84,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "P.W NIGERIA LIMITED",
+        "Address": " PLOT 9,OUTER NORTHERN EXPRESSWAY MAITAMA DISTRICT,PMB 7016,GARKI,ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 89,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "SETRACO NIGERIA LIMITED ",
+        "Address": " 526 SHEHU YAR'ADUA WAY KADO DISTRICT, GARKI, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 90,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "SKY HABITAT LIMITED",
+        "Address": " 4TH FOOR SHM PLAZA PLOT 1186 MABUSHI DISTRICT , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 87,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "SAZAK ACRES BILOQUE COMPANY LIMITED ",
+        "Address": " NO.5 BUKAR DIPCHARIMA CLOSE , OFF T.O.S BENSON STREET,UTAKO , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 79,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "INSPIRE CONSTUCTION",
+        "Address": " INSPIRE HOMES ESTATE, NEW KARMO",
+        "State": "FCT"
+    },
+    {
+        "ID": 75,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "COSGROVE AFRICA",
+        "Address": " 4TH FLOOR, MUKHTAR EL YAKUB BUILDING ZAKARIYYA MAIMALARI STREET, CENTRAL BUSINESS DISTRICT ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 80,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "JULIUS BERGER",
+        "Address": " NO 10 SHETTIMA MUNGUNO CRESCENT, UTAKO, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 71,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "BILAAD REALTY NIGERIA ",
+        "Address": " BALI ISLAND PLOT 76 CAD ZONE CO5, KAFE DISTRICT,ABUJA . , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 81,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "LUBELL NIGERIA LIMITED ",
+        "Address": " NO. 505, WILSON ODUNBAKU ROAD, IDU INDUSTRIAL AREA, OFF AIRPORT ROAD, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 82,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "M/S TRIACTA LTD",
+        "Address": " KOFAR KAURA SITE YARD, KATSINA",
+        "State": "KATSINA"
+    },
+    {
+        "ID": 95,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "ZEPHYRGOLD INTERNATIONAL LIMITED ",
+        "Address": " NO 16 KUDANG STREET WUSE 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 92,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "TRIAD ASSOCIATES ",
+        "Address": " 805, OFF EBITU UKIWE STREET, JABI- ABUJA, ABUJA, FCT ",
+        "State": "FCT "
+    },
+    {
+        "ID": 85,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "POST-SERVICE HOUSING DEVELOPMENT LIMITED ",
+        "Address": " MAMBILLA BARRACKS ROAD, OPPOSITE NIGERIAN ARMY RESOURCE CENTER, ASOKORO , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 88,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "SETRACO NIGERIA LIMITED",
+        "Address": " CEDAR SETRACO ABUBAKAR KOKO STREET, LIFE CAMP, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 74,
+        "Title": "Civil Engineering",
+        "Faculty": "FENG",
+        "Company": "BUILDCRAFT NIGERIA LIMITED ",
+        "Address": " NO 40B, ASO SAVINGS AND LOANS ESTATE 6, JIKWOYI PHASE II, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 108,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN COMMUNICATIONS COMMISSION",
+        "Address": " PLOT 423 AGUIYI IRONSI ST, MAITAMA 900271, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 113,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NILE UNIVERSITY ",
+        "Address": " NILE UNIVERSITY ",
+        "State": "FCT"
+    },
+    {
+        "ID": 98,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "FGN POWER COMPANY ",
+        "Address": " 1490 SAMUEL ADEMULEGUN AVE, CENTRAL BUSINESS DISTRICT, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 116,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "STARTER POINT",
+        "Address": " SCC HEAD OFFICE, JABI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 96,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "BILAAD REALTY ",
+        "Address": " SUITE 205, SHASHILGA COURT, PLOT 111&112, SECTOR A, 900211, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 109,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION",
+        "Address": "HERBERT MACAULAY WAY P.M.B, 190",
+        "State": "FCT"
+    },
+    {
+        "ID": 107,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NEXIM BANK",
+        "Address": " 1042 KUR MOHAMMED AVENUE, CENTRAL BUSINESS DISTRICT , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 104,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NATIONAL BROADCASTING COMMISSION ",
+        "Address": " PLOT 20 IBRAHIM TAIWO ST, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 97,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "ETRANZACT INTERNATIONAL ",
+        "Address": " SECOND FLOOR,LEADWAY HOUSE, CENTRAL AREA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 112,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NIIT ",
+        "Address": " 8 SIRAKORO STREET BLANTYRE CRESCENT WUSE 2 , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 110,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN PIPELINE AND STORAGE COMPANY LIMITED (NPSC)",
+        "Address": " BLOCK C, NNPC TOWERS, CENTRAL BUSINESS DISTRICT, GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 105,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NATIONAL INFORMATION TECHNOLOGY DEVELOPMENT AGENCY ",
+        "Address": " AREA 11, 28 PORT HARCOURT CRESCENT, OFF GIMBIYA ST, GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 101,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "INVESTMENT AND SECURITIES TRIBUNAL ",
+        "Address": " PLOT 1072, CADASTRAL ZONE B10, OPPOSITE MAJOR OIL FILING STATION, ALONG JABI AIRPORT ROAD, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 99,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "GALAXY BACKBONE",
+        "Address": " HEAD OF SERVICE, CENTRAL BUSINESS DISTRICT, BLOCK A, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 103,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NATIONAL AGENCY FOR THE CONTROL OF AIDS",
+        "Address": " NO 3, ZIGUINCHOR STREET, OFF IBB WAY, BEHIND ABUJA ELECTRICITY DISTRIBUTION COMPANY (AEDC), WUSE ZONE 4, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 106,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NEO CLOUD TECHNOLOGIES ",
+        "Address": " MIB PLAZA, 1ST AVENUE, GWARINPA, , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 100,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "HUAWEI TECHNOLOGIES, ABUJA ",
+        "Address": " 765 SAMUEL ADEMULEGUN AVE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 118,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "TIIDELAB ",
+        "Address": " GOLDLINK HOUSE, 2 HARARE STEET, OFF RABAT STREET, ZONE 6, WUSE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 102,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "KHEMSAFE COMPUTERS LTD ",
+        "Address": " 6A/7A CONSTITUTION ROAD , KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 119,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "ZEMAN-SKY SYSTEMS AND COMMUNICATIONS LIMITED",
+        "Address": " SUITE B20, OCEAN CENTER, OLADIPO DIYA ROAD BESIDE GUDU MARKET,GUDU DISTRICT, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 114,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "PHASE 3 TELECOM ",
+        "Address": " NO 4 YEDSERAM STREET MAITAMA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 111,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN PIPELINES AND STORAGE COMPANY",
+        "Address": " BLOCK C HERBERT MACAULAY WAY, GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 115,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "PIXEL SOLUTIONS LTD",
+        "Address": " YOBE INVESTMENT BUILDING, RALP SHODEINDE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 117,
+        "Title": "Computer Engineering",
+        "Faculty": "FENG",
+        "Company": "SYSTEMSPECS GROUP- REMITTA PAYMENT SERVICES LIMITED",
+        "Address": " LABOUR HOUSE , 3RD FLOOR , CENTRAL AREA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 222,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION ",
+        "Address": " HERBERT MACAULAY WAY P.M.B, 190, GARKI, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 215,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "GERAWA RICE MILL",
+        "Address": " KM8 GUNDUWAWA, GEZAWA LOCAL GOVERNMENT , KANO",
+        "State": "KANO"
+    },
+    {
+        "ID": 214,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "EMBEDDED MANUFACTURING SYNERGY ",
+        "Address": " CLOSE TO RAIL, ZANGO EAST MAKAMA,",
+        "State": "BAUCHI"
+    },
+    {
+        "ID": 212,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "BACKBONE CONNECTIVITY NETWORK ",
+        "Address": " 60 LAKE CHAD CRESCENT, MAITAMA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 216,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "MAINSTREAM ENERGY SOLUTIONS LTD ",
+        "Address": " JEBBA HYDRO POWER PLANT , MOKWA, NIGER",
+        "State": "NIGER"
+    },
+    {
+        "ID": 226,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "PETROLEUM TRAINING INSTITUTE ",
+        "Address": " P.M.B 20,EFFURUN, WARRI, DELTA",
+        "State": "DELTA"
+    },
+    {
+        "ID": 219,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN COMMUNICATIONS COMMISSION ",
+        "Address": " PLOT 423 AGUIYI IRONSI ST, MAITAMA 900271, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 221,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN COMMUNICATIONS SATELLITE LIMITED",
+        "Address": " OBASANJO SPACE CENTRE, AIRPORT ROAD, LUGBE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 223,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN SECURITY PRINTING AND MINTING PLC ",
+        "Address": " 160, LADOKE AKINTOLA BOULEVARD,",
+        "State": "FCT"
+    },
+    {
+        "ID": 213,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "BILAAD REALTY LTD ",
+        "Address": " SUITE 205, SHASHILGA COURT,JAHI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 225,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "OILSERV LIMITED PORTHARCOURT",
+        "Address": " 1-7 OILSERV LANE, OFF TRANS-WOJI ROAD, PORT HARCOURT, RIVERS",
+        "State": "RIVERS"
+    },
+    {
+        "ID": 218,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN AIRSPACE MANAGEMENT AGENCY",
+        "Address": " NNAMDI AZIKIWE INTERNATIONAL AIRPORT, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 220,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN COMMUNICATIONS SATELLITE",
+        "Address": " LUGBE,, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 224,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "OFF FIELD CONCEPTS LTD",
+        "Address": " 472 CONSTITUTION AVENUE, CENTRAL BUSINESS DISTRICT HAFSAT PLAZA SUITE C4, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 217,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "NATIONAL ASSEMBLY OB GLOBAL",
+        "Address": " THREE ARMS ZONE , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 227,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "PORTHARCOURT REFINERY COMPANY ",
+        "Address": " ALESA-ELEME, PORT HARCOURT, RIVERS",
+        "State": "RIVERS"
+    },
+    {
+        "ID": 229,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "STARSIGHT ENERGY",
+        "Address": " NO 4 IBM HARUNA STREET, UTAKO , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 228,
+        "Title": "Electrical Electronics Engineering",
+        "Faculty": "FENG",
+        "Company": "PRESIDENTIAL AIR FLEET",
+        "Address": " BILL CLINTON DRIVE, 900102, NNAMDI AZIKIWE INTERNATIONAL AIRPORT, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 346,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN MIDSTREAM AND DOWNSTREAM PETROLEUM REGULATORY AUTHORITY ",
+        "Address": " PLOT 542 CADASTRAL ZONE B09 SHEHU YAR'ADUA WAY , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 337,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "DEPARTMENT OF PETROLEUM RESOURCES (DPR). ",
+        "Address": " PLOT 542, CADASTRAL ZONE B09, SHEHU YAR'ADUA WAY, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 351,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NPSC (NIGERIAN PIPELINE AND STORAGE COMPANY)",
+        "Address": " NNPC TOWERS, HERBERT MACAULAY WAY, CENTRAL BUSINESS DISTRICT, P.M.B. 459, GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 340,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "EMADEB ENERGY GAS",
+        "Address": " LOKOGOMA JUNCTION, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 343,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NATIONAL PIPELINE AND STORAGE COMPANY",
+        "Address": " HERBERT MACAULAY WAY P.M.B, 190, GARKI, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 350,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION ",
+        "Address": " RUMFAN GWAMNA BAUCHI ROAD , JOS, PLATEAU",
+        "State": "PLATEAU"
+    },
+    {
+        "ID": 349,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION ",
+        "Address": " HERBERT MACAULAY WAY P.M.B, 190,",
+        "State": "FCT"
+    },
+    {
+        "ID": 339,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "DEPARTMENT OF PETROLEUM RESOURCES (DPR). ",
+        "Address": " 7 SYLVESTER UGOH CRESCENT, JABI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 353,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "SCHLUMBERGER NIGERIA LIMITED ",
+        "Address": " PLOT 159/161 TRANS AMADI INDUSTRIAL LAYOUT, PORT HARCOURT, RIVERS",
+        "State": "RIVERS"
+    },
+    {
+        "ID": 336,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "DEPARTMENT OF PETROLEUM RESOURCES (DPR). ",
+        "Address": " 7, SYLVESTER UGOH CRESCENT, JABI ABUJA FCT, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 354,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "SELLYFAK ENERGY SERVICES",
+        "Address": " PLOT 231 TRANS AMADI INDUSTRIAL LAYOUT OFF PETER ODILI ROAD, PORT HARCOURT, RIVERS",
+        "State": "RIVERS"
+    },
+    {
+        "ID": 345,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN GAS COMPANY ",
+        "Address": " NO 20 LOBITO CRESCENT WUSE 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 338,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "DEPARTMENT OF PETROLEUM RESOURCES (DPR). ",
+        "Address": " NO 4 AGUSTUS AIKIMOH WAY OPPOSITE EDEN GARDEN UTAKO , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 352,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "PETROLEUM TECHNOLOGY DEVELOPMENT FUND ",
+        "Address": " 2 MEMORIAL CLOSE, WUSE 904101, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 341,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "ENERGY COMMISSION OF NIGERIA ",
+        "Address": " PLOT 70CL CENTRAL AREA. GARKI , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 348,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION",
+        "Address": " HERBERT MACAULAY WAY P.M.B, 190, GARK, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 342,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "FRONTIER EXPLORATION SERVICES",
+        "Address": " TOTAL HOUSE 1, PLOT 247, HERBERT MACAULAY WAY , OPPOSITE NNPC TOWERS., ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 344,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERAIN MIDSTREAM AND DOWNSTREAM PETROLEUM REGULATORY AUTHORITY",
+        "Address": " PLOT 542, CADASTRAL ZONE B09, SHEHU YAR'ADUA WAY, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 347,
+        "Title": "Petroleum and Gas Engineering",
+        "Faculty": "FENG",
+        "Company": "NIGERIAN MIDSTREAM AND DOWNSTREAM PETROLEUM REGULATORY AUTHORITY ",
+        "Address": " PLOT 622, DIPLOMATIC DRIVE, MISSION ROAD, CENTRAL BUSINESS DISTRICT, ABUJA, FCT",
+        "State": "FCT"
+    }
+]

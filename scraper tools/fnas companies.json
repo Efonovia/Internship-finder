@@ -1,0 +1,802 @@
+[
+    {
+        "ID": 9,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "GARDEN CITY SPECIALIST HOSPITAL",
+        "Address": " NO.2 SULTAN ROAD,U/RIMI, KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 14,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL BIOSAFETY MANAGEMENT AGENCY",
+        "Address": " NATIONAL PARK HEADQUARTERS, UMARU MUSA YAR'ADUA ROAD, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 21,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "TONIA MEDICAL DIAGNOSTIC SERVICES ",
+        "Address": " THE CAPITAL HUB SUITE 02, ALONG BANEX/NEXT AHMADU BELLO WAY, MABUSHI 900021, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 13,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL AGENCY FOR FOOD AND DRUG ADMINISTRATION AND CONTROL ",
+        "Address": " NO 3, BIU ROAD, MAIDUGURI, BORNO STATE, MAIDUGURI, BORNO",
+        "State": "BORNO"
+    },
+    {
+        "ID": 15,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL BIOTECHNOLOGY DEVELOPMENT AGENCY,FEDERAL MINISTRY OF SCIENCE,TECHNOLOGY AND INNOVATION ",
+        "Address": " UMARU MUSA YARADUA WAY,AIRPORT ROAD , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 10,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "KING'S CARE WOMEN SPECIALIST HOSPITAL,Ã‚Â  MAKURDI, BENUE STATE",
+        "Address": " 1 EDWARD UJEGE STREET, HIGH LEVEL, MAKURDI, MAKURDI, BENUE",
+        "State": "BENUE"
+    },
+    {
+        "ID": 17,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NIGERIA CENTER FOR DISEASE CONTROL-NATIONAL REFERENCE LABORATORY ",
+        "Address": " NEAR NPI QUARTERS, DURUMI 3, GADUWA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 1,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "AHMAD BELLO UNIVERSITY TEACHING HOSPITAL ",
+        "Address": " PMB.06 SHIKA , ZARIA, KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 2,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "ASAD PHARMACEUTICAL LTD",
+        "Address": " BARD RD,700213,KANO, KANO",
+        "State": "KANO"
+    },
+    {
+        "ID": 3,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "BAUCHI STATE SPECIALIST HOSPITAL",
+        "Address": " AJIYA ADAMU ROAD, BAUCHI",
+        "State": "BAUCHI"
+    },
+    {
+        "ID": 4,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "CWAY INTEGRATED ABUJA LTD ",
+        "Address": " IDOGWARI 900106.  PLOT 870, INDUSTRIAL AREA 1, IDU., ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 5,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "DAILY NEED INDUSTRIES LTD",
+        "Address": " PLOT 9&10 DAILY-NEED LAIN OFF LADIPO STREET , LAGOS",
+        "State": "LAGOS"
+    },
+    {
+        "ID": 6,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "DNA LABS LIMITED ",
+        "Address": " NO 2 AJAYI CROWTHER CRESCENT , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 7,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "DR HASSAN'S HOSPITAL AND DIAGNOSTIC CENTRE ",
+        "Address": " NO.5 ILLER CRESCENT, OFF KATSINA ALA CRESCENT MAITAMA., ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 8,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "FEDERAL MEDICAL CENTRE",
+        "Address": " AIRPORT ROAD, JABI , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 20,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "OZCO TABLE WATER COMPANY",
+        "Address": " APO MECHANIC VILLAGE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 16,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL INSTITUTE FOR PHARMACEUTICAL RESEARCH AND DEVELOPMENT",
+        "Address": " PLOT 942, CADASTRAL ZONE C16, IDU INDUSTRIAL DISTRICT 1B, P.M.B 21, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 11,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "MARIAM ALOMA MUKHTAR CLINIC",
+        "Address": " THREE ARM ZONE,ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 12,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL AGENCY FOR FOOD AND DRUG ADMINISTRATION AND CONTROL ",
+        "Address": " NO, 2 WAFF ROAD BY MOGADISHU BARRACK , KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 18,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION MEDICAL SERVICES",
+        "Address": " NO.37, USUMA STREET, MAITAMA",
+        "State": "FCT"
+    },
+    {
+        "ID": 19,
+        "Title": "Biochemistry",
+        "Faculty": "FNAS",
+        "Company": "NIZAMIYE HOSPITAL ",
+        "Address": " PLOT 113,SECTOR S CADASTRAL ZONE,LIFE CAMP, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 23,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "063 NIGERIAN AIR FORCE BASE HOSPITAL ",
+        "Address": " BILL CLINTON DRIVE , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 22,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "063 NIGERIAN AIR FORCE BASE HOSPITAL ",
+        "Address": " BILL CLINTON DRIVE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 24,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ABUJA ENVIRONMENTAL PROTECTION BOARD ",
+        "Address": " Z.MAIMALARI STREET CENTRAL BUSINESS DISTRICT GARKI , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 66,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "VINETTE HOSPITAL AND MATERNITY ",
+        "Address": " 14 GINDIRI STREET, UBAIJA CRESCENT, OFF SAMUEL LADOKE AKINTOLA BOULEVARD, GARKI 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 63,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "THRIVE AGRIC LIMITED",
+        "Address": " 31, 441 CRESCENT, CITEC VILLAS, GWARIMPA, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 67,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "WELLMED HEALTHCARE LIMITED ",
+        "Address": " KM 52 LEKKI -EPE EXPRESS WAY, LAGOS",
+        "State": "LAGOS"
+    },
+    {
+        "ID": 59,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "RAW MATERIALS RESEARCH AND DEVELOPMENT COUNCIL ",
+        "Address": " GALADIMAWA, ALDENCO ESTATE , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 62,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "THE FEDERAL POLYTECHNIC ",
+        "Address": " BIDA ROAD, DOKO, NIGER STATEÃ‚Â ,Ã‚Â NIGERIA., BIDA, NIGER",
+        "State": "NIGER"
+    },
+    {
+        "ID": 69,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ZANKLI MEDICAL CENTRE",
+        "Address": " NO. 1, IBRAHIM TAHIR LANE, P.O. BOX 7745 UTAKO, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 65,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "UNIVERSITY OF MAIDUGURI TEACHING HOSPITAL ",
+        "Address": " 600104, MAIDUGURI, BORNO",
+        "State": "BORNO"
+    },
+    {
+        "ID": 64,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "TRUST CHARITOS HOSPITAL ",
+        "Address": " PLOT 879/880 IDRIS IBRAHIM CRESCENT, OFF OBAFEMI AWOLOWO WAY,JABI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 61,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "SYNLAB NIGERIA",
+        "Address": " 9A EGBEYEMI STREET, OFF COKER ROAD, ILUPEJU , LAGOS",
+        "State": "LAGOS"
+    },
+    {
+        "ID": 68,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "YOBE STATE UNIVERSITY TEACHING HOSPITAL ",
+        "Address": " POTISKUM ROAD, POTISKUM, YOBE",
+        "State": "YOBE"
+    },
+    {
+        "ID": 60,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ROYAL SPECIALIST HOSPITAL",
+        "Address": " AREA 11, 2 KUKAWA STREET, OFF GIMBIYA ST, GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 57,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "PETROLUEM PRODUCTS MARKETING COMPANY",
+        "Address": " BLOCK C, NNPC TOWERS,CBD, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 58,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "PREMIER MEDICAL SERVICES",
+        "Address": " 3 HIGH TENSION ROAD, GENERAL EDET AKPAN AVE UYO BRANCH, UYO, AKWA IBOM",
+        "State": "AKWA IBOM"
+    },
+    {
+        "ID": 31,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "DEFENSE HEADQUARTERS MEDICAL CENTRE",
+        "Address": " MOGADISHU CANTONMENT, ASOKORO, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 45,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL AGENCY FOR FOOD AND DRUG ADMINISTRATION AND CONTROL ",
+        "Address": " NAFDAC AREA LABORATORY ",
+        "State": "BORNO"
+    },
+    {
+        "ID": 54,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NNPC MEDICAL SERVICES ",
+        "Address": " 37, USUMA STREET, MAITAMA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 38,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "FEDERAL CAPITAL TERRITORY ADMINISTRATION FCTA",
+        "Address": " KAPITAL STREET, AREA 11, GARKI, FCT, NIGERIA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 51,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION ",
+        "Address": " HERBERT MACAULAY WAY, P.M.B.190,GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 25,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "AHMADU BELLO UNIVERSITY TEACHING HOSPITAL ",
+        "Address": " SHIKA ROAD , KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 43,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "INSTITUTE OF HUMAN VIROLOGY NIGERIA ",
+        "Address": " PLOT 62, EMERITUS UMARU SHEHU AVENUE , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 49,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN INSTITUTE FOR TRYPANOSOMIASIS RESEARCH  ",
+        "Address": " NO.1 SURNAME ROAD, UNGUWAN RIMI G.R.A, KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 34,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "DR HASSAN'S CLINIC & DIAGNOSTIC CENTER",
+        "Address": " ILER CRESCENT , 5 KATSINA-ALA STREET MAITAMA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 39,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "FEDERAL MEDICAL CENTER JALINGO, TARABA STATE ",
+        "Address": " OFF BARDE WAY, PMB 1061, JALINGO, TARABA STATE, JALINGO, TARABA",
+        "State": "TARABA"
+    },
+    {
+        "ID": 27,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ATBUTH BIOMOLECULAR LAB",
+        "Address": " ABUBAKAR TAFAWA BALEWA TEACHING HOSPITAL , BAUCHI",
+        "State": "BAUCHI"
+    },
+    {
+        "ID": 50,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN MIDSTREAM AND DOWNSTREAM PETROLEUM AUTHORITY ",
+        "Address": " PLOT 1012, CADASTRAL ZONE AOO, CENTRAL BUSINESS DISTRICT , P.M.B,609, GARKI GPO,ABUJA,NIGERIA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 29,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "CONTEC GLOBAL AGRO LIMITED",
+        "Address": " 7 VICTORIA FALLS STREET, MAITAMA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 46,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL ASSEMBLY ",
+        "Address": " NATIONAL ASSEMBLY, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 28,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "BIOCROPS BIOTECHNOLOGY LIMITED ",
+        "Address": " NGOZI OKONJO IWEALA WAY, UTAKO",
+        "State": "FCT"
+    },
+    {
+        "ID": 52,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN SERVICE PRINTING AND MINTING",
+        "Address": " 160 SAMUEL LADOKE AKINTOLA BOULEVARD, GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 53,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NKDC KANO DIAGNOSTICS CENTER ",
+        "Address": " NUPE ROAD, GYADI GYADI, KANO STATE, KANO",
+        "State": "KANO"
+    },
+    {
+        "ID": 30,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "DEDA HOSPITAL ",
+        "Address": " B07 PLOT, CADASTRAL ZONE , 1847 KATAMPE , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 35,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ECHOLAB RADIOLOGY AND DIAGNOSTIC SERVICES",
+        "Address": " 21, OTUKPO STREET, GARKI , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 55,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NNPC MEDICAL SERVICES ",
+        "Address": " 15 ASA STREET, OFF USUMA STREET, MAITAMA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 47,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL BIOSAFETY MANAGEMENT AGENCY (NBMA)",
+        "Address": " NATIONAL PARK HEADQUARTERS, UMARU MUSA YAR'ADUA ROAD, 900109, , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 42,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "HARMONY HOSPITAL",
+        "Address": " BARNAWA, KADUNA, KADUNA ",
+        "State": "KADUNA "
+    },
+    {
+        "ID": 36,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ECHOSCAN SERVICES LIMITED ",
+        "Address": " PLOT 643 GIMBIYA ST, GARKI 900103, ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 56,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NNPC MEDICAL SERVICES ",
+        "Address": " DIVENTION APARTMENT, APO GADUWA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 44,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL AGENCY FOR FOOD AND DRUG ADMINISTRATION AGENCY ",
+        "Address": " PLOT 2032 OLUSEGUN OBASANJO WAY, WUSE ZONE 7, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 26,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ASHAKA CEMENT PLC CLINIC ",
+        "Address": " ASHAKA CEMENT LIMITED , GOMBE",
+        "State": "GOMBE"
+    },
+    {
+        "ID": 40,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "FEDERAL MINISTRY OF ENVIRONMENT  ",
+        "Address": " SOLERU THOMPSON STREET, MABUSHI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 48,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "NIGERIA CENTER FOR DISEASE CONTROL ",
+        "Address": " PLOT 801 EBITU UKIWE STREET, JABI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 41,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "FERTILAID CLINIC ",
+        "Address": " FOREIGN AFFAIRS QUARTERS HOUSE 21 15 CRESCENT, OFF 1ST AVENUE, GWARINPA, ABUJA,FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 32,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "DHQ MEDICAL CENTER ",
+        "Address": " MOGADISHU BARRACKS, ABUJA",
+        "State": "ABUJA"
+    },
+    {
+        "ID": 37,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "ELITE INTERNATIONAL COLLEGE OF HEALTH SCIENCE & TECHNOLOGY, ZARIA",
+        "Address": " 1,MTD JUNCTION ,NEAR POLICE BARACK CHI KAJI, ZARIA, KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 33,
+        "Title": "Biotechnology",
+        "Faculty": "FNAS",
+        "Company": "DNA LABS",
+        "Address": " NO 2 AJAYI CROWTHER STREET, ASOKORO, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 120,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": " THE NATIONAL SPACE RESEARCH AND DEVELOPMENT AGENCY",
+        "Address": " NDIC QUARTERS 2, ABUJA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 158,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NEO CLOUD TECHNOLOGIES",
+        "Address": " SUITE C30, M.I.B PLAZA, 1ST AVENUE, GWARIMPA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 176,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "PETROLEUM TECHNOLOGY DEVELOPMENT FUND",
+        "Address": " NO 3 TOS BENSON CRESCENT , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 128,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "CALLPHONE LIMITED ",
+        "Address": " PLOT 1132, CADASTRAL ZONE, KATAMPE DISTRICT, OPPOSITE BON HOTELS GRAND TOWERS, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 165,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN MIDSTREAM AND DOWNSTREAM PETROLEUM REGULATORY AUTHORITY",
+        "Address": " PLOT 1012 CADASTRAL ZONE A00, GARKI, , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 190,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "XCHANGE BOX SOLUTIONS",
+        "Address": " PLOT2787, SHEHU SHAGARI WAY, OPP. IMANU ESTATE,MAITAMA , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 136,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "GALAXY BACKBONE ",
+        "Address": " 61, ADETOKUNBO ADEMOLA CRESCENT, WUSE II,, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 188,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "UNIVERSAL BASIC EDUCATION COMMISSION HQ",
+        "Address": " NO. 7 GWANI STREET , ZONE 4 - WUSE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 154,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL INSURANCE COMMISSION ",
+        "Address": " PLOT 1239, LADOKE AKINTOLA, BOULEVARD",
+        "State": "FCT"
+    },
+    {
+        "ID": 132,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "DIGITAL BRIDGE INSTITUTE ",
+        "Address": " 8, P.O.W. MAFEMI CRESCENT, MABUSHI 900108, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 140,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "HIIT PLC",
+        "Address": " ZARIA ROAD, KANO",
+        "State": "KANO"
+    },
+    {
+        "ID": 157,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NAVAL HEADQUARTERS ",
+        "Address": " NAVAL HEADQUARTERS AREA 7 GARKI , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 164,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN ELECTRICITY MANAGEMENT SERVICES AGENCY(NEMSA) ",
+        "Address": " NO.4 DARESSALAAM CRESCENT,WUSE 2,ABUJA., ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 121,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "ADL-MAX INTERNATIONAL",
+        "Address": " 4TH FLOOR KATU KOMA PLAZA, PLOT 52 CADASTRAL ZONE, KUDU, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 173,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "OASIS MANAGEMENT COMPANY ",
+        "Address": " 12 PARAKOU CRESCENT WUSE 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 124,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "ASD MOTORS",
+        "Address": " PLOT 1375, BORNO STREET, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 191,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "YBI MULTIMEDIA ",
+        "Address": " 34 A ALI AKILU ROAD, OPPOSITE DIALOUGE COLLEGE , KADUNA",
+        "State": "KADUNA"
+    },
+    {
+        "ID": 133,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "DIRECTORATE OF TECHNICAL COOPERATION IN AFRICA",
+        "Address": " 11 ONITSHA CRESCENT OFF GAMBIA STREET AREA 11,GARKI,ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 143,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "IHS TOWERS LIMITED",
+        "Address": " PLOT 934 IDEJO STREET OFF ADEOLA ODEKU STREET VICTORIA ISLAND, LAGOS",
+        "State": "LAGOS"
+    },
+    {
+        "ID": 177,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "SADA IDRIS &CO",
+        "Address": " 2ND FLOOR B WING FMBN BUILDING BEHIND FEDILITY BANK TAFAWA BALEWA WAY CBD,ABUJA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 183,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "THE NATIONAL INFORMATION TECHNOLOGY DEVELOPMENT AGENCY",
+        "Address": " AREA 11, 28 PORT HARCOUT CRESCENT ,OFF GIMBIYA ST ,GARKI, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 174,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "PATNER MOBILE ",
+        "Address": " 118 AHMADU BELLO WAY, JAHI(BANEX - GWARINPA EXPRESS WAY) , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 171,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NIIT",
+        "Address": " 8, SIRAKORO STREET, OFF BLANTYRE CRESCENT WUSE 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 138,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "GULF TECHNOLOGIES LTD",
+        "Address": " SUITE 18 ZONE 3 SHOPPING COMPLEX, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 151,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NATIONAL BUREAU OF STATISTICS ",
+        "Address": " PLOT 762, INDEPENDENCE AVANUE, CENTRAL BUSINESS DISTRICT GARKI , ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 187,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "ULESSON EDUCATION ",
+        "Address": " 3 MIKE AKHIGBE WAY JABI 900108, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 167,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN NATIONAL PETROLEUM CORPORATION ",
+        "Address": " AMEH EBUTE, WUYE, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 125,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "BETA COMPUTERS LTD",
+        "Address": " 13 ADEBOLA STREET, OFF ADENIRAN OGUNSANYA STREET, SURULERE, LAGOS",
+        "State": "LAGOS"
+    },
+    {
+        "ID": 175,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "PAYCHEX INTERNATIONAL MARKETING LIMITED",
+        "Address": " 18 WIKKI SPRING STREET OFF AGULU LAKE STREET MAITAMA, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 142,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "IGS INNOVATIVE GLOBAL SOLUTIONS",
+        "Address": " NO 15D, YALINGA STREET, OFF ADETOKUNBO ADEMOLA CRESCENT, WUSE 2, ABUJA, FCT",
+        "State": "FCT"
+    },
+    {
+        "ID": 168,
+        "Title": "Computer Science",
+        "Faculty": "FNAS",
+        "Company": "NIGERIAN NUCLUEAR REGULATORY AUTHORITY",
+        "Address": " GAMES VILLAGE ABUJA , ABUJA, FCT",
+        "State": "FCT"
+    }
+]
