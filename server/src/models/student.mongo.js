@@ -17,6 +17,11 @@ const StudentSchema = mongoose.Schema({
         min: 2,
         max: 50
     },
+    email: {
+        type: String,
+        min: 2,
+        max: 50
+    },
     password: {
         type: String,
         required: true,

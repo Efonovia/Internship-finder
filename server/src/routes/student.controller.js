@@ -8,6 +8,7 @@ export const createNewStudent = async (req, res) => {
         firstName,
         lastName,
         password,
+        email,
         picturePath
       } = req.body
   
@@ -28,6 +29,7 @@ export const createNewStudent = async (req, res) => {
               studentId,
               firstName,
               lastName,
+              email,
               password: passwordHash,
               picturePath: picturePath || "",
             })

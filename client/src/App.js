@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar.components";
+// import Login from "./pages/Login.page";
+// import Signup from "./pages/Signup.page";
+// import MyApplications from "./pages/MyApplications.page";
+// import CompaniesByState from "./pages/CompaniesByState.page";
+// import CompaniesByCategory from "./pages/CompaniesByCategory.page";
+// import CompaniesBySearch from "./pages/CompaniesBySearch.page";
+import CompanyDetailsPage from "./pages/CompanyDetails.page";
+// import SliderArea from "./components/SliderArea.components";
+// import FeaturedCategories from "./components/FeaturedCategories.components";
+// import CompaniesContainer from "./components/CompaniesContainer.components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      {/* <Login /> */}
+      {/* <Signup /> */}
+      <CompanyDetailsPage />
+      {/* <MyApplications /> */}
+      {/* <CompaniesBySearch /> */}
+      {/* <CompaniesByState /> */}
+      {/* <CompaniesByCategory /> */}
+      {/* <main>
+        <SliderArea />
+        <FeaturedCategories />
+        <CompaniesContainer />
+      </main> */}
+    </>
+  )
 }
 
 export default App;
