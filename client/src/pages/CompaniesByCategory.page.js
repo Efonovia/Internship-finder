@@ -55,12 +55,12 @@ function CompaniesByState() {
                                 
                                     <div style={{maxWidth: "90%"}} className="col-lg-8 post-list" id='my-col'>
                                         
+                                        {/* <CompanyCard />
                                         <CompanyCard />
                                         <CompanyCard />
                                         <CompanyCard />
                                         <CompanyCard />
-                                        <CompanyCard />
-                                        
+                                         */}
                                     </div>
                                     
                                 </div>

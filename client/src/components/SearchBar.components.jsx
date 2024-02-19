@@ -2,13 +2,13 @@ import React from 'react';
 import "../styles/searchbar.css"
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
-function Searchbar() {
-
+function Searchbar(props) {
+    
 
     return <div className="input-box">
                 <i className="uil uil-search"><SearchOutlinedIcon /></i>
-                <input type="text" placeholder="Search here..." />
-                <button className="button">Search</button>
+                <input name='search' value={props.value} onChange={event => props.onChange(event)} type="text" placeholder="Search here..." />
+                <button onClick={() => props.executeSearch()} className="button">Search</button>
             </div>
 }
 

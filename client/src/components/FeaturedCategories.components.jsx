@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function FeaturedCategories() {
-
+    const navigate = useNavigate()
 
     return <div className="our-services section-pad-t30">
                 <div className="container">
@@ -124,7 +125,7 @@ function FeaturedCategories() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="browse-btn2 text-center mt-50">
-                                <a href="job_listing.html" className="border-btn2">Browse All Sectors</a>
+                                <a href onClick={()=>navigate("/companies/category")} className="border-btn2">Browse All Sectors</a>
                             </div>
                         </div>
                     </div>
