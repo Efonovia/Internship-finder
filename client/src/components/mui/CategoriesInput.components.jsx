@@ -9,6 +9,15 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export default function CheckboxesTags(props) {
+  // const [selectedTags, setSelectedTags] = React.useState([]);
+
+  // const handleTagsChange = (event, values) => {
+  //   if (values.length <= 3) {
+  //     setSelectedTags(values)
+  //     console.log(values)
+  //   }
+  // }
+
   return (
     <Autocomplete
       multiple
@@ -28,10 +37,13 @@ export default function CheckboxesTags(props) {
           {option}
         </li>
       )}
+      value={props.value}
+      onChange={(event, value) => props.onCategoriesChange(value)}
       style={{ width: props.width }}
       renderInput={(params) => (
         <TextField {...params} label={props.label} placeholder={props.placeholder} />
       )}
+      limitTags={3}
     />
   );
 }

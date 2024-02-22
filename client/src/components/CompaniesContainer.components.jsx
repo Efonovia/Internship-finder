@@ -8,7 +8,7 @@ function CompaniesContainer() {
 
     const navigate = useNavigate()
     const [featuredCompanies, setFeaturedCompanies] = React.useState([])
-    const featuredCompaniesHtml = featuredCompanies.map(featuredCompany => <CompanyCard key={featuredCompany.id} data={featuredCompany} />)
+    const featuredCompaniesHtml = featuredCompanies["data"]?.map(featuredCompany => <CompanyCard key={featuredCompany.id} data={featuredCompany} />)
 
     React.useEffect(() => {
         const fetchData = async () => {

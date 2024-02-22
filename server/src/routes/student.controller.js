@@ -2,55 +2,57 @@ import StudentDatabase from "../models/student.mongo.js";
 import bcrypt from "bcrypt"
 
 export const createNewStudent = async (req, res) => {
-    try {
+  try {
       const {
-        studentId,
-        firstName,
-        lastName,
-        password,
-        email,
-        picturePath
-      } = req.body
-  
-      console.log(req.body)
-  
-      const salt = await bcrypt.genSalt()
-      const passwordHash = await bcrypt.hash(password, salt)
-  
+          studentId,
+          firstName,
+          lastName,
+          password,
+          email,
+      } = req.body;
+
+      const picturePath = req.file ? req.file.path : ""
+      console.log("this is ze file ", req.file)
+
+      console.log(req.body);
+
+      const salt = await bcrypt.genSalt();
+      const passwordHash = await bcrypt.hash(password, salt);
+
       StudentDatabase.findOne({ studentId: studentId })
-      .then((student) => {
-        if (student) {
-          console.log(student); // Found student
-          return res.status(200).json({exists: true, body: student})
-        } else {
-            console.log(`Student with studentId ${studentId} not found.`);
-  
-            const newStudent = new StudentDatabase({
-              studentId,
-              firstName,
-              lastName,
-              email,
-              password: passwordHash,
-              picturePath: picturePath || "",
-            })
-  
-            newStudent.save().then(() => {
-              console.log('New student added successfully');
-            }).catch((error) => {
-                console.log(error);
-              });
-  
-          return res.status(201).json({exists: false, body: newStudent})
-        }
-      })
-      .catch((error) => {
-        console.log(`Error finding student with studentId ${studentId}: ${error}`);
-        return res.status(500).json({error: error.message})
-      });
-  
-    } catch (error) {
-      return res.status(500).json({error: error.message})
-    }
+          .then((student) => {
+              if (student) {
+                  console.log(student); // Found student
+                  return res.status(200).json({ exists: true, body: student });
+              } else {
+                  console.log(`Student with studentId ${studentId} not found.`);
+
+                  const newStudent = new StudentDatabase({
+                      studentId,
+                      firstName,
+                      lastName,
+                      email,
+                      password: passwordHash,
+                      picturePath: picturePath || "",
+                  });
+
+                  newStudent.save().then(() => {
+                      console.log('New student added successfully');
+                  }).catch((error) => {
+                      console.log(error);
+                  });
+
+                  return res.status(201).json({ exists: false, body: newStudent });
+              }
+          })
+          .catch((error) => {
+              console.log(`Error finding student with studentId ${studentId}: ${error}`);
+              return res.status(500).json({ error: error.message });
+          });
+
+  } catch (error) {
+      return res.status(500).json({ error: error.message });
+  }
 }
 
 export const loginStudent = async(req, res) => {

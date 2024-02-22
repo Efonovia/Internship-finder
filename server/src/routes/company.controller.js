@@ -15,7 +15,7 @@ export const getAllCompanies = async (req, res) => {
         const { skip, limit, page } = getPagination(req.query)
         console.log({ skip, page, limit })
         const totalDocuments = await CompanyDatabase.countDocuments(tagsQuery)
-        const companies = await CompanyDatabase.find(tagsQuery, { '_id': 0, '__v': 0 })
+        const companies = await CompanyDatabase.find(tagsQuery, { '__v': 0 })
             .sort({ "importantTags.length": -1, "name": -1 })
             .skip(skip)
             .limit(limit);
@@ -33,6 +33,7 @@ export const getAllCompanies = async (req, res) => {
 export const getCompanyById = async (req, res) => {
     try {
         const { companyId } = req.params
+        console.log(companyId)
         const company = await CompanyDatabase.findById(companyId)
         return res.status(200).json(company)
     } catch (error) {
@@ -43,19 +44,34 @@ export const getCompanyById = async (req, res) => {
 export const getCompaniesBySearch = async (req, res) => {
     try {
         const { skip, limit, page } = getPagination(req.query);
-        const { query } = req.query
-        console.log(req.query)
-        console.log({ query, skip, page, limit });
+        const { query, state, categories } = req.query;
 
-        const companiesQuery = { $text: { $search: query } }
-        const totalDocuments = await CompanyDatabase.countDocuments(companiesQuery)
-        const companies = await CompanyDatabase.find(
-            companiesQuery,
-            { '_id': 0, '__v': 0, score: { $meta: 'textScore' } }
-        )
-        .sort({ score: { $meta: 'textScore' } })
-        .skip(skip)
-        .limit(limit);
+        const filter = {};
+        
+        if (query && query !== "undefined") {
+            filter.$text = { $search: query };
+        }
+
+        if (state && state!=="undefined") {
+            filter.state = state;
+        }
+
+        if (categories && categories!=="undefined") {
+            filter.tags = { $in: categories.split(",") };
+        }
+
+        console.log(req.query);
+        console.log({ query, state, categories, skip, page, limit });
+
+        const totalDocuments = await CompanyDatabase.countDocuments(filter);
+        let companiesQuery = CompanyDatabase.find(filter, { '__v': 0 });
+
+        if (query && query !== "undefined") {
+            companiesQuery = companiesQuery.sort({ score: { $meta: 'textScore' } });
+        }
+
+        const companies = await companiesQuery.skip(skip).limit(limit);
+
 
         return res.status(200).json({
             ...getPaginationResults(page, limit, skip),
@@ -63,9 +79,10 @@ export const getCompaniesBySearch = async (req, res) => {
             totalResults: totalDocuments
         });
     } catch (error) {
-        return res.status(404).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 }
+
 
 export const getCompaniesByState = async (req, res) => {
     try {
@@ -77,7 +94,7 @@ export const getCompaniesByState = async (req, res) => {
 
         const companies = await CompanyDatabase.find(
             companiesQuery,
-            { '_id': 0, '__v': 0 }
+            {  '__v': 0 }
         )
         .sort({ 'importantTags.length': -1, 'name': 1 })
         .skip(skip)
@@ -97,12 +114,12 @@ export const getCompaniesByTags = async (req, res) => {
     try {
         const { skip, limit, page } = getPagination(req.query);
         console.log(req.query);
-        const tags = req.query.tags.split(",")
+        const tags = req.query.categories.split(",")
         console.log(tags)
 
         const companies = await CompanyDatabase.find(
             { tags: { $in: tags } },
-            { '_id': 0, '__v': 0 }
+            { '__v': 0 }
         )
         .sort({
             'tags.length': -1,

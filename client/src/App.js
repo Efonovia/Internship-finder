@@ -22,8 +22,8 @@ function App() {
         <Route path="auth/signup" element={<Signup />}/>
         <Route path="companies/search" element={<CompaniesBySearch />}/>
         <Route path="companies/state" element={<CompaniesByState />}/>
-        <Route path="companies/category" element={<CompaniesByCategory />}/>
-        <Route path="companies/details" element={<CompanyDetailsPage />}/>
+        <Route path="companies/categories" element={<CompaniesByCategory />}/>
+        <Route path="companies/details/:companyId" element={<CompanyDetailsPage />}/>
         <Route path="profile" element={<MyApplications />}/>
       </Routes>
     </BrowserRouter>

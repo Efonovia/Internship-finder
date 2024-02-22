@@ -7,10 +7,12 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LanguageIcon from '@mui/icons-material/Language';
 import {nanoid} from "nanoid"
+import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 function CompanyCard(props) {
-    const { name, tags, logo, street, city, state, phoneNumbers, website, email, description, workingHours } = props.data
-    const tagsHtml = tags.map(tag => <li key={nanoid()}><a href="/">{tag}</a></li>)
+    const navigate = useNavigate()
+    const { _id, name, tags, logo, street, city, state, phoneNumbers, website, email, description, workingHours } = props.data
+    const tagsHtml = tags.map(tag => <li key={nanoid()} onClick={() => navigate(`/companies/categories?categories=${tag}&page=1`)}><a href>{tag}</a></li>)
     return <div className="single-post d-flex flex-row">
                 <div style={{marginRight: "10px", maxWidth: "150px"}} className="thumb">
                     <img src={logo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${logo}`: defaultLogo} alt="pic" />
@@ -24,16 +26,16 @@ function CompanyCard(props) {
                         </div>
                         <ul className="btns">
                             <li>
-                                <a href="/"><FavoriteBorderIcon /></a>
+                                <a href><FavoriteBorderIcon /></a>
                             </li>
-                            <li><a href="/">Apply</a></li>
+                            <li><a onClick={()=>navigate(`companies/details/${_id}`)} href>Apply</a></li>
                         </ul>
                     </div>
                     <p style={{width: "90%"}}>{description !== "null" ? description : "none available"} </p>
                     <h6 className='my-h6'><EmailIcon /> Email: {email !== "null" ? email : "none available"}</h6>
                     <h6 className="my-h6"><PhoneIcon /> Phone Numbers: {phoneNumbers ? phoneNumbers.join(", ") : "none available"}</h6>
                     <h6 className="my-h6"><AccessTimeIcon/> Working Hours: {workingHours !== "null" ? workingHours : "none available"}</h6>
-                    <h6 className="my-h6"><LanguageIcon/> Website: <a target='blank' href={website !== "null" ? website : "/"}>{website !== "null" ? website : "none available"}</a></h6>
+                    <h6 className="my-h6"><LanguageIcon/> Website: <a target='blank' href={website !== "null" ? website : true}>{website !== "null" ? website : "none available"}</a></h6>
                 </div>
             </div>
 }

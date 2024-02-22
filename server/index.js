@@ -9,11 +9,13 @@ import studentsRouter from "./src/routes/student.route.js";
 import { createNewStudent, loginStudent } from "./src/routes/student.controller.js";
 import companyRouter from "./src/routes/company.route.js";
 import applicationRouter from "./src/routes/application.route.js";
+import multer from "multer";
 
 
 // CONFIGURATION
 dotenv.config()
 const app = express()
+const upload = multer({ dest: "uploads/" })
 app.use(express.json())
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))
@@ -29,7 +31,7 @@ app.get("/", (req, res) => res.send("hello"))
 app.use("/students", studentsRouter)
 app.use("/companies", companyRouter)
 app.use("/application", applicationRouter)
-app.post("/signup", createNewStudent)
+app.post("/signup", upload.single("picturePath"), createNewStudent)
 app.post("/login", loginStudent)
 
 

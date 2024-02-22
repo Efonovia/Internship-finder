@@ -1,3 +1,4 @@
+// combine this with all tags and sort by these important ones to solve that equality issue
 const importantTagsDetails = {
 	"Business": 41270,
 	"Education": 4958,

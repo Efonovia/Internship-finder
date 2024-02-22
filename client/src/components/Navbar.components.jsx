@@ -33,7 +33,7 @@ function Navbar() {
 															<a href onClick={()=>navigate("/companies/state")}>By State</a>
 														</li>
 														<li>
-															<a href onClick={()=>navigate("/companies/category")}>By Category</a>
+															<a href onClick={()=>navigate("/companies/categories")}>By Category</a>
 														</li>
 													</ul>
 												</li>

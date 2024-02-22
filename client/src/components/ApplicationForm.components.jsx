@@ -47,7 +47,7 @@ function ApplicationForm() {
                                     />
                                     <label
                                         className="custom-file-label"
-                                        for="inputGroupFile03"
+                                        htmlFor="inputGroupFile03"
                                         ><CloudUploadIcon/> Upload CV</label>
                                 </div>
                             </div>
@@ -56,7 +56,6 @@ function ApplicationForm() {
                             <div className="input_field">
                                 <textarea
                                     name="#"
-                                    id
                                     cols="30"
                                     rows="10" placeholder="Coverletter"
                                 ></textarea>

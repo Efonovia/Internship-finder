@@ -7,8 +7,8 @@ function Searchbar(props) {
 
     return <div className="input-box">
                 <i className="uil uil-search"><SearchOutlinedIcon /></i>
-                <input name='search' value={props.value} onChange={event => props.onChange(event)} type="text" placeholder="Search here..." />
-                <button onClick={() => props.executeSearch()} className="button">Search</button>
+                <input name='query' value={props.value} onChange={event => props.onChange(event)} type="text" placeholder="Search here..." />
+                <button onClick={() => props.executeSearch()} className="button" style={{background: props.value ? "#fb246a" : "gray"}}>Search</button>
             </div>
 }
 
