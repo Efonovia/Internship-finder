@@ -165,8 +165,8 @@ export const addReviewToCompany = async (req, res) => {
 
         await company.save();
 
-        return res.status(201).json({ message: 'Review added successfully', review: newReview });
+        return res.status(201).json({ ok: true, body: newReview });
     } catch (error) {
-        return res.status(500).json({ error: error.message });
+        return res.status(500).json({ ok: false, error: error.message });
     }
 };

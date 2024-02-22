@@ -108,3 +108,23 @@ export const httpSignUpStudent = async (studentDetails) => {
         alert(error)
     }
 }
+
+export const httpLoginStudent = async (studentDetails) => {
+    try {
+        const response = await fetch(`${API_URL}/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(studentDetails)
+        })
+        if (response.error) {
+            throw new Error('Failed to sign you up. try again');
+        }
+        const result = await response.json()
+        return result;
+    } catch (error) {
+        console.log(error)
+        alert(error)
+    }
+}

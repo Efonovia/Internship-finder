@@ -122,7 +122,7 @@ function CompaniesByState() {
                         <div className="col-xl-9 col-lg-9 col-md-8">
                             <div className="container">
                                 <div style={{width: "1100px"}} className="row justify-content-center d-flex">
-                                    {loading ? <CircularProgress size={100} /> :
+                                    {loading ? <CircularProgress sx={{color: "#fb246a"}} size={100} /> :
                                     <>
                                         <div style={{fontSize: "20px", marginBottom: "40px", textAlign: "center"}}>{companies.totalResults} companies found</div>
                                         <div style={{maxWidth: "90%"}} className="col-lg-8 post-list" id='my-col'>

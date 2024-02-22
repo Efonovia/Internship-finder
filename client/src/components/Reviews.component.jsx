@@ -2,12 +2,16 @@ import React from 'react';
 import "../styles/review.css"
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import { httpPostReview } from '../hooks/requests.hooks';
+import { CircularProgress } from '@mui/material';
+import { capitalizeWords, formatDate } from '../utils';
 
 
 function Reviews(props) {
     const [starCount, setStarCount] = React.useState(0)
     const [reviewText, setReviewtext] = React.useState("")
     const [allReviews, setAllReviews] = React.useState(props.reviews)
+    const [loading, setLoading] = React.useState(false)
 
     function onStarClick(starNum) {
         if(starNum === starCount) {
@@ -21,37 +25,48 @@ function Reviews(props) {
         setReviewtext(event.target.value)
     }
 
-    function postReview() {
-        if(!starCount) {
-            alert("make sure to give the company a rating")
-            return
-        }
-        if(!reviewText) {
-            alert("make sure to give the company a review")
-            return
-        }
-        console.log(starCount, reviewText)
-        const newReview = {
-            reviewer: "drake",
-            content: reviewText,
-            rating: starCount,
-            publishDate: new Date(),
+    async function postReview() {
+        try {
+            if(!Boolean(props.userInfo)) {
+                return
+            }
+            if(!starCount) {
+                alert("make sure to give the company a rating")
+                return
+            }
+            if(!reviewText) {
+                alert("make sure to give the company a review")
+                return
+            }
+            setLoading(true)
+            console.log(starCount, reviewText)
+            const newReview = {
+                reviewer: props.userInfo.firstName + " " + props.userInfo.lastName,
+                content: reviewText,
+                rating: starCount,
+            }
+            const response = await httpPostReview(newReview, props.companyId)
+            console.log(response)
+            if(response.ok) {
+                setAllReviews(prev => [...prev, response.body])
+            }
+            setReviewtext("")
+            setStarCount(0)
+        } catch (error) {
+            console.log("failed to post review")
+            alert("failed to post review. Try again")
+        } finally {
+            setLoading(false)
         }
     }
 
-    const testReviewsHtml = Array.from({length: 5}, (_, i) => {
-        return <div key={i+1} className="reviews-right__item">
-        <p style={{textDecoration: "underline"}}>Dave Jones</p>
-        <div className="block-tour">
-            <span>Date Published: <span style={{"color":"black"}}>yesterday</span></span>
-            <span className="stars">Rating
-                <StarIcon sx={{color: "gold"}}/>
-                <StarIcon sx={{color: "gold"}}/>
-                <StarIcon sx={{color: "gold"}}/>
-                <StarIcon sx={{color: "gold"}}/>
-            </span>
-        </div>
-        <h5>a very good or very bad place</h5>
+    const testReviewsHtml = allReviews.map(review => {
+        return <div key={review.reviewer+"_"+review.publishDate} className="reviews-right__item">
+        <div className='deets'><p className='reviewer'>{capitalizeWords(review.reviewer)}</p><p>{formatDate(review.publishDate)}</p></div>
+        <span style={{color: "black"}} className="stars">Rating: 
+        {Array(5).fill().map((_, index) => index < review.rating ? <StarIcon key={index+1} sx={{color: "gold"}}/> : <StarOutlineIcon key={index+1} sx={{color: "gold", cursor: "pointer"}}/>)}
+        </span>
+        <h5>{review.content}</h5>
     </div>
     })
 
@@ -75,7 +90,7 @@ function Reviews(props) {
                             rows="2" placeholder="Leave a review"
                         ></textarea>
                     </div>
-                    <div onClick={postReview} className="post-button">Post review</div>
+                    <div style={{backgroundColor: Boolean(props.userInfo) ? "#fb246a" : "grey"}} onClick={postReview} className="post-button">{loading ? <><CircularProgress sx={{color: "white"}} size={20}/>posting...</> : (Boolean(props.userInfo) ? "Post review" : "You have to log in to make a review")}</div>
                 </div>
                 {allReviews.length ? <><p>All reviews for this company</p>
                 <div className='all-reviews'>{testReviewsHtml}</div></> : <p>No reviews for this company yet. Be the first one to make one.</p>}

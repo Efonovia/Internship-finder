@@ -3,9 +3,15 @@ import "../styles/applicationform.css"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 import { httpSignUpStudent } from '../hooks/requests.hooks';
+import { useDispatch } from "react-redux"
+import { setUser } from '../state';
+import { CircularProgress } from '@mui/material';
+import { checkFormFields } from '../utils';
 
 function Signup() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const [loading, setLoading] = React.useState(false)
     const [formDetails, setFormDetails] = React.useState({
         firstName: "",
         lastName: "",
@@ -25,21 +31,6 @@ function Signup() {
         console.log(formDetails)
     }
 
-    function checkFields(formData) {
-        const emptyFields = [];
-    
-        for (const field in formData) {
-            if (field === 'picturePath') {
-                continue;
-            }
-            if (!formData[field]) {
-                emptyFields.push(field);
-            }
-        }
-    
-        return emptyFields;
-    }
-
     async function submitForm() {
         try {
             const formData = new FormData();
@@ -51,22 +42,39 @@ function Signup() {
             formData.append('picturePath', formDetails.picturePath)
             console.log(formDetails, formData)
 
-            const emptyFields = checkFields(formDetails);
+            const emptyFields = checkFormFields(formDetails);
             if (emptyFields.length > 0) {
                 const emptyFieldNames = emptyFields.join(', ');
                 alert(`Please fill in the following fields: ${emptyFieldNames}`);
                 return
             }
 
+            setLoading(true)
             const response = await httpSignUpStudent(formData)
+            if(response.exists) {
+                alert("Student already exists. try logging in instead")
+                navigate("/auth/login")
+            } else if(!response.exists) {
+                dispatch(setUser({ user: response.body }))
+                navigate("/")
+            }
 
             console.log(response)
         } catch (error) {
+            setLoading(false)
             console.error('Failed to register:', error);
+            alert('Failed to register try again:', error);
+        } finally {
+            setLoading(false)
         }
     }
 
-    return <div style={{position: "relative", top: "100px", width: "60%", margin: "auto"}} className="apply_job_form white-bg">
+    return loading ? <div style={{position: "absolute", marginTop: "300px", marginLeft: "20vw", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                        <h1 style={{textAlign: "center"}}>Creating your account and signing you in. Hold on...</h1>
+                        <br></br>
+                        <CircularProgress sx={{color: "#fb246a"}} size={100} />
+                    </div>:
+            <div style={{position: "relative", top: "100px", width: "60%", margin: "auto"}} className="apply_job_form white-bg">
                 <h4 style={{textAlign: "center"}}>Sign up for [Name of APp]</h4>
                 <form action="#">
                     <div className="row my-row">

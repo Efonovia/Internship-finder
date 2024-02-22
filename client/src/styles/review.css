@@ -1,16 +1,19 @@
 .reviews-right__item h3 { 
 	margin-top: 0; 
-	text-decoration: underline;
 }
 .reviews-right__item:not(:last-child) {
     border-bottom: 2px solid black;
     padding-bottom: 10px;
 }
-.reviews-right__item .block-tour { 
-	display: flex;
-	flex-wrap: wrap; 
-	align-items: center;
+
+.reviews-right__item {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
+
 .block-tour span {
 	margin-right: 30px; 
 	color: #7B7B7B;
@@ -62,12 +65,13 @@
 .post-button {
     background-color: #fb246a;
     color: white;
-    width: 25%;
-    padding: 5px 1px;
+    /* width: 25%; */
+    padding: 5px 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .post-button:hover {
@@ -85,4 +89,16 @@
     color: black;
     text-align: center;
     font-size: 20px;
+}
+
+.deets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.reviewer {
+    color: black;
+    font-size: 18px;
 }

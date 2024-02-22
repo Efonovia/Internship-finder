@@ -15,7 +15,21 @@ import multer from "multer";
 // CONFIGURATION
 dotenv.config()
 const app = express()
-const upload = multer({ dest: "uploads/" })
+const storage = multer.diskStorage({
+            destination: function (req, file, cb) {
+                cb(null, 'uploads/');
+            },
+            filename: function (req, file, cb) {
+                const userId = req.body.studentId;
+                const timestamp = Date.now();
+                const originalName = file.originalname;
+                const extension = originalName.split('.').pop();
+                const customFileName = `${userId}_${timestamp}.${extension}`;
+                cb(null, customFileName);
+            }
+        });
+
+const upload = multer({ storage: storage });
 app.use(express.json())
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))

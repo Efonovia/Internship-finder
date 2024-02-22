@@ -11,10 +11,12 @@ import { useParams } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
 import { shortenText } from '../utils';
 import Reviews from '../components/Reviews.component';
+import { useSelector } from 'react-redux';
 function CompanyDetailsPage() {
     const { companyId } = useParams()
     const [loading, setLoading] = React.useState(true)
     const [company, setCompany] = React.useState(true)
+    const userInfo = useSelector(state => state.user)
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -34,7 +36,7 @@ function CompanyDetailsPage() {
     }, [companyId])
 
     return <main>
-            {loading ? <CircularProgress sx={{marginTop: "300px", marginLeft: "800px"}} size={100}/> : <>
+            {loading ? <CircularProgress sx={{marginTop: "300px", marginLeft: "800px", color: "#fb246a"}} size={100}/> : <>
                 <div className="slider-area">
                     <div
                         className="single-slider section-overly slider-height2 d-flex align-items-center"
@@ -104,8 +106,8 @@ function CompanyDetailsPage() {
                                         </li>
                                         <li><span><LocationOnIcon/> Location : </span><span>{shortenText(30, [company.street, company.city, company.state].join(", "))}</span></li>
                                         <li><span><PhoneIcon/> Phone : </span><span>{company.phoneNumbers ? company.phoneNumbers.join(", ") : "none available"}</span></li>
-                                        <li><span><LanguageIcon/> Website : </span><a style={{color: "blue"}} href='link.com'>link.com</a></li>
-                                        <li><span><AccessTimeIcon/> Working Hours : </span><span>02-92400</span></li>
+                                        <li><span><LanguageIcon/> Website : </span><a target={company.website === "null" ? true : "_blank"} rel='noreferrer' style={{color: "blue"}} href={company.website === "null" ? true : company.website}>{company.website === "null" ? "none available" : company.website}</a></li>
+                                        <li><span><AccessTimeIcon/> Working Hours : </span><span>{company.workingHours === "null" ? "none available" : company.workingHours}</span></li>
                                     </ul>
                                     <div style={{marginLeft: "200px"}} className="apply-btn2">
                                         <a style={{color: "white"}} href className="btn">Apply Now</a>
@@ -115,9 +117,13 @@ function CompanyDetailsPage() {
                         </div>
                         <div className='row justify-content-between'>
                             <div className="col-xl-7 col-lg-8">
-                                <ApplicationForm />
+                                <ApplicationForm isLoggedIn={Boolean(userInfo)}/>
                             </div>
-                            <Reviews reviews={company.reviews}/>
+                            <Reviews 
+                                companyId={companyId}
+                                userInfo={userInfo}
+                                reviews={company.reviews}
+                            />
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,26 @@
 import React from 'react';
 import logo from "../assets/img/logo/logo.png"
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../state';
+import { CircularProgress } from '@mui/material';
 function Navbar() {
-    const isLoggedIn = false
+    // const userInfo = true
+    const userInfo = useSelector(state => state.user)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const [logoutClicked, setLogoutClicked] = React.useState(false)
+    function logoutClick() {
+        setLogoutClicked(true)
+        setTimeout(() => {
+            dispatch(setUser({ user: null }))
+            setLogoutClicked(false)
+            navigate("/")
+        }, 2500)
+    }
+
     return 	<header>
     <div className="header-area header-transparent">
         <div className="header-top header-sticky">
@@ -37,20 +53,22 @@ function Navbar() {
 														</li>
 													</ul>
 												</li>
-                                        {isLoggedIn && <li>
+                                        {userInfo && <li>
                                             <a href onClick={()=>navigate("/profile")}>My Applications</a>
                                         </li>}
                                         <li>
-                                            <a href="about.html">About</a>
+                                            <a href>About</a>
                                         </li>
                                         <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a href>Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
 
-                            {!isLoggedIn && <div
+                            {userInfo && <a onClick={logoutClick} style={{color: "white", padding: "2%"}} href className="btn head-btn1">{logoutClicked ? <><CircularProgress sx={{color:'white'}} size={20} /> Logging out</> : <><LogoutIcon /> Logout</>}</a>}
+
+                            {!userInfo && <div
                                 className="header-btn d-none f-right d-lg-block">
                                 <a style={{color: "white"}} href onClick={()=>navigate("/auth/signup")} className="btn head-btn1">Register</a>
                                 <a href onClick={()=>navigate("/auth/login")} className="btn head-btn2">Login</a>

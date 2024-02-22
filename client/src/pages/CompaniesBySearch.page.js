@@ -182,7 +182,7 @@ function CompaniesBySearch() {
                                 <div style={{width: "1100px"}} className="row justify-content-center d-flex">
                                     <div style={{fontSize: "20px", marginBottom: "30px", marginRight: "-90px"}}>{companies.totalResults} companies found</div>
                                 
-                                    {loading ? <CircularProgress size={100} /> : (
+                                    {loading ? <CircularProgress sx={{color: "#fb246a"}} size={100} /> : (
                                         companies["data"]?.length ? 
                                         <div style={{maxWidth: "90%"}} className="col-lg-8 post-list" id='my-col'>
                                             {companyCardsHtml}

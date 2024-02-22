@@ -1,10 +1,19 @@
 import React from 'react';
 import "../styles/applicationform.css"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
-function ApplicationForm() {
-
+function ApplicationForm(props) {
+    const [formDetails, setFormDetails] = React.useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        studentId: "",
+        password: "",
+        picturePath: null
+    })
+    const [connected, setConnected] = React.useState(false)
 
     return <div style={{position: "relative", top: "40px"}} className="apply_job_form white-bg">
                 <h4>Apply for the job</h4>
@@ -20,39 +29,30 @@ function ApplicationForm() {
                                 <input type="text" placeholder="Email"/>
                             </div>
                         </div>
-                        <div style={{width: "95%"}} className="col-md-12">
+                        <div style={{width: "100%"}} className="col-md-12">
                             <div className="input_field">
                                 <input type="text" placeholder="Website/Portfolio link"/>
                             </div>
                         </div> 
-                        <div style={{width: "95%"}} className="col-md-12">
-                            <div style={{borderStyle: "dashed", borderWidth: "2px"}} className="input-group">
-                                <div className="input-group-prepend">
-                                    <button
-                                        type="button"
-                                        id="inputGroupFileAddon03"
-                                    >
-                                        <i
-                                            className="fa fa-cloud-upload"
-                                            aria-hidden="true"
-                                        ></i>
-                                    </button>
-                                </div>
+                        <div style={{width: "100%", marginTop: "30px"}} className="col-md-12">
+                            <div style={{borderStyle: "dashed", borderWidth: "2px", height: "100px"}} className="input-group">
                                 <div className="custom-file">
-                                    <input
-                                        type="file"
-                                        className="custom-file-input"
-                                        id="inputGroupFile03"
-                                        aria-describedby="inputGroupFileAddon03"
-                                    />
-                                    <label
-                                        className="custom-file-label"
-                                        htmlFor="inputGroupFile03"
-                                        ><CloudUploadIcon/> Upload CV</label>
+                                    <label style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "1px"}} className="custom-file-label" htmlFor="inputGroupFile03">
+                                        <span style={{marginTop: "10px"}}><CloudUploadIcon/> Upload your CV</span>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            style={{display: "none"}}
+                                            name="picturePath"
+                                            className="custom-file-input"
+                                            id="inputGroupFile03"
+                                            aria-describedby="inputGroupFileAddon03"/><br></br>
+                                            <span style={{marginTop: "-80px", color: "black"}} id="imageName">{formDetails["picturePath"]?.name}</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div style={{width: "95%"}} className="col-md-12">
+                        <div style={{width: "100%"}} className="col-md-12">
                             <div className="input_field">
                                 <textarea
                                     name="#"
@@ -61,8 +61,8 @@ function ApplicationForm() {
                                 ></textarea>
                             </div>
                         </div>
-                        <a style={{width: "95%",marginBottom: "20px", background: "#242b5e"}} href="/" className="btn head-btn1">Connect Student Profile for quick validation</a>
-                        <a style={{width: "95%"}} href="/" className="btn head-btn1">Apply Now</a>
+                        <a style={{width: "100%", color: "white", padding: connected && "15px", marginBottom: "20px", background: connected ? "green" : (props.isLoggedIn ? "#242b5e" : "grey")}} onClick={()=>setConnected(prev=>!prev)} href className="btn head-btn1">{connected ? <><CheckCircleIcon/>Student Profile Connected</> : (props.isLoggedIn ? "Connect Student Profile for quicker validation" : "You need to be logged in to connect your student profile")}</a>
+                        <a style={{width: "100%", color: "white", background: props.isLoggedIn ? "#fb246a" : "grey"}} href className="btn head-btn1">{props.isLoggedIn ? "Apply Now" : "You need to be logged in, in order to apply "}</a>
                         
                     </div>
                 </form>

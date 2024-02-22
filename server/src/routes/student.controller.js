@@ -2,74 +2,71 @@ import StudentDatabase from "../models/student.mongo.js";
 import bcrypt from "bcrypt"
 
 export const createNewStudent = async (req, res) => {
-  try {
-      const {
-          studentId,
-          firstName,
-          lastName,
-          password,
-          email,
-      } = req.body;
+    try {
+        const {
+            studentId,
+            firstName,
+            lastName,
+            password,
+            email,
+        } = req.body;
 
-      const picturePath = req.file ? req.file.path : ""
-      console.log("this is ze file ", req.file)
+        console.log(req.body);
 
-      console.log(req.body);
+// Check if the user already exists in the database
+        const existingStudent = await StudentDatabase.findOne({ studentId: studentId });
 
-      const salt = await bcrypt.genSalt();
-      const passwordHash = await bcrypt.hash(password, salt);
+        if (existingStudent) {
+            console.log("Student already exists. Will not create a new record.");
+            return res.status(200).json({ exists: true, body: existingStudent });
+        }
 
-      StudentDatabase.findOne({ studentId: studentId })
-          .then((student) => {
-              if (student) {
-                  console.log(student); // Found student
-                  return res.status(200).json({ exists: true, body: student });
-              } else {
-                  console.log(`Student with studentId ${studentId} not found.`);
+// If the user does not exist, proceed with creating a new record
+        const salt = await bcrypt.genSalt();
+        const passwordHash = await bcrypt.hash(password, salt);
 
-                  const newStudent = new StudentDatabase({
-                      studentId,
-                      firstName,
-                      lastName,
-                      email,
-                      password: passwordHash,
-                      picturePath: picturePath || "",
-                  });
+        let picturePath = "";
+        if (req.file) {
+            picturePath = req.file.path;
+        }
 
-                  newStudent.save().then(() => {
-                      console.log('New student added successfully');
-                  }).catch((error) => {
-                      console.log(error);
-                  });
+        // Create a new student record
+        const newStudent = new StudentDatabase({
+            studentId,
+            firstName,
+            lastName,
+            email,
+            password: passwordHash,
+            picturePath: picturePath || "", // Set picturePath only if a file is uploaded
+        });
 
-                  return res.status(201).json({ exists: false, body: newStudent });
-              }
-          })
-          .catch((error) => {
-              console.log(`Error finding student with studentId ${studentId}: ${error}`);
-              return res.status(500).json({ error: error.message });
-          });
+        // Save the new student record to the database
+        await newStudent.save();
 
-  } catch (error) {
-      return res.status(500).json({ error: error.message });
-  }
-}
+        console.log('New student added successfully');
+        return res.status(201).json({ exists: false, body: newStudent });
+
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
 
 export const loginStudent = async(req, res) => {
     try {
       const { studentId, password } = req.body
+      console.log(req.body)
       //Check if the student exists by using their studentId
       const student = await StudentDatabase.findOne({ studentId: studentId })
       if(!student) {
-        return res.status(400).json({ok: false, msg: "invalid studentId" })
+        return res.status(400).json({ok: false, msg: "No account exists with that studentId. Create a new account or type the ID correctly" })
       }
   
       //Check if password is correct
       const isMatch = await bcrypt.compare(password, student.password)
-      if(!isMatch) return res.status(400).json({ok: false, msg: "Invalid credentials" })
+      if(!isMatch) return res.status(400).json({ok: false, msg: "Incorrect Password" })
   
       
-      return await res.status(200).json({ ok: true, student: student })
+      return await res.status(200).json({ ok: true, body: student })
     } catch (error) {
         return res.status(500).json({ error: error.message })
     }
