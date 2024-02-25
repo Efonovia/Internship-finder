@@ -126,5 +126,38 @@ export const httpLoginStudent = async (studentDetails) => {
     } catch (error) {
         console.log(error)
         alert(error)
+        return
+    }
+}
+
+export const httpSubmitApplication = async (applicationDetails) => {
+    try {
+        const response = await fetch(`${API_URL}/application/create`, {
+            method: "POST",
+            body: applicationDetails
+        })
+        if (!response.ok) {
+            throw new Error('Failed to send application. try again');
+        }
+        const result = await response.json()
+        return result;
+    } catch (error) {
+        console.log(error)
+        alert(error)
+    }
+}
+
+export const httpGetandUpdateApplications = async (studentId) => {
+    try {
+        const response = await fetch(`${API_URL}/application/getnewmail/${studentId}`)
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const result = await response.json()
+        return result;
+    } catch (error) {
+        console.log(error)
+        alert("Network error. refresh page or check your connection")
+        return
     }
 }

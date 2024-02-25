@@ -1,16 +1,105 @@
 import React from 'react';
 import "../styles/myapplications.css"
 import ArticleIcon from '@mui/icons-material/Article';
+import { httpGetandUpdateApplications } from '../hooks/requests.hooks';
+import { useDispatch, useSelector } from 'react-redux';
+import defaultLogo from "../assets/img/post.png"
+import { setApplications } from '../state';
+import { CircularProgress } from '@mui/material';
+import { capitalizeWords, formatDate, formatTime } from '../utils';
+import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 
 function MyApplications() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [ showBox, setShowBox ] = React.useState(false)
+    const [ loading, setLoading ] = React.useState(true)
+    const [ currentApplication, setCurrentApplication ] = React.useState(null)
+    const userInfo = useSelector(state => state.user)
+    const applications = useSelector(state => state.applications)
 
-    function onChatClick() {
+
+    function onChatClick(application) {
         setShowBox(prev => !prev)
+        setCurrentApplication(application)
     }
 
-    return <div className="chat-area">
+    async function markMessagesAsRead() {
+
+    }
+
+    async function refreshPage() {
+        try {
+            if(userInfo) {
+                setLoading(true)
+                const result = await httpGetandUpdateApplications(userInfo._id);
+                dispatch(setApplications({ applications: result?.body }))
+                console.log("running...")
+            }
+        } catch (error) {
+            alert('Error loading your applications. refresh page:', error);
+            console.error('Error loading your applications. refresh page:', error);
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if(userInfo) {
+                    const result = await httpGetandUpdateApplications(userInfo._id);
+                    dispatch(setApplications({ applications: result?.body }))
+                    console.log("running...")
+                }
+            } catch (error) {
+                alert('Error loading your applications. refresh page:', error);
+                console.error('Error loading your applications. refresh page:', error);
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchData();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+
+        
+    }, [dispatch, userInfo, userInfo._id])
+
+    const applicationsHtml = applications?.map(application => {
+        return <a onClick={() => onChatClick(application)} href className="d-flex align-items-center">
+                    <div className="flex-shrink-0">
+                        <img 
+                            className="img-fluid"
+                            height={60}
+                            width={60}
+                            src={application.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${application.companyLogo}` : defaultLogo} 
+                            alt="user img"
+                        >
+                        </img>
+                    </div>
+                    <div className="flex-grow-1 ms-3">
+                        <h3>{application.companyName}{application.times > 1 && ` #${application.times}`}</h3>
+                    </div>
+                        <span class="notification-count">{application.briefMessages.filter(msg => !msg.seen).length}</span>
+                </a>
+    })
+
+    const messagesHtml = currentApplication?.briefMessages.map(message => {
+        const isSender = currentApplication.applicationId === message.gmailId
+        return <li className={isSender ? "sender" : "reply"}>
+                    <div style={{background: !isSender && "#1f2b7b", color: !isSender && "white"}} className='application-message'>
+                        <div className="application-header">{isSender ? "Application Overview" : "Application response"}</div>
+                        <p>{message.messageContent}</p>
+                        {isSender && <div className="attachment">Attached: <span><ArticleIcon /> {capitalizeWords(`${userInfo.firstName} ${userInfo.lastName}`)}'s CV.pdf</span></div>}
+                        <span style={{ color: !isSender && "white" }} className="time">{`Sent on: ${formatDate(message.dateSent)} at ${formatTime(message.dateSent)}`}</span>
+                    </div>
+                </li>
+    })
+
+    return loading ? <CircularProgress sx={{marginTop: "300px", marginLeft: "800px", color: "#fb246a"}} size={100} /> : <div className="chat-area">
                 <div className="chatlist">
                     <div className="modal-dialog-scrollable">
                         <div className="modal-content">
@@ -20,35 +109,7 @@ function MyApplications() {
                                 <div className="chat-lists">
                                     <div className="tab-content" id="myTabContent">
                                         <div className="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
-                                            <div className="chat-list">
-                                                <a onClick={onChatClick} href className="d-flex align-items-center">
-                                                    <div className="flex-shrink-0">
-                                                        <img className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"></img>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-3">
-                                                        <h3>Mehedi Hasan</h3>
-                                                        <p>front end developer</p>
-                                                    </div>
-                                                </a>
-                                                <a onClick={onChatClick} href className="d-flex align-items-center">
-                                                    <div className="flex-shrink-0">
-                                                        <img className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"></img>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-3">
-                                                        <h3>Mehedi Hasan</h3>
-                                                        <p>front end developer</p>
-                                                    </div>
-                                                </a>
-                                                <a onClick={onChatClick} href className="d-flex align-items-center">
-                                                    <div className="flex-shrink-0">
-                                                        <img className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"></img>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-3">
-                                                        <h3>Mehedi Hasan</h3>
-                                                        <p>front end developer</p>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            <div className="chat-list">{applicationsHtml}</div>
                                         </div>
                                     </div>
 
@@ -68,13 +129,28 @@ function MyApplications() {
                                     <div style={{margin: "auto"}} className="col-8">
                                         <div className="d-flex align-items-center">
                                             <span onClick={()=>setShowBox(prev => !prev)} className="chat-icon"><img className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="title"></img></span>
-                                            <div className="flex-shrink-0">
-                                                <img className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"></img>
-                                            </div>
-                                            <div className="flex-grow-1 ms-3">
-                                                <h3>Mehedi Hasan</h3>
-                                                <p>front end developer</p>
-                                            </div>
+                                            {Boolean(currentApplication) ? <>
+                                                <div className="flex-shrink-0">
+                                                    <img 
+                                                        className="img-fluid"
+                                                        height={60}
+                                                        width={60}
+                                                        src={currentApplication.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${currentApplication.companyLogo}` : defaultLogo} 
+                                                        alt="user img"
+                                                    >
+                                                    </img>                                            
+                                                </div>
+                                                <div className="flex-grow-1 ms-3">
+                                                    <h3 onClick={() => {navigate(`/companies/details/${currentApplication.companyId}`)}} className="companyname-header">{currentApplication.companyName}{currentApplication.times > 1 && ` #${currentApplication.times}`}</h3>
+                                                </div>
+                                            </> : <div className="flex-grow-1 ms-3">
+                                                    <h3>.</h3>
+                                                </div>}
+
+                                                <div className='tool-buttons'>
+                                                    <div onClick={refreshPage} className="refresh">Check for new responses</div>
+                                                    <div onClick={markMessagesAsRead} className="mark-read">Mark all messages as read</div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -83,31 +159,12 @@ function MyApplications() {
 
                             <div className="modal-body">
                                 <div className="msg-body">
-                                    <ul>
-                                        <li className="sender">
-                                            <div className='application-message'>
-                                                <div className="application-header">Application Overview</div>
-                                                <p>Mollit anim laborum duis au dolor in voluptate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillum.
-
-            Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlorMollit anim laborum duis au dolor in voluptate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillum.
-
-            Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.e eu quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.</p>
-                                                <div className="attachment">Attached: <span><ArticleIcon /> Igbinovia Efosa CV.pdf</span></div>
-                                                <span className="time">Sent on: 10:06 am</span>
-                                            </div>
-                                        </li>
-                                        {/* <h1 style={{fontSize: "30px", textAlign: "center", marginTop: "50px"}}>You haven't gotten a response yet, check back later</h1> */}
-                                        <li className="reply">
-                                            <div style={{background: "#4b7bec"}} className='application-message'>
-                                                <div className="application-header">Application response</div>
-                                                <p>Mollit anim laborum duis au dolor in voluptate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillum.
-
-
-            Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.e eu quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.</p>
-                                                <span className="time">Sent on: 10:06 am</span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    {
+                                        applications?.length ? 
+                                        (Boolean(currentApplication) ? <ul>{messagesHtml}</ul> : <h1>Select an application to view it's details</h1>) :
+                                        <h1>You haven't applied to any companies yet</h1>
+                                        }
+                                    {currentApplication?.briefMessages.length < 2 && <h1 style={{fontSize: "30px", textAlign: "center", marginTop: "50px"}}>You haven't gotten a response yet, check back later</h1>}
                                 </div>
                             </div>
                         </div>

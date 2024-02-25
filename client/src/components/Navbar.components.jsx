@@ -4,18 +4,37 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../state';
+import { setUser, setApplications } from '../state';
 import { CircularProgress } from '@mui/material';
+import "../styles/navbar.css"
 function Navbar() {
-    // const userInfo = true
     const userInfo = useSelector(state => state.user)
+    const applications = useSelector(state => state.applications)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [logoutClicked, setLogoutClicked] = React.useState(false)
+
+    const unreadMessagesCount = React.useMemo(() => {
+        let amount = 0;
+    
+        applications?.forEach((application) => {
+          application.briefMessages.forEach((message) => {
+            if (!message.seen) {
+              amount += 1;
+            }
+          });
+        });
+    
+        return amount;
+      }, [applications])
+
+    console.log("navbar rendered")
+
     function logoutClick() {
         setLogoutClicked(true)
         setTimeout(() => {
             dispatch(setUser({ user: null }))
+            dispatch(setApplications({ applications: null }))
             setLogoutClicked(false)
             navigate("/")
         }, 2500)
@@ -53,15 +72,13 @@ function Navbar() {
 														</li>
 													</ul>
 												</li>
-                                        {userInfo && <li>
-                                            <a href onClick={()=>navigate("/profile")}>My Applications</a>
+                                        {userInfo && <li className='applications-nav'>
+                                            <span className="notifications">{unreadMessagesCount}</span>
+                                            <a href onClick={()=>navigate("/applications")}>My Applications</a>
                                         </li>}
-                                        <li>
-                                            <a href>About</a>
-                                        </li>
-                                        <li>
-                                            <a href>Contact</a>
-                                        </li>
+                                        {userInfo && <li>
+                                            <a href onClick={()=>navigate("/saves")}>Saved Companies</a>
+                                        </li>}
                                     </ul>
                                 </nav>
                             </div>

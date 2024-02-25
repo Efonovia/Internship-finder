@@ -28,7 +28,7 @@ function CompanyCard(props) {
                             <li>
                                 <a href><FavoriteBorderIcon /></a>
                             </li>
-                            <li><a onClick={()=>navigate(`companies/details/${_id}`)} href>Apply</a></li>
+                            <li><a onClick={()=>navigate(`/companies/details/${_id}`)} href>Apply</a></li>
                         </ul>
                     </div>
                     <p style={{width: "90%"}}>{description !== "null" ? description : "none available"} </p>

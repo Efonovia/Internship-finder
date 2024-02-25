@@ -1,7 +1,7 @@
 import axios from "axios"
 import { generateConfig } from "../utils.js"
 import nodemailer from "nodemailer"
-import { auth, mailoptions } from "../constants.js"
+import { auth } from "../constants.js"
 import { google } from "googleapis"
 import dotenv from "dotenv"
 import fs from "fs"
@@ -66,7 +66,7 @@ export const readMailSent = async(nodeMailerId) => {
     }
 }
 
-export const sendMail = async(companyMail, studentSchoolId, studentFullName, messageContent) => {
+export const sendMail = async(picturePath, times, companyName, studentSchoolId, studentFullName, messageContent, cvFile) => {
   try {
       console.log("authenticating...")
       const accessToken = await oAuth2Client.getAccessToken();
@@ -79,29 +79,34 @@ export const sendMail = async(companyMail, studentSchoolId, studentFullName, mes
       });
       console.log("created transport")
       const mailOptions = {
-      ...mailoptions,
-      to: companyMail,
-      html: `
-          <main style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
-          <h1 style="text-align: center;">Our student, ${studentFullName} would like to intern at your company</h1>
-          <p style="font-size: 19px">${messageContent.replaceAll("\n", "<br/>")}</p>
-          <footer>
-              You can respond and contact them at <span style="color: blue;">${studentSchoolId}@nileuniversity.edu.ng</span>
-          </footer>
-          <br/><br/><br/>
-          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;font-weight: 600;font-size: 22px;"><span>Verified By</span><img height="150" width="160" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Logo_Nile_University_Vert_-01.jpg" alt="Nile University logo"></div>
-          </main>
-      `,
-      attachments: [
-          {
-          filename: 'my CV.pdf', // Name of the first file
-          content: fs.readFileSync('C:/Users/Efosa1/Desktop/Command Central/pending/Final Year Project/Igbinovia Efosa, CV.pdf'), // Read and include file content
-          },
-          {
-          filename: 'student profile.pdf', // Name of the second file
-          content: fs.readFileSync('C:/Users/Efosa1/Desktop/Command Central/pending/Final Year Project/Tech Job Application Letter.docx'), // Read and include file content
-          },
-      ],
+        from: "NILE UNIVERSITY <efonovia18@gmail.com>",
+        subject: `To the office of ${companyName}. ${times===1 ? `An internship application for our student, ${studentFullName}` : `Our student, ${studentFullName} is applying for an internship at your company for the ${getOrdinalSuffix(times)} time`}`,
+        to: "lordnovia18@gmail.com",
+        html: `
+            <main style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+            <h2 style="text-align: center;">Our student, ${studentFullName} would like to intern at your company. Here's what they have to say:</h2>
+            <p style="font-size: 17px">${messageContent.replaceAll("\n", "<br/>")}</p>
+            <footer>
+                You can respond and contact them at <span style="color: blue;">${studentSchoolId}@nileuniversity.edu.ng</span>
+            </footer>
+            <br/><br/><br/>
+            <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;font-weight: 600;font-size: 22px;"><span>Verified By</span><img height="150" width="160" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Logo_Nile_University_Vert_-01.jpg" alt="Nile University logo"></div>
+            </main>
+        `,
+        attachments: [
+            {
+              filename: studentFullName + "'s CV." + cvFile.originalname.split('.').pop(),
+              content: cvFile.buffer,
+            },
+            {
+              filename: "A picture of " + studentFullName + "." + picturePath.split('.').pop(),
+              content: fs.readFileSync(`C:/Users/Efosa1/Desktop/Command Central/pending/Final Year Project/server/uploads/${picturePath}`),
+            },
+            {
+              filename: 'Nile University Student Profile.pdf',
+              content: fs.readFileSync('C:/Users/Efosa1/Desktop/Command Central/pending/Final Year Project/Nile University Student Profile.pdf'),
+            },
+        ],
       };
 
       const result = await transport.sendMail(mailOptions);
@@ -111,22 +116,26 @@ export const sendMail = async(companyMail, studentSchoolId, studentFullName, mes
       const finalResult = await readMailSent(result.messageId)
       console.log("gmail details gotten")
       const briefMailDetails = {
-      ...mailOptions,
-      messageContent: messageContent,
-      gmailId: finalResult.id,
-      threadId: finalResult.threadId,
-      historyId: finalResult.historyId,
-      snippet: finalResult.snippet,
-      nodeMailerid: result.messageId,
-      hasAttachment: true,
-      seen: true,
-      dateSent: new Date()
+        from: mailOptions.from,
+        subject: mailOptions.subject,
+        to: mailOptions.to,
+        html: mailOptions.html,
+        cvFileName: cvFile.originalname,
+        messageContent: messageContent,
+        gmailId: finalResult.id,
+        threadId: finalResult.threadId,
+        historyId: finalResult.historyId,
+        snippet: finalResult.snippet,
+        nodeMailerid: result.messageId,
+        hasAttachment: true,
+        seen: true,
+        dateSent: new Date()
       }
 
       console.log("briefMailDetails", briefMailDetails)
       return {
-      briefMessage: briefMailDetails,
-      detailedMessage: finalResult
+        briefMessage: briefMailDetails,
+        detailedMessage: finalResult
       }
   } catch (error) {
       console.error('Error in readMail:', error);
@@ -155,4 +164,19 @@ export const abbreviateMessage = message => {
   return briefMailDetails
 }
 
-  
+function getOrdinalSuffix(number) {
+  if (number % 100 >= 11 && number % 100 <= 13) {
+      return `${number}th`;
+  }
+
+  switch (number % 10) {
+      case 1:
+          return `${number}st`;
+      case 2:
+          return `${number}nd`;
+      case 3:
+          return `${number}rd`;
+      default:
+          return `${number}th`;
+  }
+}

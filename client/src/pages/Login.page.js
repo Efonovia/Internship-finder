@@ -3,8 +3,8 @@ import "../styles/applicationform.css"
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 import { useDispatch } from 'react-redux';
 import { checkFormFields } from '../utils';
-import { setUser } from '../state';
-import { httpLoginStudent } from '../hooks/requests.hooks';
+import { setApplications, setUser } from '../state';
+import { httpGetandUpdateApplications, httpLoginStudent } from '../hooks/requests.hooks';
 import { CircularProgress } from '@mui/material';
 
 function Login() {
@@ -43,12 +43,12 @@ function Login() {
             setLoading(true)
             console.log(...formData)
             const response = await httpLoginStudent(formDetails)
-            if(response.ok) {
-                dispatch(setUser({ user: response.body }))
-                navigate("/")
-            } else if(!response.ok) {
-                alert(response.msg)
-            }
+            dispatch(setUser({ user: response.body }))
+            const applicationsResponse = await httpGetandUpdateApplications(response.body._id)
+            console.log("application response", applicationsResponse)
+            dispatch(setApplications({ applications: applicationsResponse.body }))
+            navigate("/")
+         
 
             console.log(response)
         } catch (error) {

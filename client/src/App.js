@@ -24,7 +24,7 @@ function App() {
         <Route path="companies/state" element={<CompaniesByState />}/>
         <Route path="companies/categories" element={<CompaniesByCategory />}/>
         <Route path="companies/details/:companyId" element={<CompanyDetailsPage />}/>
-        <Route path="profile" element={<MyApplications />}/>
+        <Route path="applications" element={<MyApplications />}/>
       </Routes>
     </BrowserRouter>
   )

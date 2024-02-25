@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import ApplicationDatabase from "../models/application.mongo.js";
 import { abbreviateMessage, getAllMail, getMailById, sendMail } from "../services/mail.services.js"
 
+
 dotenv.config()
 
 const oAuth2Client = new google.auth.OAuth2(
@@ -15,14 +16,18 @@ oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
 export const sendAndCreateNewApplication = async(req, res) => {
   try {
-    const { companyId, studentId, companyMail, studentSchoolId, studentFullName, messageContent } = req.body
-    console.log(req.body)
-    const result = await sendMail(companyMail, studentSchoolId, studentFullName, messageContent)
+    const { picturePath, times, companyId, companyName, studentId, studentSchoolId, studentFullName, messageContent } = req.body
+    console.log("req.body", req.body)
+    console.log("req.file", req.file)
+    const cvDataFile = req.file;
+    const result = await sendMail(picturePath, Number(times)+1, companyName, studentSchoolId, studentFullName, messageContent, cvDataFile)
     console.log("creating new application...")
     const newApplication = new ApplicationDatabase({
       applicationId: result.briefMessage.threadId,
       studentId: studentId,
       companyId: companyId,
+      companyName: companyName,
+      times: Number(times)+1,
       briefMessages: [result.briefMessage],
       detailedMessages: [result.detailedMessage],
       dateMade: new Date(),
@@ -32,15 +37,16 @@ export const sendAndCreateNewApplication = async(req, res) => {
     newApplication.save()
     .then(savedApplication => {
       console.log('Application saved successfully:', savedApplication)
+      console.log("application ahs been successfully created")
     })
     .catch(error => {
       console.error('Error saving application:', error)
     })
-    return res.status(201).json({success: true, body: newApplication})
+    return res.status(201).json({ok: true, body: newApplication})
   } catch (error) {
     console.error('Error in readMail:', error)
     return res.status(500).json({
-      success: false,
+      ok: false,
       error: 'Internal Server Error',
     })
   }
@@ -49,6 +55,7 @@ export const sendAndCreateNewApplication = async(req, res) => {
 export const getNewMail = async(req, res) => {
   try {
     const studentId = req.params.studentId
+    console.log(studentId)
     const applications = await ApplicationDatabase.find({ studentId })
     const data = await getAllMail("INBOX")
     let updates = applications.map(app => {
@@ -87,12 +94,12 @@ export const getNewMail = async(req, res) => {
       .catch(error => {
           console.error("Error updating applications:", error);
       });
-    const updatedApplications = await ApplicationDatabase.find({})
-    return res.status(201).json({success: true, body: updatedApplications})
+    const updatedApplications = await ApplicationDatabase.find({ studentId }, { 'detailedMessages': 0 })
+    return res.status(201).json({ok: true, body: updatedApplications})
   } catch (error) {
     console.error('Error in readMail:', error)
     return res.status(500).json({
-      success: false,
+      ok: false,
       error: 'Internal Server Error',
     })
   }

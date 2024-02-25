@@ -6,23 +6,46 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LanguageIcon from '@mui/icons-material/Language';
-import { httpGetCompanyById } from '../hooks/requests.hooks';
+import { httpGetCompanyById, httpGetandUpdateApplications } from '../hooks/requests.hooks';
 import { useParams } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
-import { shortenText } from '../utils';
+import { capitalizeWords, shortenText } from '../utils';
 import Reviews from '../components/Reviews.component';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setApplications } from '../state';
+import ApplicationSubmissionModal from '../components/mui/ApplicationSubmissionModal.components';
+
+
 function CompanyDetailsPage() {
     const { companyId } = useParams()
+    const dispatch = useDispatch()
     const [loading, setLoading] = React.useState(true)
+    const [submissionLoading, setSubmissionLoading] = React.useState(false)
     const [company, setCompany] = React.useState(true)
+    const [open, setOpen] = React.useState(false)
+    const applicationFormRef = React.useRef(null)
     const userInfo = useSelector(state => state.user)
+    const applications = useSelector(state => state.applications)
+    // console.log(applications)
+
+
+    function getNumberOfTimesApplied() {
+        return applications?.filter(application => application.companyId === companyId).length
+    }
+
+    // console.log("times applied, ", getNumberOfTimesApplied())
+
+    function scrollToApplicationForm() {
+        applicationFormRef.current.scrollIntoView({ behaviour: "smooth" })
+    }
 
     React.useEffect(() => {
         const fetchData = async () => {
             try {
                 const result = await httpGetCompanyById(companyId);
                 setCompany(result);
+                const applicationsResult = await httpGetandUpdateApplications(userInfo._id)
+                dispatch(setApplications({ applications: applicationsResult.body }))
             } catch (error) {
                 alert('Error fetching featured companies:', error);
                 console.error('Error fetching featured companies:', error);
@@ -36,6 +59,11 @@ function CompanyDetailsPage() {
     }, [companyId])
 
     return <main>
+            <ApplicationSubmissionModal 
+                open={open} 
+                handleOpen={bool=>setOpen(bool)}
+                submissionLoading={submissionLoading}
+            />
             {loading ? <CircularProgress sx={{marginTop: "300px", marginLeft: "800px", color: "#fb246a"}} size={100}/> : <>
                 <div className="slider-area">
                     <div
@@ -59,6 +87,7 @@ function CompanyDetailsPage() {
                     <div className="container">
                         <div className="row justify-content-between">
                             <div className="col-xl-7 col-lg-8">
+                                {getNumberOfTimesApplied()>=1 && <h4 style={{ textAlign: "center" }}>You've already applied here before. Do you still want to apply again?</h4>}
                                 <div className="single-job-items mb-50">
                                     <div className="job-items">
                                         <div
@@ -110,14 +139,27 @@ function CompanyDetailsPage() {
                                         <li><span><AccessTimeIcon/> Working Hours : </span><span>{company.workingHours === "null" ? "none available" : company.workingHours}</span></li>
                                     </ul>
                                     <div style={{marginLeft: "200px"}} className="apply-btn2">
-                                        <a style={{color: "white"}} href className="btn">Apply Now</a>
+                                        <a style={{color: "white"}} href onClick={scrollToApplicationForm} className="btn">Apply Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className='row justify-content-between'>
-                            <div className="col-xl-7 col-lg-8">
-                                <ApplicationForm isLoggedIn={Boolean(userInfo)}/>
+                            <div ref={applicationFormRef} className="col-xl-7 col-lg-8">
+                                <ApplicationForm 
+                                    open={open}
+                                    handleOpen={bool=>setOpen(bool)}
+                                    submissionLoading={submissionLoading}
+                                    handleSubmissionLoading={bool=>setSubmissionLoading(bool)}
+                                    isLoggedIn={Boolean(userInfo)}
+                                    picturePath={userInfo.picturePath}
+                                    companyId={companyId}
+                                    companyName={company.name}
+                                    studentId={userInfo._id}
+                                    studentSchoolId={userInfo.studentId}
+                                    amountOfTimesApplied={getNumberOfTimesApplied()}
+                                    studentFullName={capitalizeWords(userInfo.firstName + " " + userInfo.lastName)}
+                                />
                             </div>
                             <Reviews 
                                 companyId={companyId}

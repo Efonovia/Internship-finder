@@ -1,0 +1,7 @@
+Dear Hiring Manager,
+I am writing to express my interest in the Software Development Internship position advertised on your company website. As a third-year student majoring in Computer Science at ABC University, I am eager to apply my programming skills and passion for technology to contribute to innovative projects at XYZ Company.
+Throughout my academic journey, I have developed a strong foundation in programming languages such as Java, Python, and JavaScript, as well as coursework in data structures, algorithms, and software engineering principles. My experiences in participating in hackathons and developing web applications have further honed my ability to work in a team, problem-solve, and pay attention to detail.
+
+Warm regards,
+
+John Doe

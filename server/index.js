@@ -10,6 +10,7 @@ import { createNewStudent, loginStudent } from "./src/routes/student.controller.
 import companyRouter from "./src/routes/company.route.js";
 import applicationRouter from "./src/routes/application.route.js";
 import multer from "multer";
+import { sendAndCreateNewApplication } from "./src/routes/application.controller.js";
 
 
 // CONFIGURATION
@@ -30,6 +31,7 @@ const storage = multer.diskStorage({
         });
 
 const upload = multer({ storage: storage });
+const applicationUpload = multer()
 app.use(express.json())
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))
@@ -44,6 +46,7 @@ app.use(cors())
 app.get("/", (req, res) => res.send("hello"))
 app.use("/students", studentsRouter)
 app.use("/companies", companyRouter)
+app.post("/application/create", applicationUpload.single("cvFile"), sendAndCreateNewApplication)
 app.use("/application", applicationRouter)
 app.post("/signup", upload.single("picturePath"), createNewStudent)
 app.post("/login", loginStudent)

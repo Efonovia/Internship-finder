@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import CompanyDatabase from "../models/company.mongo.js";
+
 
 const ApplicationSchema = mongoose.Schema({
     applicationId: {
@@ -9,6 +11,18 @@ const ApplicationSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Students',
         required: true
+    },
+    times: {
+        type: Number,
+        default: 1
+    },
+    companyLogo: {
+        type: String,
+        default: ""
+    },
+    companyName: {
+        type: String,
+        default: ""
     },
     companyId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -30,6 +44,18 @@ const ApplicationSchema = mongoose.Schema({
         required: true
     }
 }, { timestamps: true })
+
+ApplicationSchema.pre('save', async function(next) {
+    try {
+        const company = await CompanyDatabase.findById(this.companyId);
+        if (company) {
+            this.companyLogo = company.logo;
+        }
+        next();
+    } catch (error) {
+        next(error);
+    }
+});
 
 const Application = mongoose.model("Applications", ApplicationSchema, "Applications")
 export default Application

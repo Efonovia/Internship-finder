@@ -27,7 +27,7 @@ export const createNewStudent = async (req, res) => {
 
         let picturePath = "";
         if (req.file) {
-            picturePath = req.file.path;
+            picturePath = req.file.filename;
         }
 
         // Create a new student record
@@ -66,7 +66,7 @@ export const loginStudent = async(req, res) => {
       if(!isMatch) return res.status(400).json({ok: false, msg: "Incorrect Password" })
   
       
-      return await res.status(200).json({ ok: true, body: student })
+      return res.status(200).json({ ok: true, body: student })
     } catch (error) {
         return res.status(500).json({ error: error.message })
     }
