@@ -5,6 +5,9 @@ import { auth } from "../constants.js"
 import { google } from "googleapis"
 import dotenv from "dotenv"
 import fs from "fs"
+import path from "path"
+import { getDirname } from '../utils.js';
+
 
 dotenv.config()
 
@@ -100,11 +103,11 @@ export const sendMail = async(picturePath, times, companyName, studentSchoolId, 
             },
             {
               filename: "A picture of " + studentFullName + "." + picturePath.split('.').pop(),
-              content: fs.readFileSync(`C:/Users/Efosa1/Desktop/Command Central/pending/Final Year Project/server/uploads/${picturePath}`),
+              content: fs.readFileSync(path.join(getDirname(), "../uploads", picturePath)),
             },
             {
               filename: 'Nile University Student Profile.pdf',
-              content: fs.readFileSync('C:/Users/Efosa1/Desktop/Command Central/pending/Final Year Project/Nile University Student Profile.pdf'),
+              content: fs.readFileSync(path.join(getDirname(), "../../Nile University Student Profile.pdf")),
             },
         ],
       };

@@ -161,3 +161,47 @@ export const httpGetandUpdateApplications = async (studentId) => {
         return
     }
 }
+
+
+export const httpViewAllUnreadMessages = async (message) => {
+    try {
+        const response = await fetch(`${API_URL}/application/viewmessage`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(message)
+        })
+        if (response.error) {
+            throw new Error("Network error. couldn't mark all messages as read. try again");
+        }
+        const result = await response.json()
+        return result;
+    } catch (error) {
+        console.log(error)
+        alert(error)
+        return
+    }
+}
+
+
+export const httpToggleSavedCompany = async (info) => {
+    try {
+        const response = await fetch(`${API_URL}/students/togglecompanysaved`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(info)
+        })
+        if (response.error) {
+            throw new Error("Network error. COuldn't add company to your saves. try again");
+        }
+        const result = await response.json()
+        return result;
+    } catch (error) {
+        console.log(error)
+        alert(error)
+        return
+    }
+}

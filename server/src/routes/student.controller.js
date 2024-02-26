@@ -1,5 +1,8 @@
 import StudentDatabase from "../models/student.mongo.js";
 import bcrypt from "bcrypt"
+import path from "path"
+import { getDirname } from '../utils.js';
+
 
 export const createNewStudent = async (req, res) => {
     try {
@@ -36,6 +39,7 @@ export const createNewStudent = async (req, res) => {
             firstName,
             lastName,
             email,
+            savedCompanies: [],
             password: passwordHash,
             picturePath: picturePath || "", // Set picturePath only if a file is uploaded
         });
@@ -89,3 +93,44 @@ export const getStudent = async (req, res) => {
         return res.status(404).json({error: error.message})
     }
 }
+
+
+export const getStudentPfp = async (req, res) => {
+    try {
+        const { picturePath } = req.params
+        return res.sendFile(path.join(getDirname(), "../uploads", picturePath))
+    } catch (error) {
+        return res.status(404).json({error: error.message})
+    }
+}
+
+
+export const toggleSavedCompany = async (req, res) => {
+    const { studentId, companyId, addToSaved } = req.body
+    console.log(req.body)
+
+    try {
+        let student = await StudentDatabase.findById(studentId);
+
+        if (!student) {
+            return res.status(404).json({ ok: false, message: 'Student not found' });
+        }
+
+        if (addToSaved) {
+            if (!student.savedCompanies.includes(companyId)) {
+                student.savedCompanies.push(companyId);
+            }
+        } else {
+            student.savedCompanies = student.savedCompanies.filter(id => id !== companyId);
+        }
+
+        await student.save();
+
+        return res.status(200).json({ ok: true, message: 'Saved companies updated successfully', student });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ok: false,  message: 'Server Error' });
+    }
+};
+
+export default toggleSavedCompany;

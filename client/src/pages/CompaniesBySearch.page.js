@@ -12,9 +12,11 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useSearchParams } from 'react-router-dom/dist/umd/react-router-dom.development';
 import { CircularProgress } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 
 function CompaniesBySearch() {
+    const userInfo = useSelector(state => state.user)
     const [searchParams] = useSearchParams()
     const { query, page, categories, state } = Object.fromEntries(searchParams)
     const [loading, setLoading] = React.useState(true)
@@ -95,7 +97,7 @@ function CompaniesBySearch() {
     }, [query, categories, state, page])
 
     const companyCardsHtml = companies["data"]?.map(company => (
-        <CompanyCard key={company.id} data={company} />
+        <CompanyCard key={company.id} data={company} userId={userInfo?._id} savedCompanies={userInfo?.savedCompanies}/>
     ));
     return <main>
                 <div style={{marginBottom: "40px"}} className="slider-area">

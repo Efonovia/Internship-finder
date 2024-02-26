@@ -7,9 +7,11 @@ import importantTagsDetails from '../data/important_tags_details';
 import { httpCompaniesByCategory, httpGetFeaturedCompanies } from '../hooks/requests.hooks';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CircularProgress, Pagination, Stack } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 function CompaniesByState() {
 
+    const userInfo = useSelector(state => state.user)
     const [searchParams] = useSearchParams()
     const { page, categories } = Object.fromEntries(searchParams)
     const [loading, setLoading] = React.useState(true)
@@ -73,7 +75,7 @@ function CompaniesByState() {
     })
 
     const companyCardsHtml = companies["data"]?.map(company => (
-        <CompanyCard key={company.id} data={company} />
+        <CompanyCard key={company.id} data={company} userId={userInfo?._id} savedCompanies={userInfo?.savedCompanies}/>
     ));
 
     return <main>

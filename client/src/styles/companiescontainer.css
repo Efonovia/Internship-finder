@@ -44,6 +44,14 @@
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
+
+  #like-btn-holder {
+    background-color: none;
+  }
+
+  #like-btn-holder:hover {
+    background-color: white;
+  }
   
   li {
     cursor: pointer;

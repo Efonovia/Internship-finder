@@ -3,12 +3,19 @@ import "../styles/companiescontainer.css"
 import CompanyCard from './CompanyCard.components';
 import { httpGetFeaturedCompanies } from '../hooks/requests.hooks';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function CompaniesContainer() {
 
     const navigate = useNavigate()
+    const userInfo = useSelector(state => state.user)
     const [featuredCompanies, setFeaturedCompanies] = React.useState([])
-    const featuredCompaniesHtml = featuredCompanies["data"]?.map(featuredCompany => <CompanyCard key={featuredCompany.id} data={featuredCompany} />)
+    const featuredCompaniesHtml = featuredCompanies["data"]?.map(featuredCompany => <CompanyCard 
+                                                                                        key={featuredCompany.id} 
+                                                                                        data={featuredCompany} 
+                                                                                        userId={userInfo?._id}
+                                                                                        savedCompanies={userInfo?.savedCompanies}
+                                                                                    />)
 
     React.useEffect(() => {
         const fetchData = async () => {

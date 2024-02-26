@@ -18,7 +18,7 @@ function Navbar() {
         let amount = 0;
     
         applications?.forEach((application) => {
-          application.briefMessages.forEach((message) => {
+          application?.briefMessages.forEach((message) => {
             if (!message.seen) {
               amount += 1;
             }
@@ -73,7 +73,7 @@ function Navbar() {
 													</ul>
 												</li>
                                         {userInfo && <li className='applications-nav'>
-                                            <span className="notifications">{unreadMessagesCount}</span>
+                                            {Boolean(unreadMessagesCount) && <span className="notifications">{unreadMessagesCount}</span>}
                                             <a href onClick={()=>navigate("/applications")}>My Applications</a>
                                         </li>}
                                         {userInfo && <li>

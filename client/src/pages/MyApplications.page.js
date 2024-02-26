@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/myapplications.css"
 import ArticleIcon from '@mui/icons-material/Article';
-import { httpGetandUpdateApplications } from '../hooks/requests.hooks';
+import { httpGetandUpdateApplications, httpViewAllUnreadMessages } from '../hooks/requests.hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import defaultLogo from "../assets/img/post.png"
 import { setApplications } from '../state';
@@ -15,10 +15,14 @@ function MyApplications() {
     const navigate = useNavigate()
     const [ showBox, setShowBox ] = React.useState(false)
     const [ loading, setLoading ] = React.useState(true)
+    const [ marking, setMarking ] = React.useState(false)
     const [ currentApplication, setCurrentApplication ] = React.useState(null)
     const userInfo = useSelector(state => state.user)
     const applications = useSelector(state => state.applications)
-
+    console.log("ze applicatins", applications)
+    // if(applications === null || userInfo === null) {
+    //     navigate("/auth/login")
+    // }
 
     function onChatClick(application) {
         setShowBox(prev => !prev)
@@ -26,10 +30,46 @@ function MyApplications() {
     }
 
     async function markMessagesAsRead() {
+        if(!applications?.length || marking) {
+            return
+        }
+        try {
+            setMarking(true)
+            let unreadMessages = []
+            applications.forEach(application => {
+                application.briefMessages.forEach(msg => {
+                    if(!msg.seen) {
+                        unreadMessages.push({
+                            id: application._id,
+                            mailId: msg.gmailId
+                        })
+                    }
+                })
+            })
+    
+            console.log(unreadMessages)
+            const responses = await Promise.all(
+                unreadMessages.map(async message => {
+                    const response = await httpViewAllUnreadMessages(message)
+                    return response
+                })
+            )
+    
+            console.log(responses)
 
+            const updatedApplications = await httpGetandUpdateApplications(userInfo._id)
+            dispatch(setApplications({ applications: updatedApplications?.body }))
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setMarking(false)
+        }
     }
 
     async function refreshPage() {
+        if(!applications?.length) {
+            return
+        }
         try {
             if(userInfo) {
                 setLoading(true)
@@ -69,21 +109,22 @@ function MyApplications() {
     }, [dispatch, userInfo, userInfo._id])
 
     const applicationsHtml = applications?.map(application => {
-        return <a onClick={() => onChatClick(application)} href className="d-flex align-items-center">
+        const unreadMessagesCount = application?.briefMessages.filter(msg => !msg.seen).length
+        return <a key={application._id} onClick={() => onChatClick(application)} href className="d-flex align-items-center">
                     <div className="flex-shrink-0">
                         <img 
                             className="img-fluid"
                             height={60}
                             width={60}
-                            src={application.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${application.companyLogo}` : defaultLogo} 
+                            src={application?.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${application?.companyLogo}` : defaultLogo} 
                             alt="user img"
                         >
                         </img>
                     </div>
                     <div className="flex-grow-1 ms-3">
-                        <h3>{application.companyName}{application.times > 1 && ` #${application.times}`}</h3>
+                        <h3>{application?.companyName}{application?.times > 1 && ` #${application?.times}`}</h3>
                     </div>
-                        <span class="notification-count">{application.briefMessages.filter(msg => !msg.seen).length}</span>
+                        {Boolean(unreadMessagesCount) && <span className="notification-count">{unreadMessagesCount}</span>}
                 </a>
     })
 
@@ -148,8 +189,20 @@ function MyApplications() {
                                                 </div>}
 
                                                 <div className='tool-buttons'>
-                                                    <div onClick={refreshPage} className="refresh">Check for new responses</div>
-                                                    <div onClick={markMessagesAsRead} className="mark-read">Mark all messages as read</div>
+                                                    <div 
+                                                        style={{ background: !applications?.length && "grey", cursor: !applications?.length && "not-allowed" }}
+                                                        onClick={refreshPage} 
+                                                        className="refresh"
+                                                    >
+                                                        Check for new responses
+                                                    </div>
+                                                    <div 
+                                                        style={{ background: !applications?.length && "grey", cursor: !applications?.length && "not-allowed" }}
+                                                        onClick={markMessagesAsRead} 
+                                                        className="mark-read"
+                                                    >
+                                                        {marking ? <><CircularProgress sx={{color: "white"}} size={20} />&nbsp;Marking...</> : "Mark all messages as read"}
+                                                    </div>
                                                 </div>
                                         </div>
                                     </div>

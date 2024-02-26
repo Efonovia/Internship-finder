@@ -142,7 +142,7 @@ export const getCompaniesByTags = async (req, res) => {
 export const addReviewToCompany = async (req, res) => {
     try {
         const { companyId } = req.params;
-        const { reviewer, content, rating } = req.body;
+        const { reviewer, content, rating, picturePath } = req.body;
         console.log(companyId, req.body)
 
         if (!companyId || !reviewer || !content || !rating) {
@@ -158,6 +158,7 @@ export const addReviewToCompany = async (req, res) => {
             reviewer,
             content,
             rating,
+            picturePath,
             publishDate: new Date(),
         };
 

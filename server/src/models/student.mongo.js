@@ -32,6 +32,10 @@ const StudentSchema = mongoose.Schema({
         type: String,
         default: "",
     },
+    savedCompanies: {
+        type: Array,
+        default: []
+    },
 }, { timestamps: true })
 
 const Student = mongoose.model("Students", StudentSchema, "Students")

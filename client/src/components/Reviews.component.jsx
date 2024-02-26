@@ -1,10 +1,12 @@
 import React from 'react';
 import "../styles/review.css"
+import defaultLogo from "../assets/img/post.png"
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { httpPostReview } from '../hooks/requests.hooks';
 import { CircularProgress } from '@mui/material';
 import { capitalizeWords, formatDate } from '../utils';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 function Reviews(props) {
@@ -44,6 +46,7 @@ function Reviews(props) {
                 reviewer: props.userInfo.firstName + " " + props.userInfo.lastName,
                 content: reviewText,
                 rating: starCount,
+                picturePath: props.userInfo.picturePath
             }
             const response = await httpPostReview(newReview, props.companyId)
             console.log(response)
@@ -62,7 +65,11 @@ function Reviews(props) {
 
     const testReviewsHtml = allReviews.map(review => {
         return <div key={review.reviewer+"_"+review.publishDate} className="reviews-right__item">
-        <div className='deets'><p className='reviewer'>{capitalizeWords(review.reviewer)}</p><p>{formatDate(review.publishDate)}</p></div>
+        {Boolean(review.picturePath) ? <img src={`http://localhost:8000/students/pfp/${review.picturePath}`} style={{borderRadius: "50%"}} height={50} width={60} alt="pic"></img> : <AccountCircleIcon sx={{ height: 50, width: 50 }}/>}
+        <div className='deets'>
+            <p className='reviewer'>{capitalizeWords(review.reviewer)}</p>
+            <p>{formatDate(review.publishDate)}</p>
+        </div>
         <span style={{color: "black"}} className="stars">Rating: 
         {Array(5).fill().map((_, index) => index < review.rating ? <StarIcon key={index+1} sx={{color: "gold"}}/> : <StarOutlineIcon key={index+1} sx={{color: "gold", cursor: "pointer"}}/>)}
         </span>

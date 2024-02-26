@@ -10,6 +10,7 @@ import CompanyDetailsPage from "./pages/CompanyDetails.page";
 import SliderArea from "./components/SliderArea.components";
 import FeaturedCategories from "./components/FeaturedCategories.components";
 import CompaniesContainer from "./components/CompaniesContainer.components";
+import SavedCompanies from './pages/SavedCompanies.page';
 
 const Home = () => <main><SliderArea /><FeaturedCategories /><CompaniesContainer /></main>
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="companies/categories" element={<CompaniesByCategory />}/>
         <Route path="companies/details/:companyId" element={<CompanyDetailsPage />}/>
         <Route path="applications" element={<MyApplications />}/>
+        <Route path="saves" element={<SavedCompanies />}/>
       </Routes>
     </BrowserRouter>
   )

@@ -1,4 +1,3 @@
--change loading after submit application to modal
 -fix mobile nav
 -fix mobile application page
-- check those buttons on home page if they navigate properly
+-make app logo

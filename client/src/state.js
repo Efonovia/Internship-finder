@@ -18,6 +18,21 @@ export const authSlice = createSlice({
         state.user = action.payload.user;
     },
 
+    updateSavedCompanies: (state, action) => {
+      const { companyId, addToSaved } = action.payload;
+      if (addToSaved) {
+        state.user = {
+          ...state.user,
+          savedCompanies: [...state.user.savedCompanies, companyId]
+        }
+      } else {
+        state.user = {
+          ...state.user,
+          savedCompanies: state.user.savedCompanies.filter(id => id !== companyId)
+        }
+      }
+    },
+
     setApplications: (state, action) => {
         state.applications = action.payload.applications;
     },
@@ -25,5 +40,5 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setMode, setUser, setLoggedIn, setApplications } = authSlice.actions;
+export const { setMode, setUser, setLoggedIn, setApplications, updateSavedCompanies } = authSlice.actions;
 export default authSlice.reducer; 

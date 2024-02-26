@@ -121,8 +121,8 @@ export const viewMail = async(req, res) => {
         });
 
     const formattedApplication = await ApplicationDatabase.findById(id)
-    const formattedMessage = formattedApplication.briefMessages.find(message => message.gmailId === mailId)
-    return res.status(201).json(formattedMessage)
+    // const formattedMessage = formattedApplication.briefMessages.find(message => message.gmailId === mailId)
+    return res.status(201).json(formattedApplication)
   } catch (error) {
     console.error('Error in readMail:', error)
     return res.status(500).json({
