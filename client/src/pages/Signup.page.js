@@ -75,7 +75,7 @@ function Signup() {
                         <CircularProgress sx={{color: "#fb246a"}} size={100} />
                     </div>:
             <div style={{position: "relative", top: "100px", width: "60%", margin: "auto"}} className="apply_job_form white-bg">
-                <h4 style={{textAlign: "center"}}>Sign up for [Name of APp]</h4>
+                <h4 style={{textAlign: "center"}}>Sign up for Internship Finder</h4>
                 <form action="#">
                     <div className="row my-row">
                         <div className="col-md-6">

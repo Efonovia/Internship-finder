@@ -169,7 +169,7 @@ function MyApplications() {
                                 <div className="row my-cen-row">
                                     <div style={{margin: "auto"}} className="col-8">
                                         <div className="d-flex align-items-center">
-                                            <span onClick={()=>setShowBox(prev => !prev)} className="chat-icon"><img className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="title"></img></span>
+                                            <span onClick={()=>setShowBox(prev => !prev)} className="chat-icon"><img height={50} width={50} className="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="title"></img></span>
                                             {Boolean(currentApplication) ? <>
                                                 <div className="flex-shrink-0">
                                                     <img 

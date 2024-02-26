@@ -557,8 +557,10 @@ button:focus {
 @media (max-width: 767px) {
     .chat-icon {
         display: block;
-        margin-right: 5px;
+        margin-left: -35px;
+        padding-right: 5px;
     }
+
     .chatlist {
         width: 100%;
     }
@@ -570,6 +572,7 @@ button:focus {
         background: #fff;
         transition: all 0.5s ease;
         border-left: none;
+        margin-top: 80px;
     }
     .showbox {
         left: 0 !important;
