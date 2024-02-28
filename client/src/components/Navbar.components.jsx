@@ -9,6 +9,7 @@ import { CircularProgress } from '@mui/material';
 import "../styles/navbar.css"
 function Navbar() {
     const userInfo = useSelector(state => state.user)
+    const isLoggedIn = Boolean(userInfo)
     const applications = useSelector(state => state.applications)
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -35,10 +36,10 @@ function Navbar() {
     function logoutClick() {
         setLogoutClicked(true)
         setTimeout(() => {
+            navigate("/")
             dispatch(setUser({ user: null }))
             dispatch(setApplications({ applications: null }))
             setLogoutClicked(false)
-            navigate("/")
         }, 2500)
     }
 
@@ -75,20 +76,20 @@ function Navbar() {
 														</li>
 													</ul>
 												</li>
-                                        {userInfo && <li className='applications-nav'>
+                                        {isLoggedIn && <li className='applications-nav'>
                                             {Boolean(unreadMessagesCount) && <span className="notifications">{unreadMessagesCount}</span>}
                                             <a href onClick={()=>navigate("/applications")}>My Applications</a>
                                         </li>}
-                                        {userInfo && <li>
+                                        {isLoggedIn && <li>
                                             <a href onClick={()=>navigate("/saves")}>Saved Companies</a>
                                         </li>}
                                     </ul>
                                 </nav>
                             </div>
 
-                            {userInfo && <a onClick={logoutClick} style={{color: "white", padding: "2%"}} href className="btn head-btn1">{logoutClicked ? <><CircularProgress sx={{color:'white'}} size={20} /> Logging out</> : <><LogoutIcon /> Logout</>}</a>}
+                            {isLoggedIn && <a onClick={logoutClick} style={{color: "white", padding: "2%"}} href className="btn head-btn1">{logoutClicked ? <><CircularProgress sx={{color:'white'}} size={20} /> Logging out</> : <><LogoutIcon /> Logout</>}</a>}
 
-                            {!userInfo && <div
+                            {!isLoggedIn && <div
                                 className="header-btn d-none f-right d-lg-block">
                                 <a style={{color: "white"}} href onClick={()=>navigate("/auth/signup")} className="btn head-btn1">Register</a>
                                 <a href onClick={()=>navigate("/auth/login")} className="btn head-btn2">Login</a>
@@ -111,12 +112,12 @@ function Navbar() {
                                     <li onClick={()=>navigate("/")}>
                                         <a href role="menuitem" tabIndex="0">Home</a>
                                     </li>
-                                    <li onClick={()=>navigate("/auth/signup")}>
+                                    {!isLoggedIn && <li onClick={()=>navigate("/auth/signup")}>
                                         <a href role="menuitem" tabIndex="0">Register</a>
-                                    </li>
-                                    <li onClick={()=>navigate("/auth/login")}>
+                                    </li>}
+                                    {!isLoggedIn && <li onClick={()=>navigate("/auth/login")}>
                                         <a href role="menuitem" tabIndex="0">Log In</a>
-                                    </li>
+                                    </li>}
                                     <li className="slicknav_parent slicknav_collapsed">
                                         <a href role="menuitem" aria-haspopup="true" tabIndex="0" className="slicknav_item slicknav_row" style={{outline: "none"}}>
                                             <a onClick={()=> setShowSubMenu(prev => !prev)} href tabIndex="0">Find Companies</a>
@@ -134,12 +135,13 @@ function Navbar() {
                                             </li>
                                         </ul>}
                                     </li>
-                                    <li onClick={()=>navigate("/applications")}>
+                                    {isLoggedIn && <li onClick={()=>navigate("/applications")}>
+                                        {Boolean(unreadMessagesCount) && <span className="notifications-mobile">{unreadMessagesCount}</span>}
                                         <a href role="menuitem" tabIndex="0">My Applications</a>
-                                    </li>
-                                    <li onClick={()=>navigate("/saves")}>
+                                    </li>}
+                                    {isLoggedIn && <li onClick={()=>navigate("/saves")}>
                                         <a href role="menuitem" tabIndex="0">Saved Companies</a>
-                                    </li>
+                                    </li>}
                                 </ul>}
                             </div>
                         </div>

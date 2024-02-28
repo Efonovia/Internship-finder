@@ -24,23 +24,23 @@ function ApplicationForm(props) {
     }
 
     async function submitApplication() {
+        if(props.submissionLoading) {
+            return
+        }
+        if(!connected) {
+            alert("ensure you connect your student validation for validation")
+            return
+        }
+        if(!formDetails.messageContent) {
+            alert("Type in a cover letter")
+            return
+        }
+        if(!formDetails.cv) {
+            alert("You didn't attach your CV")
+            return
+        }
+
         try {
-            if(props.submissionLoading) {
-                return
-            }
-            if(!connected) {
-                alert("ensure you connect your student validation for validation")
-                return
-            }
-            if(!formDetails.messageContent) {
-                alert("Type in a cover letter")
-                return
-            }
-            if(!formDetails.cv) {
-                alert("You didn't attach your CV")
-                return
-            }
-    
             
 
             const formData = new FormData();

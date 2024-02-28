@@ -108,7 +108,8 @@ function MyApplications() {
         
     }, [dispatch, userInfo, userInfo._id])
 
-    const applicationsHtml = applications?.map(application => {
+    const applicationsToSort = [...applications]
+    const applicationsHtml = applicationsToSort?.sort((a,b) => new Date(b.dateMade)-new Date(a.dateMade)).map(application => {
         const unreadMessagesCount = application?.briefMessages.filter(msg => !msg.seen).length
         return <a key={application._id} onClick={() => onChatClick(application)} href className="d-flex align-items-center">
                     <div className="flex-shrink-0">

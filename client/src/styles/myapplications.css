@@ -300,6 +300,7 @@ a.add img {
     font-size: 18px;
     line-height: 1.5;
     font-weight: 400;
+    width: 100%;
     padding: 15px;
     background: #f5f5f5;
     display: inline-block;
@@ -318,9 +319,9 @@ a.add img {
 
 .msg-body ul li.reply {
     display: block;
-    width: 100%;
+    width: 90%;
     position: relative;
-    right: -65%;
+    right: -45%;
 }
 
 .msg-body ul li.reply p {
@@ -328,6 +329,7 @@ a.add img {
     font-size: 18px;
     line-height: 1.5;
     font-weight: 400;
+    width: 100%;
     padding: 15px;
     background: #1f2b7b;
     display: inline-block;

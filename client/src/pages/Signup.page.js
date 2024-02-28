@@ -102,7 +102,7 @@ function Signup() {
                             <div style={{borderStyle: "dashed", borderWidth: "2px", height: "100px"}} className="input-group">
                                 <div className="custom-file">
                                     <label style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "1px"}} className="custom-file-label" htmlFor="inputGroupFile03">
-                                        <span style={{marginTop: "10px"}}><CloudUploadIcon/> Upload a picture of yourself</span>
+                                        <span style={{marginTop: "10px"}}><CloudUploadIcon/> Upload a picture of yourself for companies to know you better</span>
                                         <input
                                             type="file"
                                             accept="image/*"

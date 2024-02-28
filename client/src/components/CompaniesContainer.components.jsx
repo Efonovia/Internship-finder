@@ -4,10 +4,12 @@ import CompanyCard from './CompanyCard.components';
 import { httpGetFeaturedCompanies } from '../hooks/requests.hooks';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { CircularProgress } from '@mui/material';
 
 function CompaniesContainer() {
 
     const navigate = useNavigate()
+    const [loading, setLoading] = React.useState(true)
     const userInfo = useSelector(state => state.user)
     const [featuredCompanies, setFeaturedCompanies] = React.useState([])
     const featuredCompaniesHtml = featuredCompanies["data"]?.map(featuredCompany => <CompanyCard 
@@ -25,6 +27,8 @@ function CompaniesContainer() {
             } catch (error) {
                 alert('Error fetching data:', error);
                 console.error('Error fetching data:', error);
+            } finally {
+                setLoading(false)
             }
         };
 
@@ -33,7 +37,7 @@ function CompaniesContainer() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    return <section className="post-area section-gap">
+    return loading ? <CircularProgress sx={{ color: "#fb246a", marginLeft: "45%" }} size={100}/> : <section className="post-area section-gap">
                 <div className="section-tittle text-center">
                     <span>FEATURED Companies</span>
                     <h2>Browse through the best companies in Nigeria</h2>

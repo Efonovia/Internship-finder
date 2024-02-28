@@ -21,3 +21,20 @@
     justify-content: center;
     align-items: center;
 }
+
+.notifications-mobile {
+    position: relative;
+    margin-top: -20px;
+    top: 2.8em;
+    left: 12em;
+    background-color: #fb246a;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    /* padding: 1px 5px; */
+    color: white;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
