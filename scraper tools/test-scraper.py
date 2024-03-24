@@ -9,7 +9,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, 'companies3.json')
 
 # MongoDB connection
-client = pymongo.MongoClient('mongodb+srv://efosa:NIpnY7QqtwOUQCsl@cluster0.uncidar.mongodb.net/?retryWrites=true&w=majority')
+client = pymongo.MongoClient() # insert MONGO_URL
 db = client['main']
 collection = db['Companies']
 

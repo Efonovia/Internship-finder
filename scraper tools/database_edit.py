@@ -11,7 +11,7 @@ states_to_update = [
 # Create a case-insensitive regex pattern for matching
 pattern = "|".join(states_to_update)
 regex_pattern = re.compile(f"^(?:{pattern})$", re.IGNORECASE)
-client = MongoClient("mongodb+srv://efosa:NIpnY7QqtwOUQCsl@cluster0.uncidar.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient() #insert MONGO_URL
 db = client['main']  # Replace with your actual database name
 collection = db['Companies']  # Replace with your actual collection name
 
