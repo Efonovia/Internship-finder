@@ -130,7 +130,7 @@ function MyApplications() {
     })
 
     const messagesHtml = currentApplication?.briefMessages.map(message => {
-        const isSender = currentApplication.applicationId === message.gmailId
+        const isSender = currentApplication?.applicationId === message.gmailId
         return <li className={isSender ? "sender" : "reply"}>
                     <div style={{background: !isSender && "#1f2b7b", color: !isSender && "white"}} className='application-message'>
                         <div className="application-header">{isSender ? "Application Overview" : "Application response"}</div>
@@ -177,13 +177,13 @@ function MyApplications() {
                                                         className="img-fluid"
                                                         height={60}
                                                         width={60}
-                                                        src={currentApplication.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${currentApplication.companyLogo}` : defaultLogo} 
+                                                        src={currentApplication?.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${currentApplication?.companyLogo}` : defaultLogo} 
                                                         alt="user img"
                                                     >
                                                     </img>                                            
                                                 </div>
                                                 <div className="flex-grow-1 ms-3">
-                                                    <h3 onClick={() => {navigate(`/companies/details/${currentApplication.companyId}`)}} className="companyname-header">{currentApplication.companyName}{currentApplication.times > 1 && ` #${currentApplication.times}`}</h3>
+                                                    <h3 onClick={() => {navigate(`/companies/details/${currentApplication?.companyId}`)}} className="companyname-header">{currentApplication?.companyName}{currentApplication?.times > 1 && ` #${currentApplication?.times}`}</h3>
                                                 </div>
                                             </> : <div className="flex-grow-1 ms-3">
                                                     <h3>.</h3>

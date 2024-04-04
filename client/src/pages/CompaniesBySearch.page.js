@@ -14,8 +14,8 @@ import { useSearchParams } from 'react-router-dom/dist/umd/react-router-dom.deve
 import { CircularProgress } from '@mui/material';
 import { useSelector } from 'react-redux';
 
-
 function CompaniesBySearch() {
+    //!LOOK AT THE EFFICIENT UPDATES USING LOCATION.SEARCH
     const userInfo = useSelector(state => state.user)
     const [searchParams] = useSearchParams()
     const { query, page, categories, state } = Object.fromEntries(searchParams)
@@ -49,7 +49,7 @@ function CompaniesBySearch() {
             return
         }
         navigate(`/companies/search?query=${searchQuery}&page=1`)
-        setLoading(true)
+        // setLoading(true)
     }
 
     function executeFilter() {
@@ -69,12 +69,12 @@ function CompaniesBySearch() {
         }
         urlQueries.push("page=1")
         navigate(`/companies/search?${urlQueries.join("&")}`)
-        setLoading(true)
+        // setLoading(true)
     }
 
     const handleChange = (event, value) => {
         navigate(`/companies/search?query=${searchQuery}&page=${value}`)
-        setLoading(true)
+        // setLoading(true)
     };
 
 
@@ -197,7 +197,7 @@ function CompaniesBySearch() {
                                                     size='large' 
                                                     variant='outlined' 
                                                     shape='rounded' 
-                                                    count={Math.ceil(companies.totalResults/10)} 
+                                                    count={Math.ceil(companies?.totalResults/10)} 
                                                     page={Number(page)} 
                                                     onChange={handleChange} 
                                                 />

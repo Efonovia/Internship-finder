@@ -1,6 +1,6 @@
 import React from 'react';
 import "../styles/review.css"
-import defaultLogo from "../assets/img/post.png"
+// import defaultLogo from "../assets/img/post.png"
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { httpPostReview } from '../hooks/requests.hooks';
@@ -63,7 +63,7 @@ function Reviews(props) {
         }
     }
 
-    const testReviewsHtml = allReviews.map(review => {
+    const testReviewsHtml = allReviews?.map(review => {
         return <div key={review.reviewer+"_"+review.publishDate} className="reviews-right__item">
         {Boolean(review.picturePath) ? <img src={`http://localhost:8000/students/pfp/${review.picturePath}`} style={{borderRadius: "50%"}} height={50} width={60} alt="pic"></img> : <AccountCircleIcon sx={{ height: 50, width: 50 }}/>}
         <div className='deets'>
@@ -99,7 +99,7 @@ function Reviews(props) {
                     </div>
                     <div style={{backgroundColor: Boolean(props.userInfo) ? "#fb246a" : "grey"}} onClick={postReview} className="post-button">{loading ? <><CircularProgress sx={{color: "white"}} size={20}/>posting...</> : (Boolean(props.userInfo) ? "Post review" : "You have to log in to make a review")}</div>
                 </div>
-                {allReviews.length ? <><p>All reviews for this company</p>
+                {allReviews?.length ? <><p>All reviews for this company</p>
                 <div className='all-reviews'>{testReviewsHtml}</div></> : <p>No reviews for this company yet. Be the first one to make one.</p>}
             </div>
 }

@@ -51,11 +51,11 @@ function Signup() {
 
             setLoading(true)
             const response = await httpSignUpStudent(formData)
-            if(response.exists) {
+            if(response?.exists) {
                 alert("Student already exists. try logging in instead")
                 navigate("/auth/login")
-            } else if(!response.exists) {
-                dispatch(setUser({ user: response.body }))
+            } else if(!response?.exists) {
+                dispatch(setUser({ user: response?.body }))
                 navigate("/")
             }
 

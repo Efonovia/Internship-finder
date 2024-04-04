@@ -43,11 +43,14 @@ function Login() {
             setLoading(true)
             console.log(...formData)
             const response = await httpLoginStudent(formDetails)
-            dispatch(setUser({ user: response.body }))
-            const applicationsResponse = await httpGetandUpdateApplications(response.body._id)
+            const applicationsResponse = await httpGetandUpdateApplications(response?.body._id)
             console.log("application response", applicationsResponse)
-            dispatch(setApplications({ applications: applicationsResponse.body }))
-            navigate("/")
+            
+            if(response?.ok && applicationsResponse?.ok) {
+                dispatch(setUser({ user: response.body }))
+                dispatch(setApplications({ applications: applicationsResponse?.body }))
+                navigate("/")
+            }
          
 
             console.log(response)

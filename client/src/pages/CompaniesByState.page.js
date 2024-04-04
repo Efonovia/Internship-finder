@@ -137,7 +137,7 @@ function CompaniesByState() {
                                                     size='large' 
                                                     variant='outlined' 
                                                     shape='rounded' 
-                                                    count={Math.ceil(companies.totalResults/10)} 
+                                                    count={Math.ceil(companies?.totalResults/10)} 
                                                     page={Number(page)} 
                                                     onChange={handleChange} 
                                                 />

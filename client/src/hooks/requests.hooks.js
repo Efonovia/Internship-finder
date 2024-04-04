@@ -150,10 +150,10 @@ export const httpSubmitApplication = async (applicationDetails) => {
 export const httpGetandUpdateApplications = async (studentId) => {
     try {
         const response = await fetch(`${API_URL}/application/getnewmail/${studentId}`)
-        if (!response.ok) {
+        const result = await response.json()
+        if (!result.ok) {
             throw new Error('Failed to fetch data');
         }
-        const result = await response.json()
         return result;
     } catch (error) {
         console.log(error)

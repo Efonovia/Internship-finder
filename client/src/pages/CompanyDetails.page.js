@@ -75,8 +75,8 @@ function CompanyDetailsPage() {
                             <div className="row">
                                 <div className="col-xl-12">
                                     <div className="hero-cap text-center">
-                                        {company.logo !== "/images/no-image-available.jpg" && <img alt="logo" src={`https://www.finelib.com${company.logo}`}></img>}
-                                        <h2>{company.name}</h2>
+                                        {company?.logo !== "/images/no-image-available.jpg" && <img alt="logo" src={`https://www.finelib.com${company?.logo}`}></img>}
+                                        <h2>{company?.name}</h2>
                                     </div>
                                 </div>
                             </div>
@@ -96,18 +96,18 @@ function CompanyDetailsPage() {
                                         >
                                             <a href
                                                 ><img
-                                                    src={company.logo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${company.logo}` : defaultLogo}
+                                                    src={company?.logo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${company?.logo}` : defaultLogo}
                                                     alt="pic"
                                             /></a>
                                         </div>
                                         <div className="job-tittle">
                                             <a href>
-                                                <h4>{company.name}</h4>
+                                                <h4>{company?.name}</h4>
                                             </a>
                                             <ul>
-                                                <li><EmailIcon/>{company.email === "null" ? "none available" : company.email}</li>
+                                                <li><EmailIcon/>{company?.email === "null" ? "none available" : company?.email}</li>
                                                 <li>
-                                                    <LocationOnIcon/>{[company.street, company.city, company.state].join(", ")}
+                                                    <LocationOnIcon/>{[company?.street, company?.city, company?.state].join(", ")}
                                                 </li>
                                             </ul>
                                         </div>
@@ -119,7 +119,7 @@ function CompanyDetailsPage() {
                                         <div className="small-section-tittle">
                                             <h4>Job Description</h4>
                                         </div>
-                                        <p>{company.description !== "null" ? company.description : "none available"}</p>
+                                        <p>{company?.description !== "null" ? company?.description : "none available"}</p>
                                     </div>
                                 </div>
 
@@ -132,12 +132,12 @@ function CompanyDetailsPage() {
                                     </div>
                                     <ul>
                                         <li>
-                                            <span><EmailIcon/> Email : </span><span>{company.email === "null" ? "none available" : company.email}</span>
+                                            <span><EmailIcon/> Email : </span><span>{company?.email === "null" ? "none available" : company?.email}</span>
                                         </li>
-                                        <li><span><LocationOnIcon/> Location : </span><span>{shortenText(30, [company.street, company.city, company.state].join(", "))}</span></li>
-                                        <li><span><PhoneIcon/> Phone : </span><span>{company.phoneNumbers ? company.phoneNumbers.join(", ") : "none available"}</span></li>
-                                        <li><span><LanguageIcon/> Website : </span><a target={company.website === "null" ? true : "_blank"} rel='noreferrer' style={{color: "blue"}} href={company.website === "null" ? true : company.website}>{company.website === "null" ? "none available" : company.website}</a></li>
-                                        <li><span><AccessTimeIcon/> Working Hours : </span><span>{company.workingHours === "null" ? "none available" : company.workingHours}</span></li>
+                                        <li><span><LocationOnIcon/> Location : </span><span>{shortenText(30, [company?.street, company?.city, company?.state].join(", "))}</span></li>
+                                        <li><span><PhoneIcon/> Phone : </span><span>{company?.phoneNumbers ? company?.phoneNumbers.join(", ") : "none available"}</span></li>
+                                        <li><span><LanguageIcon/> Website : </span><a target={company?.website === "null" ? true : "_blank"} rel='noreferrer' style={{color: "blue"}} href={company?.website === "null" ? true : company?.website}>{company?.website === "null" ? "none available" : company?.website}</a></li>
+                                        <li><span><AccessTimeIcon/> Working Hours : </span><span>{company?.workingHours === "null" ? "none available" : company?.workingHours}</span></li>
                                     </ul>
                                     <div style={{marginLeft: "200px"}} className="apply-btn2">
                                         <a style={{color: "white"}} href onClick={scrollToApplicationForm} className="btn">Apply Now</a>
@@ -155,7 +155,7 @@ function CompanyDetailsPage() {
                                     isLoggedIn={Boolean(userInfo)}
                                     picturePath={userInfo.picturePath}
                                     companyId={companyId}
-                                    companyName={company.name}
+                                    companyName={company?.name}
                                     studentId={userInfo._id}
                                     studentSchoolId={userInfo.studentId}
                                     amountOfTimesApplied={getNumberOfTimesApplied()}
@@ -165,7 +165,7 @@ function CompanyDetailsPage() {
                             <Reviews 
                                 companyId={companyId}
                                 userInfo={userInfo}
-                                reviews={company.reviews}
+                                reviews={company?.reviews}
                             />
                         </div>
                     </div>

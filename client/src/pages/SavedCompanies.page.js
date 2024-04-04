@@ -20,7 +20,7 @@ function SavedCompanies() {
         const fetchData = async () => {
             try {
                 const responses = await Promise.all(
-                    userInfo.savedCompanies.map(async company => {
+                    userInfo.savedCompanies?.map(async company => {
                         const response = await httpGetCompanyById(company)
                         return response
                     })

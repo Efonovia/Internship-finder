@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setApplications } from '../state';
 import { CircularProgress } from '@mui/material';
 import "../styles/navbar.css"
+
+
 function Navbar() {
     const userInfo = useSelector(state => state.user)
     const isLoggedIn = Boolean(userInfo)
@@ -31,7 +33,6 @@ function Navbar() {
         return amount;
       }, [applications])
 
-    console.log("navbar rendered")
 
     function logoutClick() {
         setLogoutClicked(true)
@@ -50,7 +51,7 @@ function Navbar() {
                 <div className="row align-items-center">
                     <div className="col-lg-3 col-md-2">
                         <div className="logo">
-                            <p style={{cursor: "pointer"}} onClick={()=>navigate("/")}><img style={{ height: "7vh" }} src={logo} alt="pic"/></p>
+                            <p style={{cursor: "pointer"}} onClick={()=>navigate("/")}><img style={{ height: "7vh", marginTop: "10px" }} src={logo} alt="pic"/></p>
                         </div>
                         
                     </div>
