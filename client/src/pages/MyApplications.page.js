@@ -215,7 +215,7 @@ function MyApplications() {
                                 <div className="msg-body">
                                     {
                                         applications?.length ? 
-                                        (Boolean(currentApplication) ? <ul>{messagesHtml}</ul> : <h1>Select an application to view it's details</h1>) :
+                                        (Boolean(currentApplication) ? <ul>{messagesHtml}</ul> : <h1 style={{textAlign: "center"}}>Select an application to view it's details</h1>) :
                                         <h1>You haven't applied to any companies yet</h1>
                                         }
                                     {currentApplication?.briefMessages.length < 2 && <h1 style={{fontSize: "30px", textAlign: "center", marginTop: "50px"}}>You haven't gotten a response yet, check back later</h1>}
