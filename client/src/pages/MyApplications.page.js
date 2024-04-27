@@ -126,7 +126,7 @@ function MyApplications() {
                         <h3>{application?.companyName}{application?.times > 1 && ` #${application?.times}`}</h3>
                     </div>
                         {Boolean(unreadMessagesCount) && <span className="notification-count">{unreadMessagesCount}</span>}
-                </a>
+                </a> 
     })
 
     const messagesHtml = currentApplication?.briefMessages.map(message => {
