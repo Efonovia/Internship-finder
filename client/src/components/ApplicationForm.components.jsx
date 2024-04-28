@@ -23,6 +23,11 @@ function ApplicationForm(props) {
         console.log(formDetails)
     }
 
+    function connectProfile() {
+        if(!props.isLoggedIn) return
+        setConnected(prev=>!prev)
+    }
+
     async function submitApplication() {
         if(props.submissionLoading) {
             return
@@ -108,7 +113,7 @@ function ApplicationForm(props) {
                         </div>
                         <a 
                             style={{width: "100%", color: "white", padding: connected && "15px", marginBottom: "20px", background: connected ? "green" : (props.isLoggedIn ? "#242b5e" : "grey")}} 
-                            onClick={()=>setConnected(prev=>!prev)} 
+                            onClick={connectProfile} 
                             href 
                             className="btn head-btn1"
                         >

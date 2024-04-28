@@ -49,7 +49,7 @@ export const getCompaniesBySearch = async (req, res) => {
         const filter = {};
         
         if (query && query !== "undefined") {
-            filter.$text = { $search: query };
+            filter.name = { $regex: query, $options: 'i' }
         }
 
         if (state && state!=="undefined") {
@@ -67,7 +67,7 @@ export const getCompaniesBySearch = async (req, res) => {
         let companiesQuery = CompanyDatabase.find(filter, { '__v': 0 });
 
         if (query && query !== "undefined") {
-            companiesQuery = companiesQuery.sort({ score: { $meta: 'textScore' } });
+            companiesQuery = companiesQuery.sort({ name: 1 });
         }
 
         const companies = await companiesQuery.skip(skip).limit(limit);

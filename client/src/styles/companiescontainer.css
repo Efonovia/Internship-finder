@@ -222,7 +222,7 @@
   height: 50px;
   font-size: 18px;
   cursor: pointer;
-  background-color: #20285f96;
+  background-color: #fe6095;
   margin-top: 10px;
   color: white;
   border-radius: 5px;
@@ -231,7 +231,7 @@
 }
 
 .my-jobbylocation:hover {
-  background-color: #242b5e;
+  background-color: #fb246a;
 }
 
 .my-companiesbyrow {

@@ -44,8 +44,10 @@ function CompanyDetailsPage() {
             try {
                 const result = await httpGetCompanyById(companyId);
                 setCompany(result);
-                const applicationsResult = await httpGetandUpdateApplications(userInfo._id)
-                dispatch(setApplications({ applications: applicationsResult.body }))
+                if(userInfo) {
+                    const applicationsResult = await httpGetandUpdateApplications(userInfo._id)
+                    dispatch(setApplications({ applications: applicationsResult.body }))
+                }
             } catch (error) {
                 alert('Error fetching featured companies:', error);
                 console.error('Error fetching featured companies:', error);
@@ -153,13 +155,13 @@ function CompanyDetailsPage() {
                                     submissionLoading={submissionLoading}
                                     handleSubmissionLoading={bool=>setSubmissionLoading(bool)}
                                     isLoggedIn={Boolean(userInfo)}
-                                    picturePath={userInfo.picturePath}
+                                    picturePath={userInfo?.picturePath}
                                     companyId={companyId}
                                     companyName={company?.name}
-                                    studentId={userInfo._id}
-                                    studentSchoolId={userInfo.studentId}
+                                    studentId={userInfo?._id}
+                                    studentSchoolId={userInfo?.studentId}
                                     amountOfTimesApplied={getNumberOfTimesApplied()}
-                                    studentFullName={capitalizeWords(userInfo.firstName + " " + userInfo.lastName)}
+                                    studentFullName={capitalizeWords(userInfo?.firstName + " " + userInfo?.lastName)}
                                 />
                             </div>
                             <Reviews 

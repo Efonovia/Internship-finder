@@ -49,7 +49,7 @@ function CompaniesBySearch() {
             return
         }
         navigate(`/companies/search?query=${searchQuery}&page=1`)
-        // setLoading(true)
+        setLoading(true)
     }
 
     function executeFilter() {
@@ -69,7 +69,7 @@ function CompaniesBySearch() {
         }
         urlQueries.push("page=1")
         navigate(`/companies/search?${urlQueries.join("&")}`)
-        // setLoading(true)
+        setLoading(true)
     }
 
     const handleChange = (event, value) => {
@@ -138,7 +138,7 @@ function CompaniesBySearch() {
                                                 />
                                             </svg>
                                         </div>
-                                        <h4>Filter Jobs</h4>
+                                        <h4>Filter Companies</h4>
                                     </div>
                                 </div>
                             </div>
