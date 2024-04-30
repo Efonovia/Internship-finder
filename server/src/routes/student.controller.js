@@ -16,7 +16,6 @@ export const createNewStudent = async (req, res) => {
 
         console.log(req.body);
 
-// Check if the user already exists in the database
         const existingStudent = await StudentDatabase.findOne({ studentId: studentId });
 
         if (existingStudent) {
@@ -24,7 +23,6 @@ export const createNewStudent = async (req, res) => {
             return res.status(200).json({ exists: true, body: existingStudent });
         }
 
-// If the user does not exist, proceed with creating a new record
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
 
@@ -41,10 +39,9 @@ export const createNewStudent = async (req, res) => {
             email,
             savedCompanies: [],
             password: passwordHash,
-            picturePath: picturePath || "", // Set picturePath only if a file is uploaded
+            picturePath: picturePath || "",
         });
 
-        // Save the new student record to the database
         await newStudent.save();
 
         console.log('New student added successfully');
@@ -133,4 +130,3 @@ export const toggleSavedCompany = async (req, res) => {
     }
 };
 
-export default toggleSavedCompany;

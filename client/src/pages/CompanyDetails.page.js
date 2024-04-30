@@ -119,7 +119,7 @@ function CompanyDetailsPage() {
                                 <div className="job-post-details">
                                     <div className="post-details1 mb-50">
                                         <div className="small-section-tittle">
-                                            <h4>Job Description</h4>
+                                            <h4>Description</h4>
                                         </div>
                                         <p>{company?.description !== "null" ? company?.description : "none available"}</p>
                                     </div>
