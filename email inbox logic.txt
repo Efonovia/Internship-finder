@@ -6,3 +6,20 @@ if email id is not in database: //(because if the emailID was also in the DB it 
         ignore the email
 else: 
     ignore email
+
+
+SAMPLE COVER LETTER:
+I am writing to express my interest in the Software Engineer position at Tech Innovators Inc., as advertised on LinkedIn. With a strong background in computer science and a passion for developing innovative software solutions, I am excited about the opportunity to contribute to your dynamic team.
+
+I hold a Bachelor of Science in Computer Science from the University of Illinois. Over the past five years, I have developed a robust skill set in software development, which I believe aligns well with the requirements outlined in the job description. My experience at XYZ Solutions has honed my abilities in full-stack development, particularly in developing scalable web applications using JavaScript, Python, and React.
+
+At XYZ Solutions, I was responsible for leading a team of developers in designing and implementing a customer management system that increased client retention by 20%. This project required strong collaboration, problem-solving, and technical skills, which I am eager to bring to Tech Innovators Inc.
+
+I am particularly drawn to Tech Innovators Inc. because of your commitment to pushing the boundaries of technology to create impactful solutions. I am impressed by your recent advancements in AI-driven software and the innovative projects your team has undertaken. I am enthusiastic about the possibility of contributing to the development of your next-generation products and furthering your mission to drive technological innovation.
+
+SAMPLE RESPONSE:
+Thank you for your interest in the Software Engineer position at Tech Innovators Inc. We have received your application and are impressed by your qualifications and the experience you bring, particularly your achievements in developing scalable web applications and leading successful projects at XYZ Solutions.
+
+After carefully reviewing your resume, we believe your background in full-stack development and your passion for innovative software solutions align well with our team’s goals and the projects we are currently undertaking. We are particularly interested in your experience with JavaScript, Python, and React, as well as your demonstrated ability to increase client retention through effective software solutions.
+
+We would like to invite you for an interview to further discuss how your skills and experiences can contribute to the continued success and innovation at Tech Innovators Inc. The interview will also give you the opportunity to learn more about our team, projects, and the exciting advancements we are making in AI-driven software.
