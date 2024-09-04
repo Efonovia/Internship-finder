@@ -16,17 +16,18 @@ oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
 export const sendAndCreateNewApplication = async(req, res) => {
   try {
-    const { picturePath, times, companyId, companyName, studentId, studentSchoolId, studentFullName, messageContent } = req.body
+    const { picturePath, times, companyId, companyName, companyEmail, studentId, studentSchoolId, studentFullName, messageContent } = req.body
     console.log("req.body", req.body)
     console.log("req.file", req.file)
     const cvDataFile = req.file;
-    const result = await sendMail(picturePath, Number(times)+1, companyName, studentSchoolId, studentFullName, messageContent, cvDataFile)
+    const result = await sendMail(picturePath, Number(times)+1, companyName, companyEmail, studentSchoolId, studentFullName, messageContent, cvDataFile)
     console.log("creating new application...")
     const newApplication = new ApplicationDatabase({
       applicationId: result.briefMessage.threadId,
       studentId: studentId,
       companyId: companyId,
       companyName: companyName,
+      companyEmail: companyEmail,
       times: Number(times)+1,
       briefMessages: [result.briefMessage],
       detailedMessages: [result.detailedMessage],

@@ -158,6 +158,7 @@ function CompanyDetailsPage() {
                                     picturePath={userInfo?.picturePath}
                                     companyId={companyId}
                                     companyName={company?.name}
+                                    companyEmail={company?.email === "null" ? null : company?.email}
                                     studentId={userInfo?._id}
                                     studentSchoolId={userInfo?.studentId}
                                     amountOfTimesApplied={getNumberOfTimesApplied()}

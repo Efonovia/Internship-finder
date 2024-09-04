@@ -52,6 +52,7 @@ function ApplicationForm(props) {
             formData.append('picturePath', props.picturePath)
             formData.append('companyId', props.companyId)
             formData.append('companyName', props.companyName)
+            formData.append('companyEmail', props.companyEmail)
             formData.append('studentId', props.studentId)
             formData.append('studentSchoolId', props.studentSchoolId)
             formData.append('times', props.amountOfTimesApplied)

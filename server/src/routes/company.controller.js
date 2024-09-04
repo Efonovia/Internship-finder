@@ -26,6 +26,7 @@ export const getAllCompanies = async (req, res) => {
             totalResults: totalDocuments
     })
     } catch (error) {
+        console.log(error)
         return res.status(404).json({error: error.message})
     }
 }
@@ -74,7 +75,7 @@ export const getCompaniesBySearch = async (req, res) => {
 
 
         return res.status(200).json({
-            ...getPaginationResults(page, limit, skip),
+            ...getPaginationResults(page, limit, skip, totalDocuments),
             data: companies,
             totalResults: totalDocuments
         });
@@ -101,7 +102,7 @@ export const getCompaniesByState = async (req, res) => {
         .limit(limit);
 
         return res.status(200).json({
-            ...getPaginationResults(page, limit, skip),
+            ...getPaginationResults(page, limit, skip, totalDocuments),
             data: companies,
             totalResults: totalDocuments
         });
