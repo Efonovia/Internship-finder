@@ -126,11 +126,11 @@ function CompaniesByState() {
                                 </div>
                             </div>
 
-                            <div style={{width: "400px", marginLeft: "-100px"}} className="job-category-listing mb-50">{jobsByCategory}</div>
+                            <div style={{width: "400px"}} className="job-category-listing mb-50">{jobsByCategory}</div>
                         </div>
                         <div className="col-xl-9 col-lg-9 col-md-8">
                             <div className="container">
-                                <div style={{width: "1100px"}} className="row justify-content-center d-flex">
+                                <div style={{width: "916px"}} className="row justify-content-center d-flex">
                                     {loading ? <CircularProgress sx={{color: "#fb246a"}} size={100} /> :
                                     <>
                                         <div style={{fontSize: "20px", marginBottom: "40px", textAlign: "center"}}>{companies.totalResults} companies found</div>

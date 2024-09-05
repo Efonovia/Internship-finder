@@ -128,7 +128,7 @@ function CompanyDetailsPage() {
                             </div>
 
                             <div style={{marginRight: "50px"}} className="col-xl-4 col-lg-4">
-                                <div style={{width: "600px"}} className="post-details3 mb-50">
+                                <div style={{width: "450px"}} className="post-details3 mb-50">
                                     <div className="small-section-tittle">
                                         <h4>Internship Overview</h4>
                                     </div>
@@ -148,7 +148,7 @@ function CompanyDetailsPage() {
                             </div>
                         </div>
                         <div className='row justify-content-between'>
-                            <div ref={applicationFormRef} className="col-xl-7 col-lg-8">
+                            <div ref={applicationFormRef} className="col-xl-6 col-lg-8">
                                 <ApplicationForm 
                                     open={open}
                                     handleOpen={bool=>setOpen(bool)}

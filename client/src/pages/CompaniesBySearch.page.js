@@ -143,7 +143,7 @@ function CompaniesBySearch() {
                                 </div>
                             </div>
 
-                            <div style={{width: "400px", marginLeft: "-100px"}} className="job-category-listing mb-50">
+                            <div style={{width: "400px"}} className="job-category-listing mb-50">
                                 <div style={{marginBottom: "20px"}} className="single-listing">
                                     <div className="small-section-tittle2">
                                         <h4>Categories</h4>
@@ -181,8 +181,8 @@ function CompaniesBySearch() {
                         </div>
                         <div style={{marginLeft: "280px", marginTop: "-450px"}} className="col-xl-9 col-lg-9 col-md-8">
                             <div className="container">
-                                <div style={{width: "1100px"}} className="row justify-content-center d-flex">
-                                    <div style={{fontSize: "20px", marginBottom: "30px", marginRight: "-90px"}}>{companies.totalResults} companies found</div>
+                                <div style={{width: "936px"}} className="row justify-content-center d-flex">
+                                    <div style={{fontSize: "20px", marginBottom: "30px", marginRight: "-90px", width: "420px", height: "30px"}}>{companies.totalResults} companies found</div>
                                 
                                     {loading ? <CircularProgress sx={{color: "#fb246a"}} size={100} /> : (
                                         companies["data"]?.length ? 
