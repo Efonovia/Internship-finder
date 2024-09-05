@@ -80,7 +80,7 @@ function Login() {
                         </div>
                         <div className="col-md-12">
                             <div className="input_field">
-                                <input onChange={handleChange} value={formDetails.password} name='password' type="text" placeholder="Password"/>
+                                <input onChange={handleChange} value={formDetails.password} name='password' type="password" placeholder="Password"/>
                             </div>
                         </div>
                         <a onClick={submitForm} style={{width: "100%", marginTop: "30px", color: "white"}} href className="btn head-btn1">Log in</a>

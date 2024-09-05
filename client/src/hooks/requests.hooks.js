@@ -1,4 +1,4 @@
-const API_URL = "https://internship-app-api.vercel.app/companies"
+const API_URL = "https://internship-app-api.vercel.app"
 const limit = 10
 
 
