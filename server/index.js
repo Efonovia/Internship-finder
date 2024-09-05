@@ -45,7 +45,9 @@ app.use(cors())
 
 
 //ROUTES
-app.get("/", (req, res) => res.send("hello"))
+app.get("/", (req, res) => {
+    res.send("Welcome to Internship Finder...")
+})
 app.use("/students", studentsRouter)
 app.use("/companies", companyRouter)
 app.post("/application/create", applicationUpload.single("cvFile"), sendAndCreateNewApplication)
