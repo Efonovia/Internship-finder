@@ -65,7 +65,7 @@ function Reviews(props) {
 
     const testReviewsHtml = allReviews?.map(review => {
         return <div key={review.reviewer+"_"+review.publishDate} className="reviews-right__item">
-        {Boolean(review.picturePath) ? <img src={`http://localhost:8000/students/pfp/${review.picturePath}`} style={{borderRadius: "50%"}} height={50} width={60} alt="pic"></img> : <AccountCircleIcon sx={{ height: 50, width: 50 }}/>}
+        {Boolean(review.picturePath) ? <img src={`https://internship-app-api.vercel.app/uploads/${review.picturePath}`} style={{borderRadius: "50%"}} height={50} width={60} alt="pic"></img> : <AccountCircleIcon sx={{ height: 50, width: 50 }}/>}
         <div className='deets'>
             <p className='reviewer'>{capitalizeWords(review.reviewer)}</p>
             <p>{formatDate(review.publishDate)}</p>

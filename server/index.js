@@ -12,6 +12,10 @@ import companyRouter from "./src/routes/company.route.js";
 import applicationRouter from "./src/routes/application.route.js";
 import multer from "multer";
 import { sendAndCreateNewApplication } from "./src/routes/application.controller.js";
+import { fileURLToPath } from 'url';
+import path, { dirname } from "path"
+
+const __filename = fileURLToPath(import.meta.url);
 
 
 // CONFIGURATION
@@ -19,7 +23,7 @@ dotenv.config()
 const app = express()
 const storage = multer.diskStorage({
             destination: function (req, file, cb) {
-                cb(null, 'uploads/');
+                cb(null, 'public/uploads/');
             },
             filename: function (req, file, cb) {
                 const userId = req.body.studentId;
@@ -43,7 +47,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors())
 
 
-
+app.use(express.static(path.join(dirname(__filename), "public")));
 //ROUTES
 app.get("/", (req, res) => {
     res.send("Welcome to Internship Finder...")
