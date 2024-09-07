@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultLogo from "../assets/img/post.png"
+import defaultLogo from "../assets/img/company_default.png"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.developm
 import { httpToggleSavedCompany } from '../hooks/requests.hooks';
 import { useDispatch } from 'react-redux';
 import { updateSavedCompanies } from '../state';
+import "../styles/companiescontainer.css"
 
 function CompanyCard(props) {
     const navigate = useNavigate()
@@ -45,16 +46,16 @@ function CompanyCard(props) {
         }
     }
 
-
+    const hasNoImage = logo === "/images/no-image-available.jpg"
     return <div className="single-post d-flex flex-row">
                 <div style={{marginRight: "10px", maxWidth: "150px"}} className="thumb">
-                    <img src={logo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${logo}`: defaultLogo} alt="pic" />
+                    <img style={hasNoImage ? { height: 100, width: 100 }: {}} src={hasNoImage ? defaultLogo : `https://www.finelib.com${logo}`} alt="pic" />
                     <ul className="tags">{tagsHtml}</ul>
                 </div>
                 <div className="details">
                     <div className="title d-flex flex-row justify-content-between">
                         <div className="titles">
-                            <a href><h4>{name}</h4></a>
+                            <a href onClick={()=>navigate(`/companies/details/${_id}`)}><h4 id="super-custom-name">{name}</h4></a>
                             <h6 className="my-h6"><LocationOnIcon />{[street, city, state].join(", ")}</h6>
                         </div>
                         <ul className="btns">

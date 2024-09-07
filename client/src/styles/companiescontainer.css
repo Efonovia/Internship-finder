@@ -253,3 +253,11 @@
   width: 950px;
   margin-left: 100px;
 }
+
+#super-custom-name {
+  cursor: pointer;
+}
+
+#super-custom-name:hover {
+  color: #fb246a;
+}

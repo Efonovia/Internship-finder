@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultLogo from "../assets/img/post.png"
+import defaultLogo from "../assets/img/company_default.png"
 import ApplicationForm from '../components/ApplicationForm.components';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
@@ -61,6 +61,7 @@ function CompanyDetailsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [companyId])
 
+    const hasNoImage = company?.logo === "/images/no-image-available.jpg"
     return <main>
             <ApplicationSubmissionModal 
                 open={open} 
@@ -77,7 +78,7 @@ function CompanyDetailsPage() {
                             <div className="row">
                                 <div className="col-xl-12">
                                     <div className="hero-cap text-center">
-                                        {company?.logo !== "/images/no-image-available.jpg" && <img alt="logo" src={`https://www.finelib.com${company?.logo}`}></img>}
+                                        {hasNoImage ? <img style={{ height: 100, width: 100 }} src={defaultLogo} alt="pic" /> : <img alt="logo" src={`https://www.finelib.com${company?.logo}`}></img>}
                                         <h2>{company?.name}</h2>
                                     </div>
                                 </div>
@@ -96,11 +97,9 @@ function CompanyDetailsPage() {
                                         <div
                                             className="company-img company-img-details"
                                         >
-                                            <a href
-                                                ><img
-                                                    src={company?.logo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${company?.logo}` : defaultLogo}
-                                                    alt="pic"
-                                            /></a>
+                                            <a href>
+                                                <img style={hasNoImage ? { height: 100, width: 100 }: {}} src={hasNoImage ? defaultLogo : `https://www.finelib.com${company?.logo}`} alt="pic" />
+                                            </a>
                                         </div>
                                         <div className="job-tittle">
                                             <a href>

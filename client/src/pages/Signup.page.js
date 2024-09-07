@@ -4,7 +4,7 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 import { httpSignUpStudent } from '../hooks/requests.hooks';
 import { useDispatch } from "react-redux"
-import { setUser } from '../state';
+import { setApplications, setUser } from '../state';
 import { CircularProgress } from '@mui/material';
 import { checkFormFields } from '../utils';
 
@@ -56,6 +56,7 @@ function Signup() {
                 navigate("/auth/login")
             } else if(!response?.exists) {
                 dispatch(setUser({ user: response?.body }))
+                dispatch(setApplications({ applications: [] }))
                 navigate("/")
             }
 

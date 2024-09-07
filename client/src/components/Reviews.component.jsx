@@ -1,6 +1,5 @@
 import React from 'react';
 import "../styles/review.css"
-// import defaultLogo from "../assets/img/post.png"
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { httpPostReview } from '../hooks/requests.hooks';
@@ -65,13 +64,13 @@ function Reviews(props) {
 
     const testReviewsHtml = allReviews?.map(review => {
         return <div key={review.reviewer+"_"+review.publishDate} className="reviews-right__item">
-        {Boolean(review.picturePath) ? <img src={`https://internship-app-api.vercel.app/uploads/${review.picturePath}`} style={{borderRadius: "50%"}} height={50} width={60} alt="pic"></img> : <AccountCircleIcon sx={{ height: 50, width: 50 }}/>}
+        {Boolean(review.picturePath) ? <img src={`https://res.cloudinary.com/dn6uuvy0b/image/upload/v1725725696/${review.picturePath}`} style={{borderRadius: "50%", objectFit: "cover"}} height={50} width={50} alt="pic"></img> : <AccountCircleIcon sx={{ height: 50, width: 50 }}/>}
         <div className='deets'>
             <p className='reviewer'>{capitalizeWords(review.reviewer)}</p>
             <p>{formatDate(review.publishDate)}</p>
         </div>
         <span style={{color: "black"}} className="stars">Rating: 
-        {Array(5).fill().map((_, index) => index < review.rating ? <StarIcon key={index+1} sx={{color: "gold"}}/> : <StarOutlineIcon key={index+1} sx={{color: "gold", cursor: "pointer"}}/>)}
+        {Array(5).fill().map((_, index) => index < review.rating ? <StarIcon key={index+1} sx={{color: "gold", height: "15px", width: "15px"}}/> : <StarOutlineIcon key={index+1} sx={{color: "gold", cursor: "pointer", height: "15px", width: "15px"}}/>)}
         </span>
         <h5>{review.content}</h5>
     </div>

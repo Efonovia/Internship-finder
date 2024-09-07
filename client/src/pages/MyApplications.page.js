@@ -3,7 +3,7 @@ import "../styles/myapplications.css"
 import ArticleIcon from '@mui/icons-material/Article';
 import { httpGetandUpdateApplications, httpViewAllUnreadMessages } from '../hooks/requests.hooks';
 import { useDispatch, useSelector } from 'react-redux';
-import defaultLogo from "../assets/img/post.png"
+import defaultLogo from "../assets/img/company_default.png"
 import { setApplications } from '../state';
 import { CircularProgress } from '@mui/material';
 import { capitalizeWords, formatDate, formatTime } from '../utils';
@@ -111,13 +111,14 @@ function MyApplications() {
     const applicationsToSort = [...applications]
     const applicationsHtml = applicationsToSort?.sort((a,b) => new Date(b.dateMade)-new Date(a.dateMade)).map(application => {
         const unreadMessagesCount = application?.briefMessages.filter(msg => !msg.seen).length
+        const hasNoImage = application?.companyLogo === "/images/no-image-available.jpg"
         return <a key={application._id} onClick={() => onChatClick(application)} href className="d-flex align-items-center">
                     <div className="flex-shrink-0">
                         <img 
                             className="img-fluid"
                             height={60}
                             width={60}
-                            src={application?.companyLogo !== "/images/no-image-available.jpg" ? `https://www.finelib.com${application?.companyLogo}` : defaultLogo} 
+                            src={hasNoImage ? defaultLogo : `https://www.finelib.com${application?.companyLogo}`} 
                             alt="user img"
                         >
                         </img>
