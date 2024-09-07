@@ -84,7 +84,7 @@ export const sendMail = async(picturePath, times, companyName, companyEmail, stu
       const mailOptions = {
         from: "NILE UNIVERSITY <efonovia18@gmail.com>",
         subject: `To the office of ${companyName}. ${times===1 ? `An internship application for our student, ${studentFullName}` : `Our student, ${studentFullName} is applying for an internship at your company for the ${getOrdinalSuffix(times)} time`}`,
-        to: companyEmail || "lordnovia18@gmail.com",
+        to: companyEmail === "null" ? "lordnovia18@gmail.com" : companyEmail,
         html: `
             <main style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
             <h2 style="text-align: center;">Our student, ${studentFullName} would like to intern at your company. Here's what they have to say:</h2>
