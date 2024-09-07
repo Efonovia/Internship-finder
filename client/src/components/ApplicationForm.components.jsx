@@ -1,7 +1,6 @@
 import React from 'react';
 import "../styles/applicationform.css"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { httpSubmitApplication } from '../hooks/requests.hooks';
 import { formDataToJson } from '../utils';
 
@@ -14,6 +13,14 @@ function ApplicationForm(props) {
 
     function handleChange(event) {
         const { value, name, files } = event.target;
+
+        if (name === "cv" && files[0]) {
+            const fileSizeInMB = files[0].size / (1024 * 1024); // Convert bytes to MB
+            if (fileSizeInMB > 4.5) {
+                alert("File size exceeds 4.5MB. Please upload a smaller file.");
+                return; // Exit if file is too large
+            }
+        }
 
         setFormDetails(prevFormDetails => ({
             ...prevFormDetails,
