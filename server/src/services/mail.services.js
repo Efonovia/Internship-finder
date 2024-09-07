@@ -103,7 +103,7 @@ export const sendMail = async(picturePath, times, companyName, companyEmail, stu
             },
             {
               filename: "A picture of " + studentFullName + "." + picturePath.split('.').pop(),
-              content: `https://res.cloudinary.com/dn6uuvy0b/image/upload/v1725725696/${picturePath}.jpg`,
+              path: `https://res.cloudinary.com/dn6uuvy0b/image/upload/v1725725696/${picturePath}`,
             }
         ],
       };
