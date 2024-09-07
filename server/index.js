@@ -2,7 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors"
-import path from "path"
 import dotenv from "dotenv"
 import helmet from "helmet";
 import morgan from "morgan";
@@ -12,28 +11,36 @@ import companyRouter from "./src/routes/company.route.js";
 import applicationRouter from "./src/routes/application.route.js";
 import multer from "multer";
 import { sendAndCreateNewApplication } from "./src/routes/application.controller.js";
-import { fileURLToPath } from 'url';
-import path, { dirname } from "path"
-
-const __filename = fileURLToPath(import.meta.url);
+import cloudinary from "cloudinary"
+import { CloudinaryStorage } from "multer-storage-cloudinary"
 
 
 // CONFIGURATION
 dotenv.config()
 const app = express()
-const storage = multer.diskStorage({
-            destination: function (req, file, cb) {
-                cb(null, 'public/uploads/');
-            },
-            filename: function (req, file, cb) {
-                const userId = req.body.studentId;
-                const timestamp = Date.now();
-                const originalName = file.originalname;
-                const extension = originalName.split('.').pop();
-                const customFileName = `${userId}_${timestamp}.${extension}`;
-                cb(null, customFileName);
-            }
-        });
+
+cloudinary.v2.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
+})
+
+  // Multer storage configuration with dynamic `public_id`
+  const storage = new CloudinaryStorage({
+    cloudinary: cloudinary.v2,
+    params: async (req, file) => {
+        const userId = req.body.studentId;
+        const timestamp = Date.now();
+        const customFileName = `${userId}_${timestamp}`;
+        const customPublicId = customFileName; // Use provided public_id or default to a timestamp
+
+        return {
+            folder: 'internship_finder', // Cloudinary folder name
+            public_id: customPublicId, // Set the custom public_id
+        };
+    },
+  });
+
 
 const upload = multer({ storage: storage });
 const applicationUpload = multer()
@@ -47,7 +54,6 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors())
 
 
-app.use(express.static(path.join(dirname(__filename), "public")));
 //ROUTES
 app.get("/", (req, res) => {
     res.send("Welcome to Internship Finder...")
