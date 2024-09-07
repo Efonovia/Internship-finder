@@ -31,7 +31,9 @@ cloudinary.v2.config({
     params: async (req, file) => {
         const userId = req.body.studentId;
         const timestamp = Date.now();
-        const customFileName = `${userId}_${timestamp}`;
+        const originalName = file.originalname;
+        const extension = originalName.split('.').pop();
+        const customFileName = `${userId}_${timestamp}.${extension}`;
         const customPublicId = customFileName; // Use provided public_id or default to a timestamp
 
         return {
