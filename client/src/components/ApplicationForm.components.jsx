@@ -11,7 +11,6 @@ function ApplicationForm(props) {
         messageContent: "",
         cv: null
     })
-    const [connected, setConnected] = React.useState(false)
 
     function handleChange(event) {
         const { value, name, files } = event.target;
@@ -23,17 +22,8 @@ function ApplicationForm(props) {
         console.log(formDetails)
     }
 
-    function connectProfile() {
-        if(!props.isLoggedIn) return
-        setConnected(prev=>!prev)
-    }
-
     async function submitApplication() {
         if(props.submissionLoading) {
-            return
-        }
-        if(!connected) {
-            alert("ensure you connect your student validation for validation")
             return
         }
         if(!formDetails.messageContent) {
@@ -72,7 +62,6 @@ function ApplicationForm(props) {
         } finally {
             
             setFormDetails({messageContent: "", cv: null})
-            setConnected(false)
             setTimeout(() => props.handleSubmissionLoading(false), 2000)
         }
         
@@ -112,14 +101,6 @@ function ApplicationForm(props) {
                                 ></textarea>
                             </div>
                         </div>
-                        <a 
-                            style={{width: "100%", color: "white", padding: connected && "15px", marginBottom: "20px", background: connected ? "green" : (props.isLoggedIn ? "#242b5e" : "grey")}} 
-                            onClick={connectProfile} 
-                            href 
-                            className="btn head-btn1"
-                        >
-                            {connected ? <><CheckCircleIcon/>&nbsp; Student Profile Connected</> : (props.isLoggedIn ? "Connect Student Profile for quicker validation" : "You need to be logged in to connect your student profile")}
-                        </a>
                         <a 
                             style={{width: "100%", color: "white", background: props.isLoggedIn ? "#fb246a" : "grey", padding: props.submissionLoading && "20px"}} 
                             onClick={submitApplication} 
