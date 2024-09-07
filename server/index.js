@@ -62,8 +62,8 @@ app.use("/students", studentsRouter)
 app.use("/companies", companyRouter)
 app.post("/application/create", applicationUpload.single("cvFile"), sendAndCreateNewApplication)
 app.use("/application", applicationRouter)
-app.post("/signup", upload.single("picturePath"), createNewStudent)
-app.post("/login", loginStudent)
+app.post("/students/signup", upload.single("picturePath"), createNewStudent)
+app.post("/students/login", loginStudent)
 
 
 //MONGOOSE SETUP

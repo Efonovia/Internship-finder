@@ -94,7 +94,7 @@ export const httpPostReview = async (review, companyId) => {
 
 export const httpSignUpStudent = async (studentDetails) => {
     try {
-        const response = await fetch(`${API_URL}/signup`, {
+        const response = await fetch(`${API_URL}/students/signup`, {
             method: "POST",
             body: studentDetails
         })
@@ -111,7 +111,7 @@ export const httpSignUpStudent = async (studentDetails) => {
 
 export const httpLoginStudent = async (studentDetails) => {
     try {
-        const response = await fetch(`${API_URL}/login`, {
+        const response = await fetch(`${API_URL}/students/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
